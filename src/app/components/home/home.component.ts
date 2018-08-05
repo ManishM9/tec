@@ -711,6 +711,11 @@ export class HomeComponent implements OnInit {
   // event4State: string = "inactive";
   // event5State: string = "inactive";
   // event6State: string = "inactive";
+  gradstate: string = "";
+  gradestate2: string = "";
+  turnstate1: string = "";
+  turnstate2: string = "";
+  turnstate3: string = "";
   eventState: string[] = ["inactive","inactive","inactive","inactive","inactive","inactive"];
   eventActive: boolean = false;
   projState: string[] = ["inactive","inactive","inactive","inactive","inactive","inactive","inactive","inactive"];
