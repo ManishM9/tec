@@ -1,0 +1,39 @@
+<div class="row">
+
+  <table [class.w-75]="currentEvent" class="table"  *ngIf="dataready">
+
+    <tr>
+      <th class="text-center">Sunday</th>
+      <th class="text-center">Monday</th>
+      <th class="text-center">Tuesday</th>
+      <th class="text-center">Wednesday</th>
+      <th class="text-center">Thursday</th>
+      <th class="text-center">Friday</th>
+      <th class="text-center">Saturday</th>
+    </tr>
+
+    <tr *ngFor="let n of rows">
+      <td *ngFor="let m of cols" id="cell{{(n-1)*7 + m}}" class="text-center rounded" (click)="showEvent(currcal[(n-1)*7+m])" [class.bg-success]="isEvent(currcal[(n-1)*7+m])">{{ currcal[(n-1)*7+m] }}</td>
+    </tr>
+
+
+  </table>
+
+  <div *ngIf="currentEvent" [class.w-25]="currentEvent">
+    <h3>{{currentEventd.title}}</h3>
+    <p>{{ currentEventd.description }}</p>
+    <h4>Speakers:</h4>
+    <ul>
+      <li *ngFor="let speaker of currentEventd.speakers">
+        {{ speaker.name }} on {{ speaker.topic }}
+      </li>
+    </ul>
+    <h4>Coordinators:</h4>
+    <ul>
+      <li *ngFor="let coordinator of currentEventd.coordinators">
+        {{ coordinator.name }}
+      </li>
+    </ul>
+  </div>
+
+</div>
