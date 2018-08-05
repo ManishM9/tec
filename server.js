@@ -188,6 +188,6 @@ app.get("*", (req,res) => {
 });
 
 
-app.listen(process.env.PORT, process.env.IP, (req,res) => {
+app.listen(process.env.PORT || 8888, process.env.IP, (req,res) => {
     console.log("Server Started");
 });
