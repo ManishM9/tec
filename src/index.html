@@ -6,9 +6,27 @@
   <base href="/">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="icon" type="image/x-icon" href="assets/images/logo.png">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans|Raleway|Roboto" rel="stylesheet">
 </head>
 <body>
   <app-root></app-root>
 </body>
+<script>
+  $(".carousel").carousel({
+    interval: 3000,
+    pause: false
+  });
+  function initMap(){
+    var uluru = { lat: 12.9705038, lng: 79.1586786 };
+    var map = new google.maps.Map(document.getElementById('map'), {zoom:16, center: uluru});
+    var marker = new google.maps.Marker({
+  position: uluru,
+  map: map
+});
+  }
+</script>
+<!-- <script async defer
+src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDm9KE469nthcNrqvmaFNq5hOYo79Brvvs&callback=initMap">
+</script> -->
 </html>
