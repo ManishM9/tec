@@ -55,10 +55,10 @@ import { element } from '../../../../node_modules/protractor';
         transform: 'scale(1) rotate(+45deg)',
       })),
       state("active", style({
-        transform: 'scale(2) rotate(+45deg)',
+        transform: 'scale(1.4) rotate(+45deg)',
       })),
       state("de-active", style({
-        transform: 'scale(0.001) rotate(+45deg)',
+        transform: 'scale(0.5) rotate(+45deg)',
       })),
       transition('* => active', [
         animate('500ms ease-in')
@@ -75,10 +75,10 @@ import { element } from '../../../../node_modules/protractor';
         transform: 'scale(1) rotate(+45deg)',
       })),
       state("active", style({
-        transform: 'scale(2) rotate(+45deg)',
+        transform: 'scale(1.4) rotate(+45deg)',
       })),
       state("de-active", style({
-        transform: 'scale(0.001) rotate(+45deg)',
+        transform: 'scale(0.5) rotate(+45deg)',
       })),
       transition('* => active', [
         animate('500ms ease-in')
@@ -95,10 +95,10 @@ import { element } from '../../../../node_modules/protractor';
         transform: 'scale(1) rotate(+45deg)',
       })),
       state("active", style({
-        transform: 'scale(2) rotate(+45deg)',
+        transform: 'scale(1.4) rotate(+45deg)',
       })),
       state("de-active", style({
-        transform: 'scale(0.001) rotate(+45deg)',
+        transform: 'scale(0.5) rotate(+45deg)',
       })),
       transition('* => active', [
         animate('500ms ease-in')
@@ -115,10 +115,10 @@ import { element } from '../../../../node_modules/protractor';
         transform: 'scale(1) rotate(+45deg)',
       })),
       state("active", style({
-        transform: 'scale(2) rotate(+45deg)',
+        transform: 'scale(1.4) rotate(+45deg)',
       })),
       state("de-active", style({
-        transform: 'scale(0.001) rotate(+45deg)',
+        transform: 'scale(0.5) rotate(+45deg)',
       })),
       transition('* => active', [
         animate('500ms ease-in')
@@ -135,10 +135,10 @@ import { element } from '../../../../node_modules/protractor';
         transform: 'scale(1) rotate(+45deg)',
       })),
       state("active", style({
-        transform: 'scale(2) rotate(+45deg)',
+        transform: 'scale(1.4) rotate(+45deg)',
       })),
       state("de-active", style({
-        transform: 'scale(0.001) rotate(+45deg)',
+        transform: 'scale(0.5) rotate(+45deg)',
       })),
       transition('* => active', [
         animate('500ms ease-in')
@@ -155,10 +155,10 @@ import { element } from '../../../../node_modules/protractor';
         transform: 'scale(1) rotate(+45deg)',
       })),
       state("active", style({
-        transform: 'scale(2) rotate(+45deg)',
+        transform: 'scale(1.4) rotate(+45deg)',
       })),
       state("de-active", style({
-        transform: 'scale(0.001) rotate(+45deg)',
+        transform: 'scale(0.5) rotate(+45deg)',
       })),
       transition('* => active', [
         animate('500ms ease-in')
@@ -437,13 +437,13 @@ import { element } from '../../../../node_modules/protractor';
         height: '25%'
       })),
       transition("* => inactive", [
-        animate('500ms ease-in')
+        animate('300ms ease-in')
       ]),
       transition("* => active", [
-        animate('500ms ease-in')
+        animate('300ms ease-in')
       ]),
       transition("* => de-active", [
-        animate('500ms ease-in')
+        animate('300ms ease-in')
       ]),
     ]),
     trigger("downrow", [
@@ -457,13 +457,13 @@ import { element } from '../../../../node_modules/protractor';
         height: '25%'
       })),
       transition("* => inactive", [
-        animate('500ms ease-in')
+        animate('300ms ease-in')
       ]),
       transition("* => active", [
-        animate('500ms ease-in')
+        animate('300ms ease-in')
       ]),
       transition("* => de-active", [
-        animate('500ms ease-in')
+        animate('300ms ease-in')
       ]),
     ]),
     trigger("b1", [
@@ -473,7 +473,7 @@ import { element } from '../../../../node_modules/protractor';
       })),
       state("active", style({
         borderRadius: '10%',
-        transform: 'scale(1.5)',
+        // transform: 'scale(1.5)',
       })),
       state("de-active", style({
         transform: 'scale(0.7)',
@@ -496,7 +496,7 @@ import { element } from '../../../../node_modules/protractor';
       })),
       state("active", style({
         borderRadius: '10%',
-        transform: 'scale(1.5)',
+        // transform: 'scale(1.5)',
       })),
       state("de-active", style({
         transform: 'scale(0.7)',
@@ -519,7 +519,7 @@ import { element } from '../../../../node_modules/protractor';
       })),
       state("active", style({
         borderRadius: '10%',
-        transform: 'scale(1.5)',
+        // transform: 'scale(1.5)',
       })),
       state("de-active", style({
         transform: 'scale(0.7)',
@@ -542,7 +542,7 @@ import { element } from '../../../../node_modules/protractor';
       })),
       state("active", style({
         borderRadius: '10%',
-        transform: 'scale(1.5)',
+        // transform: 'scale(1.5)',
       })),
       state("de-active", style({
         transform: 'scale(0.7)',
@@ -565,7 +565,7 @@ import { element } from '../../../../node_modules/protractor';
       })),
       state("active", style({
         borderRadius: '10%',
-        transform: 'scale(1.5)',
+        // transform: 'scale(1.5)',
       })),
       state("de-active", style({
         transform: 'scale(0.7)',
@@ -588,7 +588,7 @@ import { element } from '../../../../node_modules/protractor';
       })),
       state("active", style({
         borderRadius: '10%',
-        transform: 'scale(1.5)',
+        // transform: 'scale(1.5)',
       })),
       state("de-active", style({
         transform: 'scale(0.7)',
@@ -611,7 +611,7 @@ import { element } from '../../../../node_modules/protractor';
       })),
       state("active", style({
         borderRadius: '10%',
-        transform: 'scale(1.5)',
+        // transform: 'scale(1.5)',
       })),
       state("de-active", style({
         transform: 'scale(0.7)',
@@ -634,7 +634,7 @@ import { element } from '../../../../node_modules/protractor';
       })),
       state("active", style({
         borderRadius: '10%',
-        transform: 'scale(1.5)',
+        // transform: 'scale(1.5)',
       })),
       state("de-active", style({
         transform: 'scale(0.7)',
@@ -657,7 +657,7 @@ import { element } from '../../../../node_modules/protractor';
       })),
       state("active", style({
         borderRadius: '10%',
-        transform: 'scale(1.5)',
+        // transform: 'scale(1.5)',
       })),
       state("de-active", style({
         transform: 'scale(0.7)',
@@ -680,7 +680,7 @@ import { element } from '../../../../node_modules/protractor';
       })),
       state("active", style({
         borderRadius: '10%',
-        transform: 'scale(1.5)',
+        // transform: 'scale(1.5)',
       })),
       state("de-active", style({
         transform: 'scale(0.7)',
@@ -770,7 +770,7 @@ export class HomeComponent implements OnInit {
             if(index === n){
               this.projState[index] = 'active';
             }
-            }, 200);
+            }, );
           } else {
             this.rowState[1] = "active";
             this.rowState[0] = "de-active";
@@ -779,7 +779,7 @@ export class HomeComponent implements OnInit {
               if(index === n){
                 this.projState[index] = 'active';
               }
-            }, 200);
+            }, );
           }
         } else {
           if(lower){
@@ -790,7 +790,7 @@ export class HomeComponent implements OnInit {
               if(index === n){
                 this.projState[index] = 'active';
               }
-            }, 200);
+            }, );
           } else {
             this.rowState[1] = "active";
             this.rowState[0] = "de-active";
@@ -799,7 +799,7 @@ export class HomeComponent implements OnInit {
               if(index === n){
                 this.projState[index] = 'active';
               }
-            }, 200);
+            }, );
           }
         }
       });
@@ -810,7 +810,7 @@ export class HomeComponent implements OnInit {
   pdeactivate(){
     setTimeout(() => {
       this.projState = ["inactive","inactive","inactive","inactive","inactive","inactive","inactive","inactive"];
-    }, 200);
+    }, );
     this.rowState = ["inactive","inactive"];
   }
 
