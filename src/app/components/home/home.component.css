@@ -90,42 +90,42 @@ and (max-width : 700px) {
     .event0 {
         width: 100px;
         height: 100px;
-        margin-left: 10%;
+        margin-left: 8%;
         margin-top: 130px;
     }
     
     .event1 {
         width: 100px;
         height: 100px;
-        margin-left: 39%;
+        margin-left: 37%;
         margin-top: 200px;
     }
     
     .event2 {
         width: 100px;
         height: 100px;
-        margin-left: 39%;
+        margin-left: 37%;
         margin-top: 50px;
     }
     
     .event3 {
         width: 100px;
         height: 100px;
-        margin-left: 68%;
+        margin-left: 66%;
         margin-top: 130px;
     }
     
     .event4 {
         width: 100px;
         height: 100px;
-        margin-left: 61%;
+        margin-left: 59%;
         margin-top: 300px;
     }
     
     .event5 {
         width: 100px;
         height: 100px;
-        margin-left: 17%;
+        margin-left: 15%;
         margin-top: 300px;
     }
 
