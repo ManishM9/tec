@@ -14,12 +14,59 @@
     height: 700px;
 }
 
+.board {
+    width: 200px;
+    height: 200px;
+}
+
+.event0 {
+    width: 250px;
+    height: 250px;
+    margin-left: 16%;
+    margin-top: 150px;
+}
+
+.event1 {
+    width: 250px;
+    height: 250px;
+    margin-left: 36%;
+    margin-top: 230px;
+}
+
+.event2 {
+    width: 180px;
+    height: 180px;
+    margin-left: 31%;
+    margin-top: 50px;
+}
+
+.event3 {
+    width: 220px;
+    height: 220px;
+    margin-left: 49.33%;
+    margin-top: 80px;
+}
+
+.event4 {
+    width: 200px;
+    height: 200px;
+    margin-left: 57.33%;
+    margin-top: 300px;
+}
+
+.event5 {
+    width: 250px;
+    height: 250px;
+    margin-left: 68%;
+    margin-top: 120px;
+}
+
 @media only screen 
 and (min-width : 320px) 
-and (max-width : 500px) {
+and (max-width : 700px) {
 
-    .screen1 {
-      height: 500px;
+    /* .screen1 {
+      height: 730px;
     }
 
     .navheight {
@@ -32,6 +79,54 @@ and (max-width : 500px) {
 
     .skewheight {
       height: 470px;
+    } */
+
+    .board {
+        width: 100px;
+        height: 100px;
+        /* margin-left:  */
+    }
+
+    .event0 {
+        width: 125px;
+        height: 125px;
+        margin-left: 8%;
+        margin-top: 150px;
+    }
+    
+    .event1 {
+        width: 125px;
+        height: 125px;
+        margin-left: 34%;
+        margin-top: 200px;
+    }
+    
+    .event2 {
+        width: 90px;
+        height: 90px;
+        margin-left: 29%;
+        margin-top: 100px;
+    }
+    
+    .event3 {
+        width: 110px;
+        height: 110px;
+        margin-left: 53%;
+        margin-top: 125px;
+    }
+    
+    .event4 {
+        width: 100px;
+        height: 100px;
+        margin-left: 57.33%;
+        margin-top: 270px;
+    }
+    
+    .event5 {
+        width: 125px;
+        height: 125px;
+        margin-left: 72.5%;
+        margin-top: 183px;
     }
 
   }

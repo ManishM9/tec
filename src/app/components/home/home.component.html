@@ -12,7 +12,7 @@
 
 <!-- ==================================================================================================== -->
 
-<div id="demo" class="carousel slide row" data-ride="carousel" style="width: 101%; position: absolute;">
+<div id="demo" class="carousel slide row" data-ride="carousel" style="width: 103%; position: absolute;">
 
     <!-- Indicators -->
     <ul class="carousel-indicators">
@@ -76,7 +76,7 @@
 
 <div class="screen1" style="width: 100%; position: relative; overflow: hidden;">
   <h2 class="text-center text-light mt-5" style="font-family: 'Roboto', sans-serif; font-weight: 300; letter-spacing: 20px;">EVENTS</h2>
-  <div class="" (mouseenter)="activate(0)" (mouseleave)="activate(0)" [@event1]="eventState[0]" style="position: absolute; width: 250px; height: 250px; transform: rotate(45deg);  margin-left: 16%; margin-top: 150px; overflow: hidden;">
+  <div class="event0" (mouseenter)="activate(0)" (mouseleave)="activate(0)" [@event1]="eventState[0]" style="position: absolute; transform: rotate(45deg); overflow: hidden;">
     <div class="card d-inline-block bg-dark text-light" style="transform: rotate(-45deg) translateY(-80px); width: 380px; height: 380px;">
       <img class="card-img" style="height: 100%; width: 100%;" src="../../../assets/images/f6.jpeg">
       <div class="card-img-overlay d-flex flex-column justify-content-center text-center" *ngIf="eventState[0]==='active'? true: false">
@@ -85,7 +85,7 @@
       </div>
     </div>
   </div>
-  <div class="" (mouseenter)="activate(1)" (mouseleave)="activate(1)" [@event2]="eventState[1]" style="position: absolute; width: 250px; height: 250px; transform: rotate(45deg);  margin-left: 36%; margin-top: 230px; overflow: hidden;">
+  <div class="event1" (mouseenter)="activate(1)" (mouseleave)="activate(1)" [@event2]="eventState[1]" style="position: absolute; transform: rotate(45deg); overflow: hidden;">
     <div class="card d-inline-block bg-dark text-light" style="transform: rotate(-45deg) translateY(-80px); width: 380px; height: 380px;">
       <img class="card-img" style="height: 100%; width: 100%;" src="../../../assets/images/f7.jpeg">
       <div class="card-img-overlay d-flex flex-column justify-content-center text-center" *ngIf="eventState[1]==='active'? true: false">
@@ -94,7 +94,7 @@
       </div>
     </div>
   </div>
-  <div class="" (mouseenter)="activate(2)" (mouseleave)="activate(2)" [@event3]="eventState[2]" style="position: absolute; width: 180px; height: 180px; transform: rotate(45deg);  margin-left: 31%; margin-top: 50px; overflow: hidden;">
+  <div class="event2" (mouseenter)="activate(2)" (mouseleave)="activate(2)" [@event3]="eventState[2]" style="position: absolute; transform: rotate(45deg); overflow: hidden;">
     <div class="card d-inline-block bg-dark text-light" style="transform: rotate(-45deg) translateY(-80px); width: 380px; height: 380px;">
       <img class="card-img" style="height: 100%; width: 100%;" src="../../../assets/images/f8.jpeg">
       <div class="card-img-overlay text-center" style="transform: translateY(75px); margin-right: 12%; margin-left: 12%;" *ngIf="eventState[2]==='active'? true: false">
@@ -103,7 +103,7 @@
       </div>
     </div>
   </div>
-  <div class="" (mouseenter)="activate(3)" (mouseleave)="activate(3)" [@event4]="eventState[3]" style="position: absolute; width: 220px; height: 220px; transform: rotate(45deg);  margin-left: 49.33%; margin-top: 80px; overflow: hidden;">
+  <div class="event3" (mouseenter)="activate(3)" (mouseleave)="activate(3)" [@event4]="eventState[3]" style="position: absolute; transform: rotate(45deg); overflow: hidden;">
     <div class="card d-inline-block bg-dark text-light" style="transform: rotate(-45deg) translateY(-80px); width: 380px; height: 380px;">
       <img class="card-img" style="height: 100%; width: 100%;" src="../../../assets/images/f9.jpeg">
       <div class="card-img-overlay d-flex flex-column justify-content-center text-center" style="margin-left: 10%; margin-right: 10%; transform: translateY(-10px);" *ngIf="eventState[3]==='active'? true: false">
@@ -112,7 +112,7 @@
       </div>
     </div>
   </div>
-  <div class="" (mouseenter)="activate(4)" (mouseleave)="activate(4)" [@event5]="eventState[4]" style="position: absolute; width: 200px; height: 200px; transform: rotate(45deg);  margin-left: 57.33%; margin-top: 300px; overflow: hidden;">
+  <div class="event4" (mouseenter)="activate(4)" (mouseleave)="activate(4)" [@event5]="eventState[4]" style="position: absolute; transform: rotate(45deg); overflow: hidden;">
     <div class="card d-inline-block bg-dark text-light" style="transform: rotate(-45deg) translateY(-80px); width: 380px; height: 380px;">
       <img class="card-img" style="height: 100%; width: 100%;" src="../../../assets/images/f1.jpeg">
       <div class="card-img-overlay d-flex flex-column justify-content-center text-center" style="margin-left: 10%; margin-right: 10%; transform: translateY(-40px);" *ngIf="eventState[4]==='active'? true: false">
@@ -121,7 +121,7 @@
       </div>
     </div>
   </div>
-  <div class="" (mouseenter)="activate(5)" (mouseleave)="activate(5)" [@event6]="eventState[5]" style="position: absolute; width: 250px; height: 250px; transform: rotate(45deg);  margin-left: 68%; margin-top: 120px; overflow: hidden;">
+  <div class="event5" (mouseenter)="activate(5)" (mouseleave)="activate(5)" [@event6]="eventState[5]" style="position: absolute; transform: rotate(45deg); overflow: hidden;">
     <div class="card d-inline-block bg-dark text-light" style="transform: rotate(-45deg) translateY(-80px); width: 380px; height: 380px;">
       <img class="card-img" style="height: 100%; width: 100%;" src="../../../assets/images/f2.jpeg">
       <div class="card-img-overlay d-flex flex-column justify-content-center text-center" *ngIf="eventState[5]==='active'? true: false">
@@ -269,7 +269,7 @@
 
 <div class="screen1" style="width: 100%; position: relative;">
   <h2 class="text-center text-light pt-5" style="font-family: 'Roboto', sans-serif; font-weight: 300; letter-spacing: 20px;">OUR BOARD</h2>
-  <div (mouseenter)="bactivate(0)" (mouseleave)="bactivate(0)" [@b1]="bState[0]" class="" style="position: absolute; width: 180px; height: 180px; margin-left: 6.67%; margin-top: 80px; overflow: hidden; border-radius: 50%;">
+  <div (mouseenter)="bactivate(0)" (mouseleave)="bactivate(0)" [@b1]="bState[0]" class="board" style="position: absolute; margin-left: 6.67%; margin-top: 80px; overflow: hidden; border-radius: 50%;">
     <div class="card d-inline-block bg-dark text-light" style="width: 100%; height: 100%;">
       <img class="card-img" style="height: 100%; width: 100%;" src="../../../assets/images/f1.jpeg">
       <div class="card-img-overlay d-flex flex-column justify-content-end text-center" *ngIf="bState[0]==='active'? true: false">
@@ -278,7 +278,7 @@
       </div>
     </div>
   </div>
-  <div (mouseenter)="bactivate(1)" (mouseleave)="bactivate(1)" [@b2]="bState[1]" class="" style="position: absolute; width: 180px; height: 180px; margin-left: 4%; margin-top: 400px; overflow: hidden; border-radius: 50%;">
+  <div (mouseenter)="bactivate(1)" (mouseleave)="bactivate(1)" [@b2]="bState[1]" class="board" style="position: absolute; margin-left: 4%; margin-top: 400px; overflow: hidden; border-radius: 50%;">
     <div class="card d-inline-block bg-dark text-light" style="width: 100%; height: 100%;">
       <img class="card-img" style="height: 100%; width: 100%;" src="../../../assets/images/f2.jpeg">
       <div class="card-img-overlay d-flex flex-column justify-content-end text-center" *ngIf="bState[1]==='active'? true: false">
@@ -288,7 +288,7 @@
     </div>
   </div>
   
-  <div (mouseenter)="bactivate(2)" (mouseleave)="bactivate(2)" [@b3]="bState[2]" class="" style="position: absolute; width: 180px; height: 180px; margin-left: 26.67%; margin-top: 120px; overflow: hidden; border-radius: 50%;">
+  <div (mouseenter)="bactivate(2)" (mouseleave)="bactivate(2)" [@b3]="bState[2]" class="board" style="position: absolute; margin-left: 26.67%; margin-top: 120px; overflow: hidden; border-radius: 50%;">
     <div class="card d-inline-block bg-dark text-light" style="width: 100%; height: 100%;">
       <img class="card-img" style="height: 100%; width: 100%;" src="../../../assets/images/f3.jpeg">
       <div class="card-img-overlay d-flex flex-column justify-content-end text-center" *ngIf="bState[2]==='active'? true: false">
@@ -297,7 +297,7 @@
       </div>
     </div>
   </div>
-  <div (mouseenter)="bactivate(3)" (mouseleave)="bactivate(3)" [@b4]="bState[3]" class="" style="position: absolute; width: 180px; height: 180px; margin-left: 33.33%; margin-top: 370px; overflow: hidden; border-radius: 50%;">
+  <div (mouseenter)="bactivate(3)" (mouseleave)="bactivate(3)" [@b4]="bState[3]" class="board" style="position: absolute; margin-left: 33.33%; margin-top: 370px; overflow: hidden; border-radius: 50%;">
     <div class="card d-inline-block bg-dark text-light" style="width: 100%; height: 100%;">
       <img class="card-img" style="height: 100%; width: 100%;" src="../../../assets/images/f4.jpeg">
       <div class="card-img-overlay d-flex flex-column justify-content-end text-center" *ngIf="bState[3]==='active'? true: false">
@@ -306,7 +306,7 @@
       </div>
     </div>
   </div>
-  <div (mouseenter)="bactivate(4)" (mouseleave)="bactivate(4)" [@b5]="bState[4]" class="" style="position: absolute; width: 180px; height: 180px; margin-left: 46.67%; margin-top: 200px; overflow: hidden; border-radius: 50%;">
+  <div (mouseenter)="bactivate(4)" (mouseleave)="bactivate(4)" [@b5]="bState[4]" class="board" style="position: absolute; margin-left: 46.67%; margin-top: 200px; overflow: hidden; border-radius: 50%;">
     <div class="card d-inline-block bg-dark text-light" style="width: 100%; height: 100%;">
       <img class="card-img" style="height: 100%; width: 100%;" src="../../../assets/images/f5.jpeg">
       <div class="card-img-overlay d-flex flex-column justify-content-end text-center" *ngIf="bState[4]==='active'? true: false">
@@ -315,7 +315,7 @@
       </div>
     </div>
   </div>
-  <div (mouseenter)="bactivate(5)" (mouseleave)="bactivate(5)" [@b6]="bState[5]" class="" style="position: absolute; width: 180px; height: 180px; margin-left: 56.67%; margin-top: 10px; overflow: hidden; border-radius: 50%;">
+  <div (mouseenter)="bactivate(5)" (mouseleave)="bactivate(5)" [@b6]="bState[5]" class="board" style="position: absolute; margin-left: 56.67%; margin-top: 10px; overflow: hidden; border-radius: 50%;">
     <div class="card d-inline-block bg-dark text-light" style="width: 100%; height: 100%;">
       <img class="card-img" style="height: 100%; width: 100%;" src="../../../assets/images/f6.jpeg">
       <div class="card-img-overlay d-flex flex-column justify-content-end text-center" *ngIf="bState[5]==='active'? true: false">
@@ -324,7 +324,7 @@
       </div>
     </div>
   </div>
-  <div (mouseenter)="bactivate(6)" (mouseleave)="bactivate(6)" [@b7]="bState[6]" class="" style="position: absolute; width: 180px; height: 180px; margin-left: 80.67%; margin-top: 390px; overflow: hidden; border-radius: 50%;">
+  <div (mouseenter)="bactivate(6)" (mouseleave)="bactivate(6)" [@b7]="bState[6]" class="board" style="position: absolute; margin-left: 80.67%; margin-top: 390px; overflow: hidden; border-radius: 50%;">
     <div class="card d-inline-block bg-dark text-light" style="width: 100%; height: 100%;">
       <img class="card-img" style="height: 100%; width: 100%;" src="../../../assets/images/f7.jpeg">
       <div class="card-img-overlay d-flex flex-column justify-content-end text-center" *ngIf="bState[6]==='active'? true: false">
@@ -333,7 +333,7 @@
       </div>
     </div>
   </div>
-  <div (mouseenter)="bactivate(7)" (mouseleave)="bactivate(7)" [@b8]="bState[7]" class="" style="position: absolute; width: 180px; height: 180px; margin-left: 73.33%; margin-top: 200px; overflow: hidden; border-radius: 50%;">
+  <div (mouseenter)="bactivate(7)" (mouseleave)="bactivate(7)" [@b8]="bState[7]" class="board" style="position: absolute; margin-left: 73.33%; margin-top: 200px; overflow: hidden; border-radius: 50%;">
     <div class="card d-inline-block bg-dark text-light" style="width: 100%; height: 100%;">
       <img class="card-img" style="height: 100%; width: 100%;" src="../../../assets/images/f8.jpeg">
       <div class="card-img-overlay d-flex flex-column justify-content-end text-center" *ngIf="bState[7]==='active'? true: false">
@@ -342,7 +342,7 @@
       </div>
     </div>
   </div>
-  <div (mouseenter)="bactivate(8)" (mouseleave)="bactivate(8)" [@b9]="bState[8]" class="" style="position: absolute; width: 180px; height: 180px; margin-left: 81.33%; margin-top: 0px; overflow: hidden; border-radius: 50%;">
+  <div (mouseenter)="bactivate(8)" (mouseleave)="bactivate(8)" [@b9]="bState[8]" class="board" style="position: absolute; margin-left: 81.33%; margin-top: 0px; overflow: hidden; border-radius: 50%;">
     <div class="card d-inline-block bg-dark text-light" style="width: 100%; height: 100%;">
       <img class="card-img" style="height: 100%; width: 100%;" src="../../../assets/images/f9.jpeg">
       <div class="card-img-overlay d-flex flex-column justify-content-end text-center" *ngIf="bState[8]==='active'? true: false">
@@ -351,7 +351,7 @@
       </div>
     </div>
   </div>
-  <div (mouseenter)="bactivate(9)" (mouseleave)="bactivate(9)" [@b10]="bState[9]" class="" style="position: absolute; width: 180px; height: 180px; margin-left: 60%; margin-top: 360px; overflow: hidden; border-radius: 50%;">
+  <div (mouseenter)="bactivate(9)" (mouseleave)="bactivate(9)" [@b10]="bState[9]" class="board" style="position: absolute; margin-left: 60%; margin-top: 360px; overflow: hidden; border-radius: 50%;">
     <div class="card d-inline-block bg-dark text-light" style="width: 100%; height: 100%;">
       <img class="card-img" style="height: 100%; width: 100%;" src="../../../assets/images/beautiful-beauty-blond-289225.jpg">
       <div class="card-img-overlay d-flex flex-column justify-content-end text-center" *ngIf="bState[9]==='active'? true: false">
