@@ -82,8 +82,8 @@ and (max-width : 700px) {
     } */
 
     .board {
-        width: 100px;
-        height: 100px;
+        width: 10px;
+        height: 10px;
         /* margin-left:  */
     }
 
