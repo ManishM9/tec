@@ -13,26 +13,3 @@
 .skewheight {
     height: 700px;
 }
-@media only screen
-and (min-device-width : 300px) 
-and (max-device-width : 500px)
-and (min-device-width : 768px) 
-and (max-device-width : 1024px) {
-
-.screen1 {
-  height: 300px;
-}
-
-.navheight {
-  height: 60px;
-}
-
-.navbelowheight {
-  height: 440px;
-}
-
-.skewheight {
-  height: 470px;
-}
-
-}
