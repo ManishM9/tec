@@ -1,10 +1,10 @@
-<div [@grad]="gradstate" style="width: 100%; height: 730px; position: absolute;"></div>
+<div [@grad]="gradstate" class="screen1" style="width: 100%; position: absolute;"></div>
 
-<div class="container-fluid" [@grad2]="gradstate2" style="width:100%; height: 730px; position: absolute; background-color: #000000; background: linear-gradient(147deg, #000000 0%, #2c3e50 74%);">
+<div class="container-fluid screen1" [@grad2]="gradstate2" style="width:100%; position: absolute; background-color: #000000; background: linear-gradient(147deg, #000000 0%, #2c3e50 74%);">
   
 </div>
 
-<div class="container-fluid row" style="width: 100%; height: 730px; position: relative;">
+<div class="container-fluid row screen1" style="width: 100%; position: relative;">
   <div class="h-100 row">
     <img class="w-25 d-block m-auto col-sm-4" style="opacity: 1;" src="../../../assets/images/logoinv.png">
   </div>
@@ -23,21 +23,21 @@
     </ul>
   
     <!-- The slideshow -->
-    <div class="carousel-inner" style="height: 730px; width: 100%;">
+    <div class="carousel-inner screen1" style=" width: 100%;">
       <div class="carousel-item active">
-        <img class="" style="height: 730px; width: 100%;" src="../../../assets/images/logo.png">
+        <img class="screen1" style=" width: 100%;" src="../../../assets/images/logo.png">
       </div>
       <div class="carousel-item">
-        <img class=" img-responsive" style="height: 730px; width: 100%;" src="../../../assets/images/f1.jpeg">
+        <img class=" img-responsive screen1" style=" width: 100%;" src="../../../assets/images/f1.jpeg">
       </div>
       <div class="carousel-item">
-        <img class=" img-responsive" style="height: 730px; width: 100%;" src="../../../assets/images/f2.jpeg">
+        <img class=" img-responsive screen1" style=" width: 100%;" src="../../../assets/images/f2.jpeg">
       </div>
       <div class="carousel-item">
-        <img class=" img-responsive" style="height: 730px; width: 100%;" src="../../../assets/images/f3.jpeg">
+        <img class=" img-responsive screen1" style=" width: 100%;" src="../../../assets/images/f3.jpeg">
       </div>
       <div class="carousel-item">
-        <img class=" img-responsive" style="height: 730px; width: 100%;" src="../../../assets/images/f4.jpeg">
+        <img class=" img-responsive screen1" style=" width: 100%;" src="../../../assets/images/f4.jpeg">
       </div>
     </div>
   
@@ -52,7 +52,7 @@
 </div>
 
 
-<nav class="navbar navbar-expand-sm navbar-dark" style="height: 60px; position: relative; margin-top: 0px; background-color: rgba(0, 0, 0, 0.6);">
+<nav class="navbar navbar-expand-sm navbar-dark navheight" style=" position: relative; margin-top: 0px; background-color: rgba(0, 0, 0, 0.6);">
     <img class="ml-5" style="width: 7%;" src="../../../assets/images/logoinv.png">
     <ul class="navbar-nav justify-content-end w-100 mr-5">
       <a class="nav-link mr-5 text-center" href="#" style="font-family: 'Roboto', sans-serif; font-weight: 100; color: #ffffff">EVENTS</a>
@@ -64,17 +64,17 @@
 
 <!-- =================================================================================== -->
 
-<div class="container-fluid" style="width: 100%; height: 670px; position: relative;">
+<div class="container-fluid navbelowheight" style="width: 100%; position: relative;">
 </div>
 
 
 
 
-<div style="width: 100%; height: 730px; overflow: hidden; position: absolute;">
-  <div class="" [@turn1]="turnstate1" style="width:100%; height: 700px; background-color: #000000; margin-top: 20px; transform: skewY(-4deg);"></div>
+<div class="screen1" style="width: 100%; overflow: hidden; position: absolute;">
+  <div class="skewheight" [@turn1]="turnstate1" style="width:100%; background-color: #000000; margin-top: 20px; transform: skewY(-4deg);"></div>
 </div>
 
-<div class="" style="width: 100%; height: 730px; position: relative; overflow: hidden;">
+<div class="screen1" style="width: 100%; position: relative; overflow: hidden;">
   <h2 class="text-center text-light mt-5" style="font-family: 'Roboto', sans-serif; font-weight: 300; letter-spacing: 20px;">EVENTS</h2>
   <div class="" (mouseenter)="activate(0)" (mouseleave)="activate(0)" [@event1]="eventState[0]" style="position: absolute; width: 250px; height: 250px; transform: rotate(45deg);  margin-left: 16%; margin-top: 150px; overflow: hidden;">
     <div class="card d-inline-block bg-dark text-light" style="transform: rotate(-45deg) translateY(-80px); width: 380px; height: 380px;">
@@ -142,16 +142,16 @@
 
 <!-- =================================================================================================================================== -->
 
-<div class="" style="width: 100%; height: 730px; position: absolute; overflow: hidden;">
+<div class="screen1" style="width: 100%; position: absolute; overflow: hidden;">
   <img src="../../../assets/images/beautiful-beauty-blond-289225.jpg" style="width: 104%; height: 100%; transform: translateX(-20px);">
 </div>
 
-<div class="" style="width: 100%; height: 730px; position: absolute;">
+<div class="screen1" style="width: 100%; position: absolute;">
   <div style="width: 100%; height: 50%; background: linear-gradient(to bottom, rgba(0,0,0,1), rgba(0,0,0,0.7), rgba(0,0,0,0))"></div>
   <div style="width: 100%; height: 50%; background: linear-gradient(0, rgba(0,0,0,1), rgba(0,0,0,0.7), rgba(0,0,0,0))"></div>
 </div>
 
-<div style="width: 100%; height: 730px; position: relative; background: rgba(0,0,0,0.5)">
+<div class="screen1" style="width: 100%; position: relative; background: rgba(0,0,0,0.5)">
   <h2 class="text-center text-light pt-5" style="font-family: 'Roboto', sans-serif; font-weight: 300; letter-spacing: 20px;">ABOUT US</h2>
   <div class="pl-5 pr-5 mx-auto row w-100 h-75">
     <div class="col-sm-4 mt-5">
@@ -175,8 +175,8 @@
 
 <!-- ================================================================================================================================= -->
 
-<div style="width: 100%; height: 730px; overflow: hidden; position: absolute;">
-  <div class="" [@turn2]="turnstate2" style="width:100%; height: 730px; background-color: black; transform: skewY(-4deg);"></div>
+<div class="screen1" style="width: 100%; overflow: hidden; position: absolute;">
+  <div class="screen1" [@turn2]="turnstate2" style="width:100%; background-color: black; transform: skewY(-4deg);"></div>
 </div>
 
 <div style="width: 100%; height: 730px; position: relative;">
@@ -263,11 +263,11 @@
 
 <!-- ====================================================================================================================================== -->
 
-<div style="width: 100%; height: 730px; overflow: hidden; position: absolute;">
+<div class="screen1" style="width: 100%; overflow: hidden; position: absolute;">
   <div class="" [@turn3]="turnstate3" style="width:100%; height: 730px; background-color: black; transform: skewY(-4deg);"></div>
 </div>
 
-<div style="width: 100%; height: 730px; position: relative;">
+<div class="screen1" style="width: 100%; position: relative;">
   <h2 class="text-center text-light pt-5" style="font-family: 'Roboto', sans-serif; font-weight: 300; letter-spacing: 20px;">OUR BOARD</h2>
   <div (mouseenter)="bactivate(0)" (mouseleave)="bactivate(0)" [@b1]="bState[0]" class="" style="position: absolute; width: 180px; height: 180px; margin-left: 6.67%; margin-top: 80px; overflow: hidden; border-radius: 50%;">
     <div class="card d-inline-block bg-dark text-light" style="width: 100%; height: 100%;">
@@ -364,7 +364,7 @@
 
 <!-- ============================================================================================================================== -->
 
-<div style="width: 100%; height: 730px; position: relative;" #test123>
+<div class="screen1" style="width: 100%; position: relative;" #test123>
   <!-- <div class="" style="width: 100%; height: 35%; overflow: hidden; position: absolute;"><img style="width: 100%; transform: translateY(-350px);" src="../../../assets/images/map.JPG"></div> -->
   <div id="map" style="width: 100%; height: 85%; position: absolute"></div>
   <div style="width: 100%; height: 35%; position: relative; background: rgba(0,0,0,0.8);"></div>
