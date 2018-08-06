@@ -16,10 +16,10 @@
 
 @media only screen 
 and (min-width : 320px) 
-and (max-width : 700px) {
+and (max-width : 500px) {
 
     .screen1 {
-      height: 300px;
+      height: 500px;
     }
 
     .navheight {
