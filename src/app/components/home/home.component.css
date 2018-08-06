@@ -97,7 +97,7 @@ and (max-width : 700px) {
     .event1 {
         width: 100px;
         height: 100px;
-        margin-left: 34%;
+        margin-left: 35%;
         margin-top: 200px;
     }
     
@@ -105,7 +105,7 @@ and (max-width : 700px) {
         width: 72px;
         height: 72px;
         margin-left: 31%;
-        margin-top: 120px;
+        margin-top: 110px;
     }
     
     .event3 {
