@@ -1,4 +1,4 @@
-import { Component, OnInit, ElementRef, ViewChild, AfterViewInit, Renderer2 } from '@angular/core';
+import { Component, OnInit, ElementRef, ViewChild, AfterViewInit, Renderer2, HostListener } from '@angular/core';
 import { trigger, state, style, animate, transition, keyframes } from '@angular/animations';
 import { element } from '../../../../node_modules/protractor';
 
@@ -698,13 +698,21 @@ import { element } from '../../../../node_modules/protractor';
     ])
   ]
 })
-export class HomeComponent implements OnInit {
+export class HomeComponent implements OnInit, AfterViewInit {
   // images:string[] = ['../../../assets/images/logo.png', '../../../assets/images/gokul_search2.jpeg','../../../assets/images/gokul_search.jpeg'];
   // activeImage = { url:'', state:'', pos:0 };
   // activeImage2 = { url:'', state:'', pos:1 };
   // introState:string = '';
   // carBack:string = '';
-  // @ViewChild('test123') testing:ElementRef;
+  @ViewChild('start') start: ElementRef;
+  @ViewChild('carousel') carousel: ElementRef;
+  @ViewChild('events') events: ElementRef;
+  @ViewChild('aboutus') aboutus: ElementRef;
+  @ViewChild('projects') projects: ElementRef;
+  @ViewChild('board') board: ElementRef;
+  @ViewChild('end') end: ElementRef;
+  pages: ElementRef[]= [];
+  offsets: number[] = [];
   // event1State: string = "inactive";
   // event2State: string = "inactive";
   // event3State: string = "inactive";
@@ -723,11 +731,97 @@ export class HomeComponent implements OnInit {
   rowState: string[] = ["inactive","inactive"];
   bState: string[] = ["inactive","inactive","inactive","inactive","inactive","inactive","inactive","inactive","inactive","inactive"];
   bActive: boolean = false;
+  lastScrollTop: number = 0;
+  inTransition: boolean = false;
 
   constructor(private renderer: Renderer2) { }
 
   ngOnInit() {
     
+  }
+
+  ngAfterViewInit() {
+    // setTimeout(() =>{
+    //   this.start.nativeElement.scrollIntoView({behavior: 'smooth'});
+    //   console.log("Start");
+    // }, 1000);
+    this.pages = [this.start, this.carousel, this.events, this.aboutus, this.projects, this.board, this.end];
+    this.pages.forEach(element => {
+      this.offsets.push(element.nativeElement.offsetTop);
+    });
+    // this.offsets.push(this.start.nativeElement.offsetTop);
+    // this.offsets.push(this.carousel.nativeElement.offsetTop);
+    // this.offsets.push(this.events.nativeElement.offsetTop);
+    // this.offsets.push(this.aboutus.nativeElement.offsetTop);
+    // this.offsets.push(this.projects.nativeElement.offsetTop);
+    // this.offsets.push(this.board.nativeElement.offsetTop);
+    // this.offsets.push(this.end.nativeElement.offsetTop);
+    setTimeout(() => {
+      this.carousel.nativeElement.scrollIntoView({behavior: 'smooth'});
+      // console.log("Carousel");
+      // console.log(this.carousel);
+      console.log(this.offsets);
+      console.log(this.pages);
+    }, 2000);
+  }
+
+  // @HostListener('window:scroll', ['$event'])
+  onScroll($event: any) {
+    // console.log(window.pageYOffset);
+    // console.log("Scroll");
+    setTimeout(() => {
+      let st = window.pageYOffset;
+      let up = false;
+      if (st > this.lastScrollTop) {
+        // console.log("down");
+        up = false;
+      } else {
+        // console.log("up");
+        up = true;
+      }
+      this.lastScrollTop = st;
+      
+      let curr = -1;
+      this.offsets.forEach((element,index) => {
+        if(element < st && this.offsets[index+1] > st){
+          // if(up){
+          //   if(index != 0){
+          //     this.pages[index-1].nativeElement.scrollIntoView({ behavior: 'smooth' });
+          //     console.log(`${this.pages[index-1]} up`);
+          //   }
+          // } else {
+          //   if(index != this.pages.length-1){
+          //     this.pages[index+1+1].nativeElement.scrollIntoView({ behavior: 'smooth' });
+          //     console.log(`${this.pages[index+1]} down`);
+          //   }
+          // }
+          curr = index;
+        }
+      });
+      if(up && !this.inTransition){
+        if(curr != 0){
+          this.pages[curr].nativeElement.scrollIntoView({ behavior: 'smooth' });
+          this.inTransition = true;
+          this.resetTransition();
+          console.log(`${this.pages[curr-1]} up`);
+        }
+      } else if(!up && !this.inTransition) {
+      // if(!up){
+        if(curr != this.pages.length){
+          this.pages[curr+1].nativeElement.scrollIntoView({ behavior: 'smooth' });
+          this.inTransition = true;
+          this.resetTransition();
+          console.log(this.pages[curr+1]);
+        }
+      }
+    }, 1000);
+
+  }
+
+  resetTransition(){
+    setTimeout(() => {
+      this.inTransition = false;
+    }, 2000);
   }
 
   activate(n: number){
