@@ -2,6 +2,10 @@ import { Component, OnInit, ElementRef, ViewChild, AfterViewInit, Renderer2, Hos
 import { trigger, state, style, animate, transition, keyframes } from '@angular/animations';
 import { element } from '../../../../node_modules/protractor';
 
+// declare var scrollIntoView: any;
+import scrollIntoViewIfNeeded from 'scroll-into-view-if-needed';
+import { resolve } from 'path';
+
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -712,6 +716,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
   @ViewChild('board') board: ElementRef;
   @ViewChild('end') end: ElementRef;
   pages: ElementRef[]= [];
+  screens: string[] = ["start","carousel","events","aboutus","projects","board","end"]
   offsets: number[] = [];
   // event1State: string = "inactive";
   // event2State: string = "inactive";
@@ -733,6 +738,8 @@ export class HomeComponent implements OnInit, AfterViewInit {
   bActive: boolean = false;
   lastScrollTop: number = 0;
   inTransition: boolean = false;
+  settime1: number = 350;
+  settime2: number = 700;
 
   constructor(private renderer: Renderer2) { }
 
@@ -757,7 +764,21 @@ export class HomeComponent implements OnInit, AfterViewInit {
     // this.offsets.push(this.board.nativeElement.offsetTop);
     // this.offsets.push(this.end.nativeElement.offsetTop);
     setTimeout(() => {
-      this.carousel.nativeElement.scrollIntoView({behavior: 'smooth'});
+      // this.carousel.nativeElement.scrollIntoView({behavior: 'smooth'});
+      const scrolling = scrollIntoViewIfNeeded<Promise<any>>(document.getElementById("carousel"), {
+        behavior: actions => {
+          return new Promise((resolve, rejected) => {
+            scrollIntoViewIfNeeded(document.getElementById("carousel"), {
+              behavior: 'smooth',
+            });
+            resolve();
+          })
+        },
+      });
+      scrolling.then(() => {
+        console.log("YAAYYYY!!!!");
+      });
+      // console.log(typeof(scrollIntoViewIfNeeded));
       // console.log("Carousel");
       // console.log(this.carousel);
       console.log(this.offsets);
@@ -800,28 +821,63 @@ export class HomeComponent implements OnInit, AfterViewInit {
       });
       if(up && !this.inTransition){
         if(curr != 0){
-          this.pages[curr].nativeElement.scrollIntoView({ behavior: 'smooth' });
+          // this.pages[curr].nativeElement.scrollIntoView({ behavior: 'smooth', block: 'center'});
+          const scrolling1 = scrollIntoViewIfNeeded<Promise<any>>(document.getElementById(this.screens[curr]), {
+            behavior: actions => {
+              return new Promise((resolve, rejected) => {
+                scrollIntoViewIfNeeded(document.getElementById(this.screens[curr]), {
+                  behavior: 'smooth',
+                });
+                setTimeout(() => {
+                  resolve();
+                }, this.settime2);
+                // resolve();
+              })
+            },
+          });
           this.inTransition = true;
-          this.resetTransition();
+          scrolling1.then(() => {this,this.inTransition = false});
+          // this.resetTransition(700);
+          // setTimeout(() => {
+          //   this.inTransition = false;
+          // })
           console.log(`${this.pages[curr-1]} up`);
         }
       } else if(!up && !this.inTransition) {
       // if(!up){
         if(curr != this.pages.length){
-          this.pages[curr+1].nativeElement.scrollIntoView({ behavior: 'smooth' });
+          // this.pages[curr+1].nativeElement.scrollIntoView({ behavior: 'smooth', block: 'center'});
+          const scrolling2 = scrollIntoViewIfNeeded<Promise<any>>(document.getElementById(this.screens[curr+1]), {
+            behavior: actions => {
+              return new Promise((resolve, rejected) => {
+                scrollIntoViewIfNeeded(document.getElementById(this.screens[curr+1]), {
+                  behavior: 'smooth',
+                });
+                setTimeout(() => {
+                  resolve();
+                }, this.settime2);
+                // resolve();
+              })
+            },
+          });
           this.inTransition = true;
-          this.resetTransition();
+          scrolling2.then(() => {this.inTransition = false});
+          // this.resetTransition(700);
           console.log(this.pages[curr+1]);
         }
       }
-    }, 350);
+      // else {
+      //   console.log("=========================================================");
+      //   // this.resetTransition(0);
+      // }
+    }, this.settime1);
 
   }
 
-  resetTransition(){
+  resetTransition(n: number){
     setTimeout(() => {
       this.inTransition = false;
-    }, 700);
+    }, n);
   }
 
   activate(n: number){
