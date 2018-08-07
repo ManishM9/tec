@@ -814,14 +814,14 @@ export class HomeComponent implements OnInit, AfterViewInit {
           console.log(this.pages[curr+1]);
         }
       }
-    }, 300);
+    }, 350);
 
   }
 
   resetTransition(){
     setTimeout(() => {
       this.inTransition = false;
-    }, 320);
+    }, 700);
   }
 
   activate(n: number){
