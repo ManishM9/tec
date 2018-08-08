@@ -967,6 +967,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
               {title:'GLITCH', desc:'\“Glitch\”- an online event was hosted by TEC-VIT on 17th and 18th of March. An online quiz with access granted to anyone who wishes to take part just made the weekend a total bonanza of learning and fun. It was a two-day online quiz with two rounds in all. The first round had basic riddles and tangled questions to which the final answer was something related to the field of electronics. The players with more questions solved in lesser time were awarded with points and given access to the next round where the level of hardness was further set higher. The winners were declared at the end of the quiz and were given electronic components (RPi) and RedWolf coupons as schwags. Yet another event which disrupted weekend naps and gained momentum overnight.'}, {title: '101/102', desc: 'The session begins with the primary aim of familiarizing the audience with VIT\’s great culture-the clubs and chapters functioning, the vast opportunities, the ample amount of time to accomplish the same, academics, faculties, placements and in whole the campus life at VIT. We shared our wonderful, brisk and dusky experiences with our young successors which was a great experience. In addition to this precious vast of knowledge , our main objective of this series \“E-LEXA\” is to impart the basic technological aspects of electronics as a beginner from scratch. Electronics 101 is the 1st and foremost opening event of this series, which highlights breadboards, leds, resistors, potentiometers and capacitors. The audience were enthralled to handle the different small components and understand their importance in the final circuits of elementary projects. At the end, a project display was conducted wherein the live demonstration of minor projects was done successfully as it gave a practical outlook to the event.\“Electronics 102\” was the 2nd episode of this series “E-lexa”. In this, we took the audience to a ride of switches, their different types-applications, ICs, transistors and finally a detailed explanation on motors.'}, {title: 'RASPBERRY PI SESSION', desc: 'It was one and half hour technical workshop on Raspberry pi. The audience was first given a brief introduction of raspberry pi and then they were taught about its installation process. Presentation was informative & visually appealing. Audience was given Raspberry Pi to have a closer look and had been taught about each and every part of it.\nAudience enjoyed controlling GPIO pins using their cell phones by operating them on the same network. For which WebIOPi was used.'}, {title: 'GITHUB', desc: 'The session on GitHub will cover the entire GitHub platform,its advantages to a technical mind and how it plays a role to develop a new generation Curriculum Vitae(RESUME) for programming oriented students as well as myriad domains. The session will be conducted in a big hall which will attract a crowd of 200+ people. Github is a platform which will be beneficial to a lot of young generation engineers in VIT of which most of them are unaware of.'}];
   screensActive = [false,false,false,false,false,false,false,false];
   eventdesState = "null";
+  priority: boolean = false;
   
   constructor(private renderer: Renderer2) { }
 
@@ -1030,7 +1031,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
       }
       this.lastScrollTop = st;
       
-      let curr = -1;
+      let curr: number = -1;
       this.offsets.forEach((element,index) => {
         if(element < st && this.offsets[index+1] > st){
           // if(up){
@@ -1047,8 +1048,10 @@ export class HomeComponent implements OnInit, AfterViewInit {
           curr = index;
         }
       });
-      if(up && !this.inTransition){
-        if(curr != 0){
+      // console.log(curr);
+      // console.log(this.pages.length);
+      if(up && !this.inTransition && !this.priority){
+        if(curr > 0 && curr !== this.pages.length-1){
           // this.pages[curr].nativeElement.scrollIntoView({ behavior: 'smooth', block: 'center'});
           const scrolling1 = scrollIntoViewIfNeeded<Promise<any>>(document.getElementById(this.screens[curr]), {
             behavior: actions => {
@@ -1078,9 +1081,9 @@ export class HomeComponent implements OnInit, AfterViewInit {
           // })
           console.log(`${this.pages[curr-1]} up`);
         }
-      } else if(!up && !this.inTransition) {
+      } else if(!up && !this.inTransition && !this.priority && !(curr < 0)) {
       // if(!up){
-        if(curr != this.pages.length){
+        if(curr !== this.pages.length-1){
           // this.pages[curr+1].nativeElement.scrollIntoView({ behavior: 'smooth', block: 'center'});
           const scrolling2 = scrollIntoViewIfNeeded<Promise<any>>(document.getElementById(this.screens[curr+1]), {
             behavior: actions => {
@@ -1116,11 +1119,13 @@ export class HomeComponent implements OnInit, AfterViewInit {
   }
 
   goto(s: string){
-    this.inTransition = true;
+    // this.inTransition = true;
+    this.priority = true;
     scrollIntoViewIfNeeded(document.getElementById(s), {behavior: 'smooth', block: 'start'});
     setTimeout(() => {
-      this.inTransition = false;
-    }, 1000);
+      // this.inTransition = false;
+      this.priority = false;
+    }, 1200);
   }
 
   activatePage(s: string){

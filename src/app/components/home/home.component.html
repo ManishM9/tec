@@ -14,7 +14,23 @@
 
 <!-- ==================================================================================================== -->
 
-<div class="carousel slide carouselwidth" data-ride="carousel" style="width: 100%; position: absolute; overflow: hidden;" id="carousel" #carousel>
+<nav class="navbar navbar-expand-md navbar-dark navheight" style=" position: relative; margin-top: 0px; background-color: rgba(0, 0, 0, 0.6);"  id="carousel" #carousel>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#colnav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <img class="ml-5 navbar-brand" style="width: 7%;" src="../../../assets/images/logoinv.png">
+    <div class="navbar-collapse" id="colnav">
+        <ul class="navbar-nav justify-content-end w-100 mr-5">
+            <li class="nav-item"><a class="nav-link mr-5 text-center btn" (click)="goto('events')" style="font-family: 'Roboto', sans-serif; font-weight: 100; color: #ffffff">EVENTS</a></li>
+            <li class="nav-item"><a class="nav-link mr-5 text-center btn" (click)="goto('aboutus')" style="font-family: 'Roboto', sans-serif; font-weight: 100; color: #ffffff">ABOUT US</a></li>
+            <li class="nav-item"><a class="nav-link mr-5 text-center btn" (click)="goto('board')" style="font-family: 'Roboto', sans-serif; font-weight: 100; color: #ffffff">OUR SPONSORS</a></li>
+            <li class="nav-item"><a class="nav-link mr-5 text-center btn" (click)="goto('end')" style="font-family: 'Roboto', sans-serif; font-weight: 100; color: #ffffff">CONTACT US</a></li>
+          </ul>
+    </div>
+</nav>
+
+
+<div class="carousel slide carouselwidth" data-ride="carousel" style="width: 100%; height: 650px; position: relative; overflow: hidden;">
 
     <!-- Indicators -->
     <ul class="carousel-indicators">
@@ -54,7 +70,7 @@
 </div>
 
 
-<nav class="navbar navbar-expand-md navbar-dark navheight" style=" position: relative; margin-top: 0px; background-color: rgba(0, 0, 0, 0.6);">
+<!-- <nav class="navbar navbar-expand-md navbar-dark navheight" style=" position: relative; margin-top: 0px; background-color: rgba(0, 0, 0, 0.6);">
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#colnav">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -67,12 +83,12 @@
             <li class="nav-item"><a class="nav-link mr-5 text-center btn" (click)="goto('end')" style="font-family: 'Roboto', sans-serif; font-weight: 100; color: #ffffff">CONTACT US</a></li>
           </ul>
     </div>
-</nav>
+</nav> -->
 
 <!-- =================================================================================== -->
 
-<div class="navbelowheight" style="width: 100%; position: relative;">
-</div>
+<!-- <div class="navbelowheight" style="width: 100%; position: relative;">
+</div> -->
 
 
 
@@ -185,7 +201,7 @@
     <div class="col-1 mt-5">
       <div class="rounded mx-auto" style="width: 5%; height: 45%; background: white; margin-top: 150%;"></div>
     </div>
-    <div class="col-6 mt-5">
+    <div class="col-7 mt-5">
       <h3 class="smallheading text-light" style="margin-right: 100px; font-family: 'Raleway', sans-serif; font-weight: 100; font-style: italic;">What we are:</h3>
       <p class="smallfont text-light text-left" style="margin-top: 10%; margin-right: 15%; font-family: 'Roboto', sans-serif; font-weight: 100;">They say technology is a never-ending curve and you always should be ready for new surprises. At The Electronics Club (TEC) of VIT, we believe that knowledge is not just to attain, but also to impart. Our passion and our focus are primarily on electronics. Education is not just about reading big fat textbooks or memorizing a zillion formulae; that is what we call information. Education begins when we begin to experience the things that we study, and that is what TEC strives to provide. Through regular theoretical and Hands-on sessions, TEC supports students who are passionate about electronics and helps them in exploring new avenues of imagination. TEC is working on a number of projects, and is always open to more innovative and inspiring ideas. We believe that the success of any organization depends on the unity amongst the people in it. TEC is a well-knit group of 81 members and through regular group discussions and meetings, the smooth working of the club is ensured. Our intense work is well complemented with some fun. This is done by organizing a few trips and parties round the year. Our motto of helping others learn is further strengthened as the senior’s act as mentors for the juniors. In addition to this, several sessions are also kept for the junior members of the club that enable them further to achieve their dreams. The Electronics Club of VIT does not tell you what your goals should be, but surely helps you to move closer to them.</p>
     </div>
