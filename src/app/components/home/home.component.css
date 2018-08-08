@@ -1,6 +1,7 @@
 .carousel-indicators > li {
     border-radius: 50%;
-    height: 30px;
+    height: 20px;
+    width: 20px;
   }
 
 .screen1 {
@@ -9,10 +10,11 @@
 
 .navheight {
     min-height: 60px;
+    max-height: 80px;
 }
 
 .navbelowheight {
-    height: 670px;
+    height: 650px;
 }
 
 .skewheight {
