@@ -133,4 +133,8 @@ and (max-width : 700px) {
         font-size: 7px;
     }
 
+    .smallheading {
+        font-size: 9px;
+    }
+
   }
