@@ -740,6 +740,9 @@ export class HomeComponent implements OnInit, AfterViewInit {
   inTransition: boolean = false;
   settime1: number = 300;
   settime2: number = 600;
+  event = { title: '', desc: '' };
+  eventsAll = [{title: 'SENSORED', desc: '\"SENSORED\", hosted by TEC, is one of the premier pre-GraVITas events. The event is a two-day technical workshop. The motive of the workshop is to get the beginners equipped with the field of embedded systems and sensor interfacing. Take-away kits consisting of everything a techie needs to start off in the world of electronics provided to the participants.\n We start with the very basic level explanation as to how various sensors actually work in the real world. Starting with the most basic knowledge of building simple circuits, running codes on Arduino Uno and interfacing it with more sensors to make a final embedded project of practical importance, we ensure to make every minute more exciting than the earlier as the inquisitive participants explore the kits containing breadboard, jumpers, LEDs, Potentiometer, Transistors, Resistors, Capacitors, Photo-Diodes, Ultrasonic sensor, Adxl, Piezo, DHT Sensor, IR emitter, Arduino Uno and all major essentials. We have been getting an overwhelming response to the workshop for the past three years in a row with a great turn-up and the participants leaving with a sense of fulfillment and quench for more. \“Our satisfaction is never satisfied\”. To add novelty to the 4th Edition of Sensored, we have planned to add basics of IoT this time by adding Bluetooth module to the list of components. At the end of the workshop, the participants leave home with a final project made by themselves for further learning.'}, {title: 'EMBED 4.0', desc: 'PCB is a workshop hosted by TEC with an aim to teach the participants all about Printed Circuit Boards. The participants are made aware of every small detail about PCB. From definitions to exploring career options in PCB, each topic will be duly addressed. The workshop starts with the designing of circuits, aided by the software-EAGLE. The participants will be taught simulation of the circuits, soon followed by fabrication of the circuits which they had designed themselves. It was fun while learning as the participants will have a hands-on experience imprinting designs, it’s etching and soldering of components. The hands-on session conducted will ensure effective learning of the concepts which further helps them in enhancing their skill set as well as in making their capstone (20 credits) projects in the most effective manner.\nPCB FABRICATION WORKSHOP has been renamed as EMBED 4.0 as it is the fourth edition of the workshop being hosted by TEC. To give the event an industrial incline, TEC is collaborating with Enthu Technologies Solutions India Pvt Ltd for Embed 4.0 in this GraVITas 2k18. Enthu is bringing their PCB prototyping machine to the event and have accepted to print all the participants boards. We also have external speakers this time to give a more practical insight of how printed boards are actually manufactured in large scale industries. This is definite to give the participants an industrial insight making the workshop more effective.'},
+              {title:'GLITCH', desc:'\“Glitch\”- an online event was hosted by TEC-VIT on 17th and 18th of March. An online quiz with access granted to anyone who wishes to take part just made the weekend a total bonanza of learning and fun. It was a two-day online quiz with two rounds in all. The first round had basic riddles and tangled questions to which the final answer was something related to the field of electronics. The players with more questions solved in lesser time were awarded with points and given access to the next round where the level of hardness was further set higher. The winners were declared at the end of the quiz and were given electronic components (RPi) and RedWolf coupons as schwags. Yet another event which disrupted weekend naps and gained momentum overnight.'}, {title: '101/102', desc: 'The session begins with the primary aim of familiarizing the audience with VIT\’s great culture-the clubs and chapters functioning, the vast opportunities, the ample amount of time to accomplish the same, academics, faculties, placements and in whole the campus life at VIT. We shared our wonderful, brisk and dusky experiences with our young successors which was a great experience. In addition to this precious vast of knowledge , our main objective of this series \“E-LEXA\” is to impart the basic technological aspects of electronics as a beginner from scratch. Electronics 101 is the 1st and foremost opening event of this series, which highlights breadboards, leds, resistors, potentiometers and capacitors. The audience were enthralled to handle the different small components and understand their importance in the final circuits of elementary projects. At the end, a project display was conducted wherein the live demonstration of minor projects was done successfully as it gave a practical outlook to the event.\“Electronics 102\” was the 2nd episode of this series “E-lexa”. In this, we took the audience to a ride of switches, their different types-applications, ICs, transistors and finally a detailed explanation on motors.'}, {title: 'RASPBERRY PI SESSION', desc: 'It was one and half hour technical workshop on Raspberry pi. The audience was first given a brief introduction of raspberry pi and then they were taught about its installation process. Presentation was informative & visually appealing. Audience was given Raspberry Pi to have a closer look and had been taught about each and every part of it.\nAudience enjoyed controlling GPIO pins using their cell phones by operating them on the same network. For which WebIOPi was used.'}, {title: 'GITHUB', desc: ''}];
 
   constructor(private renderer: Renderer2) { }
 
@@ -877,6 +880,10 @@ export class HomeComponent implements OnInit, AfterViewInit {
 
   }
 
+  goto(s: string){
+    scrollIntoViewIfNeeded(document.getElementById(s), {behavior: 'smooth', block: 'start'});
+  }
+
   resetTransition(n: number){
     setTimeout(() => {
       this.inTransition = false;
@@ -892,6 +899,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
       this.eventState.forEach((element,index) => {
         if(index === n){
           this.eventState[index] = "active";
+          this.event = this.eventsAll[index];
           this.eventActive = true;
         } else {
           this.eventState[index] = "de-active";
@@ -902,6 +910,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
 
   deactivate(){
     this.eventState = ["inactive","inactive","inactive","inactive","inactive","inactive"];
+    this.event = {title: '', desc: ''};
   }
 
   pactivate(n: number){

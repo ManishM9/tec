@@ -1,4 +1,5 @@
-<div (window:scroll)="onScroll($event)">
+<!-- <div (window:scroll)="onScroll($event)"> -->
+  <div>
 <div [@grad]="gradstate"  class="screen1" style="width: 100%; position: absolute;" id="start" #start></div>
 
 <div class="container-fluid screen1" [@grad2]="gradstate2" style="width:100%; position: absolute; background-color: #000000; background: linear-gradient(147deg, #000000 0%, #2c3e50 74%);">
@@ -56,10 +57,10 @@
 <nav class="navbar navbar-expand-sm navbar-dark navheight" style=" position: relative; margin-top: 0px; background-color: rgba(0, 0, 0, 0.6);">
     <img class="ml-5" style="width: 7%;" src="../../../assets/images/logoinv.png">
     <ul class="navbar-nav justify-content-end w-100 mr-5">
-      <a class="nav-link mr-5 text-center" href="#" style="font-family: 'Roboto', sans-serif; font-weight: 100; color: #ffffff">EVENTS</a>
-      <a class="nav-link mr-5 text-center" style="font-family: 'Roboto', sans-serif; font-weight: 100; color: #ffffff">ABOUT US</a>
-      <a class="nav-link mr-5 text-center" style="font-family: 'Roboto', sans-serif; font-weight: 100; color: #ffffff">OUR BOARD</a>
-      <a class="nav-link mr-5 text-center" style="font-family: 'Roboto', sans-serif; font-weight: 100; color: #ffffff">CONTACT US</a>
+      <a class="nav-link mr-5 text-center btn" (click)="goto('events')" style="font-family: 'Roboto', sans-serif; font-weight: 100; color: #ffffff">EVENTS</a>
+      <a class="nav-link mr-5 text-center btn" (click)="goto('aboutus')" style="font-family: 'Roboto', sans-serif; font-weight: 100; color: #ffffff">ABOUT US</a>
+      <a class="nav-link mr-5 text-center btn" (click)="goto('board')" style="font-family: 'Roboto', sans-serif; font-weight: 100; color: #ffffff">OUR SPONSORS</a>
+      <a class="nav-link mr-5 text-center btn" (click)="goto('end')" style="font-family: 'Roboto', sans-serif; font-weight: 100; color: #ffffff">CONTACT US</a>
     </ul>
 </nav>
 
@@ -78,56 +79,67 @@
 <div class="screen1" style="width: 100%; position: relative; overflow: hidden;">
   <h2 class="text-center text-light mt-5" style="font-family: 'Roboto', sans-serif; font-weight: 300; letter-spacing: 20px;">EVENTS</h2>
   <div class="event0" (mouseenter)="activate(0)" (mouseleave)="activate(0)" [@event1]="eventState[0]" style="position: absolute; transform: rotate(45deg); overflow: hidden;">
-    <div class="card d-inline-block bg-dark text-light" style="transform: rotate(-45deg) translateY(-80px); width: 380px; height: 380px;">
+    <div class="card d-inline-block bg-dark text-light" style="transform: rotate(-45deg) translateY(-40px); width: 180px; height: 180px;">
       <img class="card-img" style="height: 100%; width: 100%;" src="../../../assets/images/f6.jpeg">
       <div class="card-img-overlay d-flex flex-column justify-content-center text-center" *ngIf="eventState[0]==='active'? true: false">
-        <h5 style="font-size: 10px;">Title:</h5>
-        <p class="container" style="font-size: 7px;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis eveniet quas assumenda asperiores quidem nisi nobis explicabo quisquam iste voluptatum voluptate, sint, soluta sed aspernatur fugiat. Id atque saepe ipsa.</p>
+        <h5 style="font-size: 10px;">SENSORED:</h5>
+        <!-- <p class="container" style="font-size: 7px;">“SENSORED”, hosted by TEC, is one of the premier pre-GraVITas events. The
+          event is a two-day technical workshop. The motive of the workshop is to get the beginners equipped with the field of embedded systems and sensor interfacing. Take-away kits consisting of everything a techie needs to start off in the world of electronics provided to the participants. 
+          
+          We start with the very basic level explanation as to how various sensors actually work in the real world. Starting with the most basic knowledge of building simple circuits, running codes on Arduino Uno and interfacing it with more sensors to make a final embedded project of practical importance, we ensure to make every minute more exciting than the earlier as the inquisitive participants explore the kits containing breadboard, jumpers, LEDs, Potentiometer, Transistors, Resistors, Capacitors, Photo-Diodes, Ultrasonic sensor, Adxl, Piezo, DHT Sensor, IR emitter, Arduino Uno and all major essentials. 
+          We have been getting an overwhelming response to the workshop for the past three years in a row with a great turn-up and the participants leaving with a sense of fulfillment and quench for more.
+          “Our satisfaction is never satisfied”. To add novelty to the 4th Edition of Sensored, we have planned to add basics of IoT this time by adding Bluetooth module to the list of components. At the end of the workshop, the participants leave home with a final project made by themselves for further learning.
+          </p> -->
       </div>
     </div>
   </div>
   <div class="event1" (mouseenter)="activate(1)" (mouseleave)="activate(1)" [@event2]="eventState[1]" style="position: absolute; transform: rotate(45deg); overflow: hidden;">
-    <div class="card d-inline-block bg-dark text-light" style="transform: rotate(-45deg) translateY(-80px); width: 380px; height: 380px;">
+      <div class="card d-inline-block bg-dark text-light" style="transform: rotate(-45deg) translateY(-40px); width: 180px; height: 180px;">
       <img class="card-img" style="height: 100%; width: 100%;" src="../../../assets/images/f7.jpeg">
       <div class="card-img-overlay d-flex flex-column justify-content-center text-center" *ngIf="eventState[1]==='active'? true: false">
-        <h5 style="font-size: 10px;">Title:</h5>
-        <p class="container" style="font-size: 7px;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis eveniet quas assumenda asperiores quidem nisi nobis explicabo quisquam iste voluptatum voluptate, sint, soluta sed aspernatur fugiat. Id atque saepe ipsa.</p>
+        <h5 style="font-size: 10px;">EMBED 4.0:</h5>
+        <!-- <p class="container" style="font-size: 7px;">PCB is a workshop hosted by TEC with an aim to teach the participants all about Printed Circuit Boards. The participants are made aware of every small detail about PCB. From definitions to exploring career options in PCB, each topic will be duly addressed. The workshop starts with the designing of circuits, aided by the software-EAGLE. The participants will be taught simulation of the circuits, soon followed by fabrication of the circuits which they had designed themselves. It was fun while learning as the participants will have a hands-on experience imprinting designs, it’s etching and soldering of components. The hands-on session conducted will ensure effective learning of the concepts which further helps them in enhancing their skill set as well as in making their capstone (20 credits) projects in the most effective manner. 
+
+          PCB FABRICATION WORKSHOP has been renamed as EMBED 4.0 as it is the fourth edition of the workshop being hosted by TEC. To give the event an industrial incline, TEC is collaborating with Enthu Technologies Solutions India Pvt Ltd for Embed 4.0 in this GraVITas 2k18. Enthu is bringing their PCB prototyping machine to the event and have accepted to print all the participants boards. We also have external speakers this time to give a more practical insight of how printed boards are actually manufactured in large scale industries. This is definite to give the participants an industrial insight making the workshop more effective. 
+          </p> -->
       </div>
     </div>
   </div>
   <div class="event2" (mouseenter)="activate(2)" (mouseleave)="activate(2)" [@event3]="eventState[2]" style="position: absolute; transform: rotate(45deg); overflow: hidden;">
-    <div class="card d-inline-block bg-dark text-light" style="transform: rotate(-45deg) translateY(-80px); width: 380px; height: 380px;">
+      <div class="card d-inline-block bg-dark text-light" style="transform: rotate(-45deg) translateY(-40px); width: 180px; height: 180px;">
       <img class="card-img" style="height: 100%; width: 100%;" src="../../../assets/images/f8.jpeg">
-      <div class="card-img-overlay text-center" style="transform: translateY(75px); margin-right: 12%; margin-left: 12%;" *ngIf="eventState[2]==='active'? true: false">
-        <h5 style="font-size: 10px;">Title:</h5>
-        <p class="container" style="font-size: 7px;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis eveniet quas assumenda asperiores quidem nisi nobis explicabo quisquam iste voluptatum voluptate, sint, soluta sed aspernatur fugiat. Id atque saepe ipsa.</p>
+      <div class="card-img-overlay text-center" style="transform: translateY(40px); margin-right: 12%; margin-left: 12%;" *ngIf="eventState[2]==='active'? true: false">
+        <h5 style="font-size: 10px;">GLITCH:</h5>
+        <!-- <p class="container" style="font-size: 7px;">“Glitch”- an online event was hosted by TEC-VIT on 17th and 18th of March. An online quiz with access granted to anyone who wishes to take part just made the weekend a total bonanza of learning and fun. It was a two-day online quiz with two rounds in all. The first round had basic riddles and tangled questions to which the final answer was something related to the field of electronics. The players with more questions solved in lesser time were awarded with points and given access to the next round where the level of hardness was further set higher. The winners were declared at the end of the quiz and were given electronic components (RPi) and RedWolf coupons as schwags. Yet another event which disrupted weekend naps and gained momentum overnight. </p> -->
       </div>
     </div>
   </div>
   <div class="event3" (mouseenter)="activate(3)" (mouseleave)="activate(3)" [@event4]="eventState[3]" style="position: absolute; transform: rotate(45deg); overflow: hidden;">
-    <div class="card d-inline-block bg-dark text-light" style="transform: rotate(-45deg) translateY(-80px); width: 380px; height: 380px;">
+      <div class="card d-inline-block bg-dark text-light" style="transform: rotate(-45deg) translateY(-40px); width: 180px; height: 180px;">
       <img class="card-img" style="height: 100%; width: 100%;" src="../../../assets/images/f9.jpeg">
       <div class="card-img-overlay d-flex flex-column justify-content-center text-center" style="margin-left: 10%; margin-right: 10%; transform: translateY(-10px);" *ngIf="eventState[3]==='active'? true: false">
-        <h5 style="font-size: 10px;">Title:</h5>
-        <p class="container" style="font-size: 7px;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis eveniet quas assumenda asperiores quidem nisi nobis explicabo quisquam iste voluptatum voluptate, sint, soluta sed aspernatur fugiat. Id atque saepe ipsa.</p>
+        <h5 style="font-size: 10px;">101/102:</h5>
+        <!-- <p class="container" style="font-size: 7px;">The session begins with the primary aim of familiarizing the audience with VIT’s great culture-the clubs and chapters functioning, the vast opportunities, the ample amount of time to accomplish the same, academics, faculties, placements and in whole the campus life at VIT. We shared our wonderful, brisk and dusky experiences with our young successors which was a great experience. In addition to this precious vast of knowledge , our main objective of this series “E-LEXA” is to impart the basic technological aspects of electronics as a beginner from scratch. Electronics 101 is the 1st and foremost opening event of this series, which highlights breadboards, leds, resistors, potentiometers and capacitors. The audience were enthralled to handle the different small components and understand their importance in the final circuits of elementary projects. At the end, a project display was conducted wherein the live demonstration of minor projects was done successfully as it gave a practical outlook to the event.
+          “Electronics 102” was the 2nd episode of this series “E-lexa”. In this, we took the audience to a ride of switches, their different types-applications, ICs, transistors and finally a detailed explanation on motors.
+          </p> -->
       </div>
     </div>
   </div>
   <div class="event4" (mouseenter)="activate(4)" (mouseleave)="activate(4)" [@event5]="eventState[4]" style="position: absolute; transform: rotate(45deg); overflow: hidden;">
-    <div class="card d-inline-block bg-dark text-light" style="transform: rotate(-45deg) translateY(-80px); width: 380px; height: 380px;">
+      <div class="card d-inline-block bg-dark text-light" style="transform: rotate(-45deg) translateY(-40px); width: 180px; height: 180px;">
       <img class="card-img" style="height: 100%; width: 100%;" src="../../../assets/images/f1.jpeg">
-      <div class="card-img-overlay d-flex flex-column justify-content-center text-center" style="margin-left: 10%; margin-right: 10%; transform: translateY(-40px);" *ngIf="eventState[4]==='active'? true: false">
-        <h5 style="font-size: 10px;">Title:</h5>
-        <p class="container" style="font-size: 7px;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis eveniet quas assumenda asperiores quidem nisi nobis explicabo quisquam iste voluptatum voluptate, sint, soluta sed aspernatur fugiat. Id atque saepe ipsa.</p>
+      <div class="card-img-overlay d-flex flex-column justify-content-center text-center" style="margin-left: 10%; margin-right: 10%; transform: translateY(-10px);" *ngIf="eventState[4]==='active'? true: false">
+        <h5 style="font-size: 10px;">RASPBERRY PI SESSION:</h5>
+        <!-- <p class="container" style="font-size: 7px;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis eveniet quas assumenda asperiores quidem nisi nobis explicabo quisquam iste voluptatum voluptate, sint, soluta sed aspernatur fugiat. Id atque saepe ipsa.</p> -->
       </div>
     </div>
   </div>
   <div class="event5" (mouseenter)="activate(5)" (mouseleave)="activate(5)" [@event6]="eventState[5]" style="position: absolute; transform: rotate(45deg); overflow: hidden;">
-    <div class="card d-inline-block bg-dark text-light" style="transform: rotate(-45deg) translateY(-80px); width: 380px; height: 380px;">
+      <div class="card d-inline-block bg-dark text-light" style="transform: rotate(-45deg) translateY(-40px); width: 180px; height: 180px;">
       <img class="card-img" style="height: 100%; width: 100%;" src="../../../assets/images/f2.jpeg">
       <div class="card-img-overlay d-flex flex-column justify-content-center text-center" *ngIf="eventState[5]==='active'? true: false">
-        <h5 style="font-size: 10px;">Title:</h5>
-        <p class="container" style="font-size: 7px;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis eveniet quas assumenda asperiores quidem nisi nobis explicabo quisquam iste voluptatum voluptate, sint, soluta sed aspernatur fugiat. Id atque saepe ipsa.</p>
+        <h5 style="font-size: 10px;">GITHUB:</h5>
+        <!-- <p class="container" style="font-size: 7px;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis eveniet quas assumenda asperiores quidem nisi nobis explicabo quisquam iste voluptatum voluptate, sint, soluta sed aspernatur fugiat. Id atque saepe ipsa.</p> -->
       </div>
     </div>
   </div>
@@ -135,6 +147,11 @@
   <div class="bg-danger" style="position: absolute; width: 200px; height: 200px; transform: rotate(45deg);margin-left: 660px; margin-top: 180px;"></div>
   <div class="bg-danger" style="position: absolute; width: 200px; height: 200px; transform: rotate(45deg);margin-left: 840px; margin-top: 350px;"></div>
   <div class="bg-danger" style="position: absolute; width: 200px; height: 200px; transform: rotate(45deg);margin-left: 1020px; margin-top: 180px;"></div> -->
+
+    <div class="text-light" style="position: absolute; bottom: 5%; margin-left: 10%; margin-right: 10%;">
+      <h4 class="">{{event.title}}</h4>
+      <p>{{event.desc}}</p>
+    </div>
 
 </div>
 
@@ -157,15 +174,15 @@
   <div class="pl-5 pr-5 mx-auto row w-100 h-75">
     <div class="col-sm-4 mt-5">
       <h3 class=" text-light" style="font-family: 'Raleway', sans-serif; font-weight: 100; font-style: italic;">Our Motto:</h3>
-      <p class="text-light" style="margin-top: 30%; margin-left: 30%; font-family: 'Roboto', sans-serif; font-style: italic; font-weight: 100;">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Modi aliquid doloremque ad illo distinctio inventore voluptatem molestias accusamus architecto eos laborum nesciunt, facere possimus ipsa facilis quaerat rerum, aperiam alias.</p>
+      <i class="fa fa-quote-left text-light" style="font-weight: 900; font-size: 40px; position: absolute; margin-top: 15%; margin-left: 15%;"></i>
+      <p class="text-light" style="margin-top: 30%; margin-left: 30%; font-family: 'Roboto', sans-serif; font-style: italic; font-weight: 100;">TEC aims to inculcate practical knowledge to the students, provide them platform to change their ideas into innovations and develop their skills to compete with the present world of electronics.</p>
     </div>
     <div class="col-sm-1 mt-5">
       <div class="rounded mx-auto" style="width: 5%; height: 45%; background: white; margin-top: 150%;"></div>
     </div>
     <div class="col-sm-7 mt-5">
-      <h3 class="text-light" style="margin-right: 100px; font-family: 'Raleway', sans-serif; font-weight: 100; font-style: italic;">XXXX</h3>
-      <p class="text-light text-center" style="margin-top: 10%; margin-right: 15%; font-family: 'Roboto', sans-serif; font-weight: 100;">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur amet cum magni in nesciunt dolore suscipit incidunt sit dolor, porro voluptas repellat quos harum, id necessitatibus? Quos animi odio blanditiis perferendis? Dignissimos omnis inventore adipisci laborum id error hic at fugit, facilis tempore quod pariatur? Expedita accusamus, maxime sit et qui, culpa earum tempore inventore eum nobis libero enim quam cum dignissimos hic. Porro, quae magnam laboriosam dignissimos incidunt labore quod impedit voluptates consequuntur mollitia sapiente dolorem facilis quos blanditiis officia in sint qui. Deleniti alias earum corporis accusamus autem dicta ea, repellat eum, cupiditate impedit culpa. Non, laborum aliquam?</p>
-      <p class="text-light text-center" style="margin-top: 5%; margin-right: 15%; font-family: 'Roboto', sans-serif; font-weight: 100;">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nemo error, facilis nihil cupiditate, iste quis dignissimos cum, sapiente magnam ut consequatur voluptates? A natus pariatur asperiores amet excepturi eum nobis necessitatibus non ab aspernatur recusandae, tempore assumenda qui ipsam nihil odit tempora eos iure! Qui, repellat. Earum impedit ipsum cupiditate.</p>
+      <h3 class="text-light" style="margin-right: 100px; font-family: 'Raleway', sans-serif; font-weight: 100; font-style: italic;">What we are:</h3>
+      <p class="text-light text-center" style="margin-top: 10%; margin-right: 15%; font-family: 'Roboto', sans-serif; font-weight: 100;">They say technology is a never-ending curve and you always should be ready for new surprises. At The Electronics Club (TEC) of VIT, we believe that knowledge is not just to attain, but also to impart. Our passion and our focus are primarily on electronics. Education is not just about reading big fat textbooks or memorizing a zillion formulae; that is what we call information. Education begins when we begin to experience the things that we study, and that is what TEC strives to provide. Through regular theoretical and Hands-on sessions, TEC supports students who are passionate about electronics and helps them in exploring new avenues of imagination. TEC is working on a number of projects, and is always open to more innovative and inspiring ideas. We believe that the success of any organization depends on the unity amongst the people in it. TEC is a well-knit group of 81 members and through regular group discussions and meetings, the smooth working of the club is ensured. Our intense work is well complemented with some fun. This is done by organizing a few trips and parties round the year. Our motto of helping others learn is further strengthened as the senior’s act as mentors for the juniors. In addition to this, several sessions are also kept for the junior members of the club that enable them further to achieve their dreams. The Electronics Club of VIT does not tell you what your goals should be, but surely helps you to move closer to them.</p>
     </div>
   </div>
 </div>
@@ -185,76 +202,78 @@
   <div class="" style="width: 100%; height: 60%; margin-top: 5%; padding-left: 50px; padding-right: 50px;">
     <div [@uprow]="rowState[0]" class="w-100" style="position: relative; height: 50%; overflow: hidden;">
       <div (mouseenter)="pactivate(0)" (mouseleave)="pactivate(0)" [@proj1]="projState[0]" style="width: 25%; height: 100%;" class="pr-2 d-inline-block">
-        <div class="card d-inline-block bg-dark text-light" style="width: 100%; height: 100%;">
-          <img class="card-img" style="height: 100%; width: 100%;" src="../../../assets/images/f1.jpeg">
+        <div class="card d-inline-block bg-dark text-light" style="width: 100%; height: 100%; overflow: hidden;">
+          <img class="card-img" style="height: 600px; width: 900px;" src="../../../assets/images/f1.jpeg">
           <div class="card-img-overlay d-flex flex-column justify-content-end" *ngIf="projState[0]==='active'? true: false">
-            <h3 class="card-title">Title</h3>
-            <p class="card-text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tenetur illum architecto impedit facilis eos! Iure!</p>
+            <h3 class="card-title">Gesture And Pupil Controlled Wheelchair</h3>
+            <p class="card-text">Technological innovations in the field of medicine and healthcare is gaining momentum every day. As innovations are getting more creative, the major aim of this project is to develop a wheel chair embedded with modern features to support the disabled people to move around better without much dependence on others. The prototype is to benefit the differently abled people with much easier operation and quicker response time and greater built in security. It has two supporting features- gesture control(partial disability) and iris control(complete immobility) which are is a boon to the specially abled to move around with no external assistance required.</p>
           </div>
         </div>
       </div>
       <div (mouseenter)="pactivate(1)" (mouseleave)="pactivate(1)" [@proj2]="projState[1]" style="width: 25%; height: 100%;" class="pr-2 d-inline-block">
-        <div class="card d-inline-block bg-dark text-light" style="width: 100%; height: 100%;">
-          <img class="card-img" style="height: 100%; width: 100%;" src="../../../assets/images/f2.jpeg">
+        <div class="card d-inline-block bg-dark text-light" style="width: 100%; height: 100%; overflow: hidden;">
+          <img class="card-img" style="height: 600px; width: 900px;" src="../../../assets/images/f2.jpeg">
           <div class="card-img-overlay d-flex flex-column justify-content-end" *ngIf="projState[1]==='active'? true: false">
-            <h3>Title</h3>
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tenetur illum architecto impedit facilis eos! Iure!</p>
+            <h3>An Optimal Approach To Solve Learning Disorders</h3>
+            <p>Who knew that a worldwide health related issue, dyslexia and learning disorders (improving the pronunciation and lets them spell it efficiently) can be made simpler by just a handy game. 
+              An app developed in the form of a game which addresses the problem of dyslexia and helps the victim with pronunciations, helps them in spell words, thus solving the disorders faced in learning.
+              </p>
           </div>
         </div>
       </div>
       <div (mouseenter)="pactivate(2)" (mouseleave)="pactivate(2)" [@proj3]="projState[2]" style="width: 25%; height: 100%;" class="pr-2 d-inline-block">
-        <div class="card d-inline-block bg-dark text-light" style="width: 100%; height: 100%;">
-          <img class="card-img" style="height: 100%; width: 100%;" src="../../../assets/images/f3.jpeg">
+        <div class="card d-inline-block bg-dark text-light" style="width: 100%; height: 100%; overflow: hidden;">
+          <img class="card-img" style="height: 600px; width: 900px;" src="../../../assets/images/f3.jpeg">
           <div class="card-img-overlay d-flex flex-column justify-content-end" *ngIf="projState[2]==='active'? true: false">
-            <h3>Title</h3>
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tenetur illum architecto impedit facilis eos! Iure!</p>
+            <h3>T-Farmation</h3>
+            <p>Farmers are on a constant hunt for technological advancements which can reduce human intervention and make way to an advanced method of agriculture. We are working on making this dream come true to design a smart agriculture system by incorporating smart irrigation system, crop prediction system, weather forecast API, nutrient detection, Crop health monitoring and efficient supply of raw materials. This sure is to benefit the farmers and bring about a major change.</p>
           </div>
         </div>
       </div>
       <div (mouseenter)="pactivate(3)" (mouseleave)="pactivate(3)" [@proj4]="projState[3]" style="width: 25%; height: 100%;" class="d-inline-block">
-        <div class="card d-inline-block bg-dark text-light" style="width: 100%; height: 100%;">
-          <img class="card-img" style="height: 100%; width: 100%;" src="../../../assets/images/f4.jpeg">
+        <div class="card d-inline-block bg-dark text-light" style="width: 100%; height: 100%; overflow: hidden;">
+          <img class="card-img" style="height: 600px; width: 900px;" src="../../../assets/images/f4.jpeg">
           <div class="card-img-overlay d-flex flex-column justify-content-end" *ngIf="projState[3]==='active'? true: false">
-            <h3>Title</h3>
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tenetur illum architecto impedit facilis eos! Iure!</p>
+            <h3>Early Detection Of Rheumatic Heart Diseases Using Machine Learning</h3>
+            <p>Rheumatic Heart Disease is damage to one or more heart valves that remains unnoticed in the earlier stages and becomes difficult to cure in its later stages. The project work on detecting abnormalities present in phonocardiogram or heart Sounds of an affected person from a healthy one. Using Kalman filtering technique for an adaptive filtration of the heart sound followed by feature extraction which will be used to train a convolution neural net. Rheumatic Heart Disease is a chronic, disabling and sometimes fatal but if identifies is 100% curable.</p>
           </div>
         </div>
       </div>
     </div>
     <div [@downrow]="rowState[1]" class="w-100 mt-2" style="position: relative; height: 50%; overflow: hidden;">
       <div (mouseenter)="pactivate(4)" (mouseleave)="pactivate(4)" [@proj5]="projState[4]" style="width: 25%; height: 100%;" class="pr-2 d-inline-block">
-        <div class="card d-inline-block bg-dark text-light" style="width: 100%; height: 100%;">
-          <img class="card-img" style="height: 100%; width: 100%;" src="../../../assets/images/f5.jpeg">
+        <div class="card d-inline-block bg-dark text-light" style="width: 100%; height: 100%; overflow: hidden;">
+          <img class="card-img" style="height: 600px; width: 900px;" src="../../../assets/images/f5.jpeg">
           <div class="card-img-overlay d-flex flex-column justify-content-end" *ngIf="projState[4]==='active'? true: false">
-            <h3>Title</h3>
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tenetur illum architecto impedit facilis eos! Iure!</p>
+            <h3>WE-SHARE</h3>
+            <p>The dependency of our country on non-renewable sources of energy has been one of the main reasons for this problem. In this solution, we would be developing a smart grid infrastructure for the analysis and sharing of energy resources at home. The grid links all the household in a network and smartly switches the connection on user’s necessities. A person can invite other app users to join their network and transact energy. Different lenders can set their bid for multiple units of their excess energy and a borrower in need can choose the most efficient bid for himself. The feature will ensure that no part of the city is left in darkness wherein the energy is going waste in another part as the concept says “we-share”.</p>
           </div>
         </div>
       </div>
       <div (mouseenter)="pactivate(5)" (mouseleave)="pactivate(5)" [@proj6]="projState[5]" style="width: 25%; height: 100%;" class="pr-2 d-inline-block">
-        <div class="card d-inline-block bg-dark text-light" style="width: 100%; height: 100%;">
-          <img class="card-img" style="height: 100%; width: 100%;" src="../../../assets/images/f6.jpeg">
+        <div class="card d-inline-block bg-dark text-light" style="width: 100%; height: 100%; overflow: hidden;">
+          <img class="card-img" style="height: 600px; width: 900px;" src="../../../assets/images/f6.jpeg">
           <div class="card-img-overlay d-flex flex-column justify-content-end" *ngIf="projState[5]==='active'? true: false">
-            <h3>Title</h3>
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tenetur illum architecto impedit facilis eos! Iure!</p>
+            <h3>Automated Color Sorter</h3>
+            <p>Sorting of products is a very tedious industrial process and continuous manual sorting creates consistency issues. This is a major drawback and at many times confusion leads to wrong sorting. The project aims to make the process of sorting automated and easier than the existing task. In the process, making it more efficient and reducing the relative percentage of error. The prototype will fulfill the needs for higher production and precise quality in the field of automation.</p>
           </div>
         </div>
       </div>
       <div (mouseenter)="pactivate(6)" (mouseleave)="pactivate(6)" [@proj7]="projState[6]" style="width: 25%; height: 100%;" class="pr-2 d-inline-block">
-        <div class="card d-inline-block bg-dark text-light" style="width: 100%; height: 100%;">
-          <img class="card-img" style="height: 100%; width: 100%;" src="../../../assets/images/f7.jpeg">
+        <div class="card d-inline-block bg-dark text-light" style="width: 100%; height: 100%; overflow: hidden;">
+          <img class="card-img" style="height: 600px; width: 900px;" src="../../../assets/images/f7.jpeg">
           <div class="card-img-overlay d-flex flex-column justify-content-end" *ngIf="projState[6]==='active'? true: false">
-            <h3>Title</h3>
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tenetur illum architecto impedit facilis eos! Iure!</p>
+            <h3>Gesture Controlled Air Guitar</h3>
+            <p>Playing guitar is a skill which is acquired by practice. The aim of this project is to allow everyone to create music. We have created a gesture-controlled air guitar in which the music will be played using bands worn in each hand. The bands will be used to select the chord/note and time to be played. The band's will connect and send the data to a computer via Wi-Fi locally and sound would be generated using MATLAB.</p>
           </div>
         </div>
       </div>
       <div (mouseenter)="pactivate(7)" (mouseleave)="pactivate(7)" [@proj8]="projState[7]" style="width: 25%; height: 100%;" class="d-inline-block">
-        <div class="card d-inline-block bg-dark text-light" style="width: 100%; height: 100%;">
-          <img class="card-img" style="height: 100%; width: 100%;" src="../../../assets/images/f8.jpeg">
+        <div class="card d-inline-block bg-dark text-light" style="width: 100%; height: 100%; overflow: hidden;">
+          <img class="card-img" style="height: 600px; width: 900px;" src="../../../assets/images/f8.jpeg">
           <div class="card-img-overlay d-flex flex-column justify-content-end" *ngIf="projState[7]==='active'? true: false">
-            <h3>Title</h3>
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tenetur illum architecto impedit facilis eos! Iure!</p>
+            <h3>Swarm Robotics</h3>
+            <p>Swarm robotics is an approach to the coordination of multiple robots as a system which consist of large numbers of mostly simple physical robots. It is supposed that a desired collective behavior emerges from the interactions between the robots and interactions of robots with the environment. All these small robots work in coordination to achieve a same purpose.</p>
           </div>
         </div>
       </div>
