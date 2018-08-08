@@ -10,7 +10,7 @@
 
 .navheight {
     min-height: 60px;
-    max-height: 80px;
+    /* max-height: 60px; */
 }
 
 .navbelowheight {
