@@ -836,7 +836,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
             },
           });
           this.inTransition = true;
-          scrolling1.then(() => {this,this.inTransition = false});
+          scrolling1.then(() => {this.inTransition = false});
           // this.resetTransition(700);
           // setTimeout(() => {
           //   this.inTransition = false;
