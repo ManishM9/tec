@@ -78,6 +78,20 @@ import { resolve } from 'path';
         ]))
       ])
     ]),
+    trigger("turn4", [
+      state("null", style({
+        transform: 'skewY(0deg)',
+      })),
+      state("lalala", style({
+        transform: 'skewY(4deg)',
+      })),
+      transition("null => *", [
+        animate('500ms ease-in', keyframes([
+          style({ transform: 'skewY(0deg)', offset:0 }),
+          style({ transform: 'skewY(4deg)', offset: 1 })
+        ]))
+      ])
+    ]),
     trigger("event1", [
       state("inactive", style({
         transform: 'scale(1) rotate(+45deg)',
@@ -936,6 +950,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
   turnstate1: string = "null";
   turnstate2: string = "null";
   turnstate3: string = "null";
+  turnstate4: string = "null";
   eventState: string[] = ["null","null","null","null","null","null"];
   eventActive: boolean = false;
   projState: string[] = ["null","null","null","null","null","null","null","null"];
@@ -1117,6 +1132,9 @@ export class HomeComponent implements OnInit, AfterViewInit {
       case "board":
               this.bState = ["inactive","inactive","inactive","inactive","inactive","inactive","inactive","inactive","inactive","inactive"];
               this.turnstate3 = "lalala";
+              break;
+      case "sponsors":
+              this.turnstate4 = "lalala";
               break;
     }
   }
