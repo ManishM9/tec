@@ -26,20 +26,38 @@ import { resolve } from 'path';
         animate('500ms ease-in', keyframes([
           style({opacity: 0, offset: 0}),
           style({opacity: 0.5, offset: 0.5}),
-          style({opacity: 1, offset: 1})
+          style({opacity: 1, offset: 1}),
         ]))
       ])
     ]),
     trigger("turn1", [
-      transition("void => *", [
+      // transition("void => null", [
+      //   animate('0ms ease-in', keyframes([
+      //     style({ transform: 'skewy(0deg)', offset:1 })
+      //   ]))
+      // ]),
+      state("null", style({
+        transform: 'skewY(0deg)',
+      })),
+      state("lalala", style({
+        transform: 'skewY(-4deg)',
+      })),
+      transition("null => *", [
         animate('500ms ease-in', keyframes([
+          // style({  }),
           style({ transform: 'skewY(0deg)', offset:0 }),
           style({ transform: 'skewY(-4deg)', offset: 1 })
         ]))
       ])
     ]),
     trigger("turn2", [
-      transition("void => *", [
+      state("null", style({
+        transform: 'skewY(0deg)',
+      })),
+      state("lalala", style({
+        transform: 'skewY(-4deg)',
+      })),
+      transition("null => *", [
         animate('500ms ease-in', keyframes([
           style({ transform: 'skewY(0deg)', offset:0 }),
           style({ transform: 'skewY(-4deg)', offset: 1 })
@@ -47,10 +65,16 @@ import { resolve } from 'path';
       ])
     ]),
     trigger("turn3", [
-      transition("void => *", [
+      state("null", style({
+        transform: 'skewY(0deg)',
+      })),
+      state("lalala", style({
+        transform: 'skewY(4deg)',
+      })),
+      transition("null => *", [
         animate('500ms ease-in', keyframes([
           style({ transform: 'skewY(0deg)', offset:0 }),
-          style({ transform: 'skewY(-4deg)', offset: 1 })
+          style({ transform: 'skewY(4deg)', offset: 1 })
         ]))
       ])
     ]),
@@ -64,6 +88,12 @@ import { resolve } from 'path';
       state("de-active", style({
         transform: 'scale(0.5) rotate(+45deg)',
       })),
+      state("null", style({
+        transform: 'scale(0.001)',
+      })),
+      transition('* => null', [
+        animate('0ms ease-in')
+      ]),
       transition('* => active', [
         animate('500ms ease-in')
       ]),
@@ -84,6 +114,12 @@ import { resolve } from 'path';
       state("de-active", style({
         transform: 'scale(0.5) rotate(+45deg)',
       })),
+      state("null", style({
+        transform: 'scale(0.001)',
+      })),
+      transition('* => null', [
+        animate('0ms ease-in')
+      ]),
       transition('* => active', [
         animate('500ms ease-in')
       ]),
@@ -104,6 +140,12 @@ import { resolve } from 'path';
       state("de-active", style({
         transform: 'scale(0.5) rotate(+45deg)',
       })),
+      state("null", style({
+        transform: 'scale(0.001)',
+      })),
+      transition('* => null', [
+        animate('0ms ease-in')
+      ]),
       transition('* => active', [
         animate('500ms ease-in')
       ]),
@@ -124,6 +166,12 @@ import { resolve } from 'path';
       state("de-active", style({
         transform: 'scale(0.5) rotate(+45deg)',
       })),
+      state("null", style({
+        transform: 'scale(0.001)',
+      })),
+      transition('* => null', [
+        animate('0ms ease-in')
+      ]),
       transition('* => active', [
         animate('500ms ease-in')
       ]),
@@ -144,6 +192,12 @@ import { resolve } from 'path';
       state("de-active", style({
         transform: 'scale(0.5) rotate(+45deg)',
       })),
+      state("null", style({
+        transform: 'scale(0.001)',
+      })),
+      transition('* => null', [
+        animate('0ms ease-in')
+      ]),
       transition('* => active', [
         animate('500ms ease-in')
       ]),
@@ -164,6 +218,12 @@ import { resolve } from 'path';
       state("de-active", style({
         transform: 'scale(0.5) rotate(+45deg)',
       })),
+      state("null", style({
+        transform: 'scale(0.001)',
+      })),
+      transition('* => null', [
+        animate('0ms ease-in')
+      ]),
       transition('* => active', [
         animate('500ms ease-in')
       ]),
@@ -193,6 +253,12 @@ import { resolve } from 'path';
         width: '25%',
         opacity: 0.2,
       })),
+      state("null", style({
+        transform: 'scale(0.001)',
+      })),
+      transition('* => null', [
+        animate('0ms ease-in')
+      ]),
       transition("* => inactive", [
         animate('300ms ease-in')
       ]),
@@ -225,6 +291,12 @@ import { resolve } from 'path';
         width: '25%',
         opacity: 0.2,
       })),
+      state("null", style({
+        transform: 'scale(0.001)',
+      })),
+      transition('* => null', [
+        animate('0ms ease-in')
+      ]),
       transition("* => inactive", [
         animate('300ms ease-in')
       ]),
@@ -257,6 +329,12 @@ import { resolve } from 'path';
         width: '25%',
         opacity: 0.2,
       })),
+      state("null", style({
+        transform: 'scale(0.001)',
+      })),
+      transition('* => null', [
+        animate('0ms ease-in')
+      ]),
       transition("* => inactive", [
         animate('300ms ease-in')
       ]),
@@ -289,6 +367,12 @@ import { resolve } from 'path';
         width: '25%',
         opacity: 0.2,
       })),
+      state("null", style({
+        transform: 'scale(0.001)',
+      })),
+      transition('* => null', [
+        animate('0ms ease-in')
+      ]),
       transition("* => inactive", [
         animate('300ms ease-in')
       ]),
@@ -321,6 +405,12 @@ import { resolve } from 'path';
         width: '25%',
         opacity: 0.2,
       })),
+      state("null", style({
+        transform: 'scale(0.001)',
+      })),
+      transition('* => null', [
+        animate('0ms ease-in')
+      ]),
       transition("* => inactive", [
         animate('300ms ease-in')
       ]),
@@ -353,6 +443,12 @@ import { resolve } from 'path';
         width: '25%',
         opacity: 0.2,
       })),
+      state("null", style({
+        transform: 'scale(0.001)',
+      })),
+      transition('* => null', [
+        animate('0ms ease-in')
+      ]),
       transition("* => inactive", [
         animate('300ms ease-in')
       ]),
@@ -385,6 +481,12 @@ import { resolve } from 'path';
         width: '25%',
         opacity: 0.2,
       })),
+      state("null", style({
+        transform: 'scale(0.001)',
+      })),
+      transition('* => null', [
+        animate('0ms ease-in')
+      ]),
       transition("* => inactive", [
         animate('300ms ease-in')
       ]),
@@ -417,6 +519,12 @@ import { resolve } from 'path';
         width: '25%',
         opacity: 0.2,
       })),
+      state("null", style({
+        transform: 'scale(0.001)',
+      })),
+      transition('* => null', [
+        animate('0ms ease-in')
+      ]),
       transition("* => inactive", [
         animate('300ms ease-in')
       ]),
@@ -483,6 +591,12 @@ import { resolve } from 'path';
         transform: 'scale(0.7)',
         borderRadius: '50%',
       })),
+      state("null", style({
+        transform: 'scale(0.001)',
+      })),
+      transition('* => null', [
+        animate('0ms ease-in')
+      ]),
       transition("* => inactive", [
         animate('500ms ease-in')
       ]),
@@ -506,6 +620,12 @@ import { resolve } from 'path';
         transform: 'scale(0.7)',
         borderRadius: '50%',
       })),
+      state("null", style({
+        transform: 'scale(0.001)',
+      })),
+      transition('* => null', [
+        animate('0ms ease-in')
+      ]),
       transition("* => inactive", [
         animate('500ms ease-in')
       ]),
@@ -529,6 +649,12 @@ import { resolve } from 'path';
         transform: 'scale(0.7)',
         borderRadius: '50%',
       })),
+      state("null", style({
+        transform: 'scale(0.001)',
+      })),
+      transition('* => null', [
+        animate('0ms ease-in')
+      ]),
       transition("* => inactive", [
         animate('500ms ease-in')
       ]),
@@ -552,6 +678,12 @@ import { resolve } from 'path';
         transform: 'scale(0.7)',
         borderRadius: '50%',
       })),
+      state("null", style({
+        transform: 'scale(0.001)',
+      })),
+      transition('* => null', [
+        animate('0ms ease-in')
+      ]),
       transition("* => inactive", [
         animate('500ms ease-in')
       ]),
@@ -575,6 +707,12 @@ import { resolve } from 'path';
         transform: 'scale(0.7)',
         borderRadius: '50%',
       })),
+      state("null", style({
+        transform: 'scale(0.001)',
+      })),
+      transition('* => null', [
+        animate('0ms ease-in')
+      ]),
       transition("* => inactive", [
         animate('500ms ease-in')
       ]),
@@ -598,6 +736,12 @@ import { resolve } from 'path';
         transform: 'scale(0.7)',
         borderRadius: '50%',
       })),
+      state("null", style({
+        transform: 'scale(0.001)',
+      })),
+      transition('* => null', [
+        animate('0ms ease-in')
+      ]),
       transition("* => inactive", [
         animate('500ms ease-in')
       ]),
@@ -621,6 +765,12 @@ import { resolve } from 'path';
         transform: 'scale(0.7)',
         borderRadius: '50%',
       })),
+      state("null", style({
+        transform: 'scale(0.001)',
+      })),
+      transition('* => null', [
+        animate('0ms ease-in')
+      ]),
       transition("* => inactive", [
         animate('500ms ease-in')
       ]),
@@ -644,6 +794,12 @@ import { resolve } from 'path';
         transform: 'scale(0.7)',
         borderRadius: '50%',
       })),
+      state("null", style({
+        transform: 'scale(0.001)',
+      })),
+      transition('* => null', [
+        animate('0ms ease-in')
+      ]),
       transition("* => inactive", [
         animate('500ms ease-in')
       ]),
@@ -667,6 +823,12 @@ import { resolve } from 'path';
         transform: 'scale(0.7)',
         borderRadius: '50%',
       })),
+      state("null", style({
+        transform: 'scale(0.001)',
+      })),
+      transition('* => null', [
+        animate('0ms ease-in')
+      ]),
       transition("* => inactive", [
         animate('500ms ease-in')
       ]),
@@ -690,6 +852,12 @@ import { resolve } from 'path';
         transform: 'scale(0.7)',
         borderRadius: '50%',
       })),
+      state("null", style({
+        transform: 'scale(0.001)',
+      })),
+      transition('* => null', [
+        animate('0ms ease-in')
+      ]),
       transition("* => inactive", [
         animate('500ms ease-in')
       ]),
@@ -726,15 +894,15 @@ export class HomeComponent implements OnInit, AfterViewInit {
   // event6State: string = "inactive";
   gradstate: string = "";
   gradstate2: string = "";
-  turnstate1: string = "";
-  turnstate2: string = "";
-  turnstate3: string = "";
-  eventState: string[] = ["inactive","inactive","inactive","inactive","inactive","inactive"];
+  turnstate1: string = "null";
+  turnstate2: string = "null";
+  turnstate3: string = "null";
+  eventState: string[] = ["null","null","null","null","null","null"];
   eventActive: boolean = false;
-  projState: string[] = ["inactive","inactive","inactive","inactive","inactive","inactive","inactive","inactive"];
+  projState: string[] = ["null","null","null","null","null","null","null","null"];
   projActive: boolean = false;
   rowState: string[] = ["inactive","inactive"];
-  bState: string[] = ["inactive","inactive","inactive","inactive","inactive","inactive","inactive","inactive","inactive","inactive"];
+  bState: string[] = ["null","null","null","null","null","null","null","null","null","null"];
   bActive: boolean = false;
   lastScrollTop: number = 0;
   inTransition: boolean = false;
@@ -743,7 +911,8 @@ export class HomeComponent implements OnInit, AfterViewInit {
   event = { title: '', desc: '' };
   eventsAll = [{title: 'SENSORED', desc: '\"SENSORED\", hosted by TEC, is one of the premier pre-GraVITas events. The event is a two-day technical workshop. The motive of the workshop is to get the beginners equipped with the field of embedded systems and sensor interfacing. Take-away kits consisting of everything a techie needs to start off in the world of electronics provided to the participants.\n We start with the very basic level explanation as to how various sensors actually work in the real world. Starting with the most basic knowledge of building simple circuits, running codes on Arduino Uno and interfacing it with more sensors to make a final embedded project of practical importance, we ensure to make every minute more exciting than the earlier as the inquisitive participants explore the kits containing breadboard, jumpers, LEDs, Potentiometer, Transistors, Resistors, Capacitors, Photo-Diodes, Ultrasonic sensor, Adxl, Piezo, DHT Sensor, IR emitter, Arduino Uno and all major essentials. We have been getting an overwhelming response to the workshop for the past three years in a row with a great turn-up and the participants leaving with a sense of fulfillment and quench for more. \“Our satisfaction is never satisfied\”. To add novelty to the 4th Edition of Sensored, we have planned to add basics of IoT this time by adding Bluetooth module to the list of components. At the end of the workshop, the participants leave home with a final project made by themselves for further learning.'}, {title: 'EMBED 4.0', desc: 'PCB is a workshop hosted by TEC with an aim to teach the participants all about Printed Circuit Boards. The participants are made aware of every small detail about PCB. From definitions to exploring career options in PCB, each topic will be duly addressed. The workshop starts with the designing of circuits, aided by the software-EAGLE. The participants will be taught simulation of the circuits, soon followed by fabrication of the circuits which they had designed themselves. It was fun while learning as the participants will have a hands-on experience imprinting designs, it’s etching and soldering of components. The hands-on session conducted will ensure effective learning of the concepts which further helps them in enhancing their skill set as well as in making their capstone (20 credits) projects in the most effective manner.\nPCB FABRICATION WORKSHOP has been renamed as EMBED 4.0 as it is the fourth edition of the workshop being hosted by TEC. To give the event an industrial incline, TEC is collaborating with Enthu Technologies Solutions India Pvt Ltd for Embed 4.0 in this GraVITas 2k18. Enthu is bringing their PCB prototyping machine to the event and have accepted to print all the participants boards. We also have external speakers this time to give a more practical insight of how printed boards are actually manufactured in large scale industries. This is definite to give the participants an industrial insight making the workshop more effective.'},
               {title:'GLITCH', desc:'\“Glitch\”- an online event was hosted by TEC-VIT on 17th and 18th of March. An online quiz with access granted to anyone who wishes to take part just made the weekend a total bonanza of learning and fun. It was a two-day online quiz with two rounds in all. The first round had basic riddles and tangled questions to which the final answer was something related to the field of electronics. The players with more questions solved in lesser time were awarded with points and given access to the next round where the level of hardness was further set higher. The winners were declared at the end of the quiz and were given electronic components (RPi) and RedWolf coupons as schwags. Yet another event which disrupted weekend naps and gained momentum overnight.'}, {title: '101/102', desc: 'The session begins with the primary aim of familiarizing the audience with VIT\’s great culture-the clubs and chapters functioning, the vast opportunities, the ample amount of time to accomplish the same, academics, faculties, placements and in whole the campus life at VIT. We shared our wonderful, brisk and dusky experiences with our young successors which was a great experience. In addition to this precious vast of knowledge , our main objective of this series \“E-LEXA\” is to impart the basic technological aspects of electronics as a beginner from scratch. Electronics 101 is the 1st and foremost opening event of this series, which highlights breadboards, leds, resistors, potentiometers and capacitors. The audience were enthralled to handle the different small components and understand their importance in the final circuits of elementary projects. At the end, a project display was conducted wherein the live demonstration of minor projects was done successfully as it gave a practical outlook to the event.\“Electronics 102\” was the 2nd episode of this series “E-lexa”. In this, we took the audience to a ride of switches, their different types-applications, ICs, transistors and finally a detailed explanation on motors.'}, {title: 'RASPBERRY PI SESSION', desc: 'It was one and half hour technical workshop on Raspberry pi. The audience was first given a brief introduction of raspberry pi and then they were taught about its installation process. Presentation was informative & visually appealing. Audience was given Raspberry Pi to have a closer look and had been taught about each and every part of it.\nAudience enjoyed controlling GPIO pins using their cell phones by operating them on the same network. For which WebIOPi was used.'}, {title: 'GITHUB', desc: 'The session on GitHub will cover the entire GitHub platform,its advantages to a technical mind and how it plays a role to develop a new generation Curriculum Vitae(RESUME) for programming oriented students as well as myriad domains. The session will be conducted in a big hall which will attract a crowd of 200+ people. Github is a platform which will be beneficial to a lot of young generation engineers in VIT of which most of them are unaware of.'}];
-
+  screensActive = [false,false,false,false,false,false,false,false];
+  
   constructor(private renderer: Renderer2) { }
 
   ngOnInit() {
@@ -833,6 +1002,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
                   behavior: 'smooth',
                   block: 'start'
                 });
+                // activatePage()
                 setTimeout(() => {
                   resolve();
                 }, this.settime2);
@@ -841,7 +1011,12 @@ export class HomeComponent implements OnInit, AfterViewInit {
             },
           });
           this.inTransition = true;
-          scrolling1.then(() => {this.inTransition = false});
+          scrolling1.then(() => {
+            this.inTransition = false;
+            if(this.screensActive[curr] === false){
+              this.activatePage(this.screens[curr]);
+            }
+          });
           // this.resetTransition(700);
           // setTimeout(() => {
           //   this.inTransition = false;
@@ -867,7 +1042,12 @@ export class HomeComponent implements OnInit, AfterViewInit {
             },
           });
           this.inTransition = true;
-          scrolling2.then(() => {this.inTransition = false});
+          scrolling2.then(() => {
+            this.inTransition = false;
+            if(this.screensActive[curr+1] === false){
+            this.activatePage(this.screens[curr+1]);
+            }
+          });
           // this.resetTransition(700);
           console.log(this.pages[curr+1]);
         }
@@ -882,6 +1062,23 @@ export class HomeComponent implements OnInit, AfterViewInit {
 
   goto(s: string){
     scrollIntoViewIfNeeded(document.getElementById(s), {behavior: 'smooth', block: 'start'});
+  }
+
+  activatePage(s: string){
+    switch(s){
+      case "events":
+              this.eventState = ["inactive","inactive","inactive","inactive","inactive","inactive"];
+              this.turnstate1 = "lalala";
+              break;
+      case "projects":
+              this.projState = ["inactive","inactive","inactive","inactive","inactive","inactive","inactive","inactive"];
+              this.turnstate2 = "lalala";
+              break;
+      case "board":
+              this.bState = ["inactive","inactive","inactive","inactive","inactive","inactive","inactive","inactive","inactive","inactive"];
+              this.turnstate3 = "lalala";
+              break;
+    }
   }
 
   resetTransition(n: number){
