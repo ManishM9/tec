@@ -129,4 +129,8 @@ and (max-width : 700px) {
         margin-top: 300px;
     }
 
+    .smallfont {
+        font-size: 1px;
+    }
+
   }
