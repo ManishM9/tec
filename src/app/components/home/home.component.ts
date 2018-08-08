@@ -738,7 +738,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
   bActive: boolean = false;
   lastScrollTop: number = 0;
   inTransition: boolean = false;
-  settime1: number = 350;
+  settime1: number = 400;
   settime2: number = 700;
 
   constructor(private renderer: Renderer2) { }
