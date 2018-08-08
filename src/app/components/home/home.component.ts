@@ -83,12 +83,12 @@ import { resolve } from 'path';
         transform: 'skewY(0deg)',
       })),
       state("lalala", style({
-        transform: 'skewY(4deg)',
+        transform: 'skewY(-4deg)',
       })),
       transition("null => *", [
         animate('500ms ease-in', keyframes([
           style({ transform: 'skewY(0deg)', offset:0 }),
-          style({ transform: 'skewY(4deg)', offset: 1 })
+          style({ transform: 'skewY(-4deg)', offset: 1 })
         ]))
       ])
     ]),
