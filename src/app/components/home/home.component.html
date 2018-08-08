@@ -1,12 +1,12 @@
-<div (window:scroll)="onScroll($event)" class="width:100%;">
+<!-- <div  class="width:100%;"> -->
   <!-- <div> -->
-<div [@grad]="gradstate"  class="screen1" style="width: 100%; position: absolute;" id="start" #start></div>
+<div (window:scroll)="onScroll($event)" [@grad]="gradstate"  class="screen1" style="width: 100%; position: absolute;" id="start" #start></div>
 
-<div class="container-fluid screen1" [@grad2]="gradstate2" style="width:100%; position: absolute; background-color: #000000; background: linear-gradient(147deg, #000000 0%, #2c3e50 74%);">
+<div class="screen1" [@grad2]="gradstate2" style="width:100%; position: absolute; background-color: #000000; background: linear-gradient(147deg, #000000 0%, #2c3e50 74%);">
   
 </div>
 
-<div class="container-fluid row screen1" style="width: 100%; position: relative;">
+<div class="row screen1" style="width: 100%; position: relative;">
   <div class="h-100 row">
     <img class="w-25 d-block m-auto col-sm-4" style="opacity: 1;" src="../../../assets/images/logoinv.png">
   </div>
@@ -161,7 +161,7 @@
 <!-- =================================================================================================================================== -->
 
 <div class="screen1" style="width: 100%; position: absolute; overflow: hidden;" id="aboutus" #aboutus>
-  <img src="../../../assets/images/beautiful-beauty-blond-289225.jpg" style="width: 100%; height: 100%; transform: translateX(-20px);">
+  <img src="../../../assets/images/beautiful-beauty-blond-289225.jpg" style="width: 104%; height: 100%; transform: translateX(-20px);">
 </div>
 
 <div class="screen1" style="width: 100%; position: absolute;">
@@ -180,7 +180,7 @@
     <div class="col-1 mt-5">
       <div class="rounded mx-auto" style="width: 5%; height: 45%; background: white; margin-top: 150%;"></div>
     </div>
-    <div class="col-7 mt-5">
+    <div class="col-6 mt-5">
       <h3 class="smallheading text-light" style="margin-right: 100px; font-family: 'Raleway', sans-serif; font-weight: 100; font-style: italic;">What we are:</h3>
       <p class="smallfont text-light text-left" style="margin-top: 10%; margin-right: 15%; font-family: 'Roboto', sans-serif; font-weight: 100;">They say technology is a never-ending curve and you always should be ready for new surprises. At The Electronics Club (TEC) of VIT, we believe that knowledge is not just to attain, but also to impart. Our passion and our focus are primarily on electronics. Education is not just about reading big fat textbooks or memorizing a zillion formulae; that is what we call information. Education begins when we begin to experience the things that we study, and that is what TEC strives to provide. Through regular theoretical and Hands-on sessions, TEC supports students who are passionate about electronics and helps them in exploring new avenues of imagination. TEC is working on a number of projects, and is always open to more innovative and inspiring ideas. We believe that the success of any organization depends on the unity amongst the people in it. TEC is a well-knit group of 81 members and through regular group discussions and meetings, the smooth working of the club is ensured. Our intense work is well complemented with some fun. This is done by organizing a few trips and parties round the year. Our motto of helping others learn is further strengthened as the senior’s act as mentors for the juniors. In addition to this, several sessions are also kept for the junior members of the club that enable them further to achieve their dreams. The Electronics Club of VIT does not tell you what your goals should be, but surely helps you to move closer to them.</p>
     </div>
@@ -433,6 +433,6 @@
   <div class="" style="width: 100%; height: 10%; position: absolute; background: black; bottom:0; left: 0;"></div>
 </div>
 
-</div>
+<!-- </div> -->
 
 <!-- <div id="map" style="width: 100%; height: 730px;"></div> -->
