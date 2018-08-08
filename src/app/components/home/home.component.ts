@@ -770,6 +770,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
           return new Promise((resolve, rejected) => {
             scrollIntoViewIfNeeded(document.getElementById("carousel"), {
               behavior: 'smooth',
+              block: 'start'
             });
             resolve();
           })
@@ -827,6 +828,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
               return new Promise((resolve, rejected) => {
                 scrollIntoViewIfNeeded(document.getElementById(this.screens[curr]), {
                   behavior: 'smooth',
+                  block: 'start'
                 });
                 setTimeout(() => {
                   resolve();
@@ -852,6 +854,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
               return new Promise((resolve, rejected) => {
                 scrollIntoViewIfNeeded(document.getElementById(this.screens[curr+1]), {
                   behavior: 'smooth',
+                  block: 'start'
                 });
                 setTimeout(() => {
                   resolve();
