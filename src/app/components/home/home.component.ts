@@ -921,8 +921,9 @@ export class HomeComponent implements OnInit, AfterViewInit {
   @ViewChild('projects') projects: ElementRef;
   @ViewChild('board') board: ElementRef;
   @ViewChild('end') end: ElementRef;
+  @ViewChild('sponsors') sponsors: ElementRef;
   pages: ElementRef[]= [];
-  screens: string[] = ["start","carousel","events","aboutus","projects","board","end"]
+  screens: string[] = ["start","carousel","events","aboutus","projects","board","sponsors","end"];
   offsets: number[] = [];
   // event1State: string = "inactive";
   // event2State: string = "inactive";
@@ -963,7 +964,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
     //   this.start.nativeElement.scrollIntoView({behavior: 'smooth'});
     //   console.log("Start");
     // }, 1000);
-    this.pages = [this.start, this.carousel, this.events, this.aboutus, this.projects, this.board, this.end];
+    this.pages = [this.start, this.carousel, this.events, this.aboutus, this.projects, this.board, this.sponsors, this.end];
     this.pages.forEach(element => {
       this.offsets.push(element.nativeElement.offsetTop);
     });
