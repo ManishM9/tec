@@ -259,6 +259,9 @@ import { resolve } from 'path';
       transition('* => null', [
         animate('0ms ease-in')
       ]),
+      transition('null => inactive', [
+        animate('500ms ease-in')
+      ]),
       transition("* => inactive", [
         animate('300ms ease-in')
       ]),
@@ -294,6 +297,9 @@ import { resolve } from 'path';
       state("null", style({
         transform: 'scale(0.001)',
       })),
+      transition('null => inactive', [
+        animate('500ms ease-in')
+      ]),
       transition('* => null', [
         animate('0ms ease-in')
       ]),
@@ -332,6 +338,9 @@ import { resolve } from 'path';
       state("null", style({
         transform: 'scale(0.001)',
       })),
+      transition('null => inactive', [
+        animate('500ms ease-in')
+      ]),
       transition('* => null', [
         animate('0ms ease-in')
       ]),
@@ -370,6 +379,9 @@ import { resolve } from 'path';
       state("null", style({
         transform: 'scale(0.001)',
       })),
+      transition('null => inactive', [
+        animate('500ms ease-in')
+      ]),
       transition('* => null', [
         animate('0ms ease-in')
       ]),
@@ -408,6 +420,9 @@ import { resolve } from 'path';
       state("null", style({
         transform: 'scale(0.001)',
       })),
+      transition('null => inactive', [
+        animate('500ms ease-in')
+      ]),
       transition('* => null', [
         animate('0ms ease-in')
       ]),
@@ -446,6 +461,9 @@ import { resolve } from 'path';
       state("null", style({
         transform: 'scale(0.001)',
       })),
+      transition('null => inactive', [
+        animate('500ms ease-in')
+      ]),
       transition('* => null', [
         animate('0ms ease-in')
       ]),
@@ -484,6 +502,9 @@ import { resolve } from 'path';
       state("null", style({
         transform: 'scale(0.001)',
       })),
+      transition('null => inactive', [
+        animate('500ms ease-in')
+      ]),
       transition('* => null', [
         animate('0ms ease-in')
       ]),
@@ -522,6 +543,9 @@ import { resolve } from 'path';
       state("null", style({
         transform: 'scale(0.001)',
       })),
+      transition('null => inactive', [
+        animate('500ms ease-in')
+      ]),
       transition('* => null', [
         animate('0ms ease-in')
       ]),
