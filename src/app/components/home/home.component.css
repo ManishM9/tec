@@ -1,9 +1,14 @@
+.carousel-indicators > li {
+    border-radius: 50%;
+    height: 30px;
+  }
+
 .screen1 {
     height: 730px;
 }
 
 .navheight {
-    height: 60px;
+    min-height: 60px;
 }
 
 .navbelowheight {
@@ -83,6 +88,10 @@ and (max-width : 700px) {
 
     .skewheight {
       height: 470px;
+    } */
+
+    /* .navheight {
+        min-height: 0px;
     } */
 
     .board {

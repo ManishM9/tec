@@ -14,7 +14,7 @@
 
 <!-- ==================================================================================================== -->
 
-<div class="carousel slide row carouselwidth" data-ride="carousel" style="width: 100%; position: absolute; overflow: hidden;" id="carousel" #carousel>
+<div class="carousel slide carouselwidth" data-ride="carousel" style="width: 100%; position: absolute; overflow: hidden;" id="carousel" #carousel>
 
     <!-- Indicators -->
     <ul class="carousel-indicators">
@@ -44,29 +44,34 @@
     </div>
   
     <!-- Left and right controls -->
-    <a class="carousel-control-prev" style="background: linear-gradient(to right, rgba(0,0,0,3), rgba(0,0,0,0))" data-target="#carousel" data-slide="prev">
+    <a class="carousel-control-prev" style="background: linear-gradient(to right, rgba(0,0,0,3), rgba(0,0,0,0));" role="button" href="#carousel" data-slide="prev">
       <span class="carousel-control-prev-icon"></span>
     </a>
-    <a class="carousel-control-next" style="background: linear-gradient(to left, rgba(0,0,0,3), rgba(0,0,0,0))" data-target="#carousel" data-slide="next">
+    <a class="carousel-control-next" style="background: linear-gradient(to left, rgba(0,0,0,3), rgba(0,0,0,0));" role="button" href="#carousel" data-slide="next">
       <span class="carousel-control-next-icon"></span>
     </a>
   
 </div>
 
 
-<nav class="navbar navbar-expand-sm navbar-dark navheight" style=" position: relative; margin-top: 0px; background-color: rgba(0, 0, 0, 0.6);">
-    <img class="ml-5" style="width: 7%;" src="../../../assets/images/logoinv.png">
-    <ul class="navbar-nav justify-content-end w-100 mr-5">
-      <a class="nav-link mr-5 text-center btn" (click)="goto('events')" style="font-family: 'Roboto', sans-serif; font-weight: 100; color: #ffffff">EVENTS</a>
-      <a class="nav-link mr-5 text-center btn" (click)="goto('aboutus')" style="font-family: 'Roboto', sans-serif; font-weight: 100; color: #ffffff">ABOUT US</a>
-      <a class="nav-link mr-5 text-center btn" (click)="goto('board')" style="font-family: 'Roboto', sans-serif; font-weight: 100; color: #ffffff">OUR SPONSORS</a>
-      <a class="nav-link mr-5 text-center btn" (click)="goto('end')" style="font-family: 'Roboto', sans-serif; font-weight: 100; color: #ffffff">CONTACT US</a>
-    </ul>
+<nav class="navbar navbar-expand-md navbar-dark navheight" style=" position: relative; margin-top: 0px; background-color: rgba(0, 0, 0, 0.6);">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#colnav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <img class="ml-5 navbar-brand" style="width: 7%;" src="../../../assets/images/logoinv.png">
+    <div class="navbar-collapse" id="colnav">
+        <ul class="navbar-nav justify-content-end w-100 mr-5">
+            <li class="nav-item"><a class="nav-link mr-5 text-center btn" (click)="goto('events')" style="font-family: 'Roboto', sans-serif; font-weight: 100; color: #ffffff">EVENTS</a></li>
+            <li class="nav-item"><a class="nav-link mr-5 text-center btn" (click)="goto('aboutus')" style="font-family: 'Roboto', sans-serif; font-weight: 100; color: #ffffff">ABOUT US</a></li>
+            <li class="nav-item"><a class="nav-link mr-5 text-center btn" (click)="goto('board')" style="font-family: 'Roboto', sans-serif; font-weight: 100; color: #ffffff">OUR SPONSORS</a></li>
+            <li class="nav-item"><a class="nav-link mr-5 text-center btn" (click)="goto('end')" style="font-family: 'Roboto', sans-serif; font-weight: 100; color: #ffffff">CONTACT US</a></li>
+          </ul>
+    </div>
 </nav>
 
 <!-- =================================================================================== -->
 
-<div class="container-fluid navbelowheight" style="width: 100%; position: relative;">
+<div class="navbelowheight" style="width: 100%; position: relative;">
 </div>
 
 
@@ -161,7 +166,7 @@
 <!-- =================================================================================================================================== -->
 
 <div class="screen1" style="width: 100%; position: absolute; overflow: hidden;" id="aboutus" #aboutus>
-  <img src="../../../assets/images/beautiful-beauty-blond-289225.jpg" style="width: 104%; height: 100%; transform: translateX(-20px);">
+  <img src="../../../assets/images/beautiful-beauty-blond-289225.jpg" style="width: 100%; height: 100%; transform: translateX(-20px);">
 </div>
 
 <div class="screen1" style="width: 100%; position: absolute;">
@@ -421,7 +426,7 @@
           <input type="text" class="form-control" placeholder="Mail ID">
         </div>
       </div>
-      <div class="row pr-3 pl-3">
+      <div class="pr-3 pl-3">
         <div class="col-md-12">
           <textarea class="form-control" rows="6" cols="190" placeholder="Message"></textarea>
         </div>
