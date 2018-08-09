@@ -94,8 +94,8 @@
 <div class="screen1" style="width: 100%; position: relative; overflow: hidden;">
   <h2 class="text-center text-light mt-5" style="font-family: 'Roboto', sans-serif; font-weight: 300; letter-spacing: 20px;">EVENTS</h2>
   <div class="event0" (mouseenter)="activate(0)" (mouseleave)="activate(0)" [@event1]="eventState[0]" style="position: absolute; transform: rotate(45deg); overflow: hidden;">
-    <div class="card d-inline-block bg-dark text-light" style="transform: rotate(-45deg) translateY(-40px); width: 180px; height: 180px;">
-      <img class="card-img" style="height: 100%; width: 100%;" src="../../../assets/images/sensored.jpg">
+    <div class="card d-inline-block bg-dark text-light" style="transform: rotate(-45deg) translateY(-40px) translateX(-20px); width: 180px; height: 180px;">
+      <img class="card-img" style="height: 100%; width: 130%;" src="../../../assets/images/sensored.jpg">
       <div class="card-img-overlay d-flex flex-column justify-content-center text-center" *ngIf="eventState[0]==='active'? true: false">
         <!-- <h5 style="font-size: 10px;">SENSORED:</h5> -->
         <!-- <p class="container" style="font-size: 7px;">“SENSORED”, hosted by TEC, is one of the premier pre-GraVITas events. The
@@ -109,7 +109,7 @@
     </div>
   </div>
   <div class="event1" (mouseenter)="activate(1)" (mouseleave)="activate(1)" [@event2]="eventState[1]" style="position: absolute; transform: rotate(45deg); overflow: hidden;">
-      <div class="card d-inline-block bg-dark text-light" style="transform: rotate(-45deg) translateY(-50px); width: 180px; height: 180px;">
+      <div class="card d-inline-block bg-dark text-light" style="transform: rotate(-45deg) translateY(-40px); width: 180px; height: 180px;">
       <img class="card-img" style="height: 100%; width: 100%;" src="../../../assets/images/embed.jpg">
       <div class="card-img-overlay d-flex flex-column justify-content-center text-center" *ngIf="eventState[1]==='active'? true: false">
         <!-- <h5 style="font-size: 10px;">EMBED 4.0:</h5> -->
@@ -121,7 +121,7 @@
     </div>
   </div>
   <div class="event2" (mouseenter)="activate(2)" (mouseleave)="activate(2)" [@event3]="eventState[2]" style="position: absolute; transform: rotate(45deg); overflow: hidden;">
-      <div class="card d-inline-block bg-dark text-light" style="transform: rotate(-45deg) translateY(-50px); width: 180px; height: 180px;">
+      <div class="card d-inline-block bg-dark text-light" style="transform: rotate(-45deg) translateY(-40px); width: 180px; height: 180px;">
       <img class="card-img" style="height: 100%; width: 100%;" src="../../../assets/images/gltch.jpg">
       <div class="card-img-overlay text-center" style="transform: translateY(40px); margin-right: 12%; margin-left: 12%;" *ngIf="eventState[2]==='active'? true: false">
         <!-- <h5 style="font-size: 10px;">GLITCH:</h5> -->
@@ -130,10 +130,10 @@
     </div>
   </div>
   <div class="event3" (mouseenter)="activate(3)" (mouseleave)="activate(3)" [@event4]="eventState[3]" style="position: absolute; transform: rotate(45deg); overflow: hidden;">
-      <div class="card d-inline-block bg-dark text-light" style="transform: rotate(-45deg) translateY(-50px); width: 180px; height: 180px;">
+      <div class="card d-inline-block bg-dark text-light" style="transform: rotate(-45deg) translateY(-40px); width: 180px; height: 180px;">
       <img class="card-img" style="height: 100%; width: 100%;" src="../../../assets/images/e10.jpg">
-      <div class="card-img-overlay d-flex flex-column justify-content-center text-center" style="margin-left: 10%; margin-right: 10%; transform: translateY(-10px);" *ngIf="eventState[3]==='active'? true: false">
-        <h5 style="font-size: 10px;">101/102:</h5>
+      <div class="card-img-overlay d-flex flex-column justify-content-center text-center" style="margin-left: 10%; margin-right: 10%; margin-top: 5%; transform: translateY(-10px);" >
+        <h4 style="font-size: 10px;">101/102:</h4>
         <!-- <p class="container" style="font-size: 7px;">The session begins with the primary aim of familiarizing the audience with VIT’s great culture-the clubs and chapters functioning, the vast opportunities, the ample amount of time to accomplish the same, academics, faculties, placements and in whole the campus life at VIT. We shared our wonderful, brisk and dusky experiences with our young successors which was a great experience. In addition to this precious vast of knowledge , our main objective of this series “E-LEXA” is to impart the basic technological aspects of electronics as a beginner from scratch. Electronics 101 is the 1st and foremost opening event of this series, which highlights breadboards, leds, resistors, potentiometers and capacitors. The audience were enthralled to handle the different small components and understand their importance in the final circuits of elementary projects. At the end, a project display was conducted wherein the live demonstration of minor projects was done successfully as it gave a practical outlook to the event.
           “Electronics 102” was the 2nd episode of this series “E-lexa”. In this, we took the audience to a ride of switches, their different types-applications, ICs, transistors and finally a detailed explanation on motors.
           </p> -->
@@ -141,7 +141,7 @@
     </div>
   </div>
   <div class="event4" (mouseenter)="activate(4)" (mouseleave)="activate(4)" [@event5]="eventState[4]" style="position: absolute; transform: rotate(45deg); overflow: hidden;">
-      <div class="card d-inline-block bg-dark text-light" style="transform: rotate(-45deg) translateY(-50px); width: 180px; height: 180px;">
+      <div class="card d-inline-block bg-dark text-light" style="transform: rotate(-45deg) translateY(-40px); width: 180px; height: 180px;">
       <img class="card-img" style="height: 100%; width: 100%;" src="../../../assets/images/rpi.jpg">
       <div class="card-img-overlay d-flex flex-column justify-content-center text-center" style="margin-left: 10%; margin-right: 10%; transform: translateY(-10px);" *ngIf="eventState[4]==='active'? true: false">
         <!-- <h5 style="font-size: 10px;">RASPBERRY PI SESSION:</h5> -->
@@ -150,8 +150,8 @@
     </div>
   </div>
   <div class="event5 border border-success" (mouseenter)="activate(5)" (mouseleave)="activate(5)" [@event6]="eventState[5]" style="position: absolute; transform: rotate(45deg); overflow: hidden;">
-      <div class="card d-inline-block bg-dark text-light" style="transform: rotate(-45deg) translateY(-50px); width: 180px; height: 180px;">
-      <img class="card-img" style="height: 100%; width: 100%;" src="../../../assets/images/git.jpg">
+      <div class="card d-inline-block bg-dark text-light" style="transform: rotate(-45deg) translateY(-40px) translateX(-25px); width: 180px; height: 180px;">
+      <img class="card-img" style="height: 100%; width: 130%;" src="../../../assets/images/git.jpg">
       <div class="card-img-overlay d-flex flex-column justify-content-center text-center" *ngIf="eventState[5]==='active'? true: false">
         <!-- <h5 style="font-size: 10px;">GITHUB:</h5> -->
         <!-- <p class="container" style="font-size: 7px;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis eveniet quas assumenda asperiores quidem nisi nobis explicabo quisquam iste voluptatum voluptate, sint, soluta sed aspernatur fugiat. Id atque saepe ipsa.</p> -->
@@ -176,7 +176,7 @@
 <!-- =================================================================================================================================== -->
 
 <div class="screen1" style="width: 100%; position: absolute; overflow: hidden;" id="aboutus" #aboutus>
-  <img src="../../../assets/images/beautiful-beauty-blond-289225.jpg" style="width: 100%; height: 100%; transform: translateX(-20px);">
+  <img src="../../../assets/images/abt_us.jpg" style="width: 100%; height: 100%;">
 </div>
 
 <div class="screen1" style="width: 100%; position: absolute;">
