@@ -906,6 +906,35 @@ import { resolve } from 'path';
         animate('500ms ease-in')
       ]),
     ]),
+    trigger("b11", [
+      state("inactive", style({
+        borderRadius: '50%',
+        transform: 'scale(1)',
+      })),
+      state("active", style({
+        borderRadius: '10%',
+        // transform: 'scale(1.5)',
+      })),
+      state("de-active", style({
+        transform: 'scale(0.7)',
+        borderRadius: '50%',
+      })),
+      state("null", style({
+        transform: 'scale(0.001)',
+      })),
+      transition('* => null', [
+        animate('0ms ease-in')
+      ]),
+      transition("* => inactive", [
+        animate('500ms ease-in')
+      ]),
+      transition("* => active", [
+        animate('500ms ease-in')
+      ]),
+      transition("* => de-active", [
+        animate('500ms ease-in')
+      ]),
+    ]),
     trigger("eventdes", [
       state("null", style({
         transform: 'translateY(200px)'
@@ -956,7 +985,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
   projState: string[] = ["null","null","null","null","null","null","null","null"];
   projActive: boolean = false;
   rowState: string[] = ["inactive","inactive"];
-  bState: string[] = ["null","null","null","null","null","null","null","null","null","null"];
+  bState: string[] = ["null","null","null","null","null","null","null","null","null","null","null"];
   bActive: boolean = false;
   lastScrollTop: number = 0;
   inTransition: boolean = false;
@@ -993,20 +1022,21 @@ export class HomeComponent implements OnInit, AfterViewInit {
     // this.offsets.push(this.end.nativeElement.offsetTop);
     setTimeout(() => {
       // this.carousel.nativeElement.scrollIntoView({behavior: 'smooth'});
-      const scrolling = scrollIntoViewIfNeeded<Promise<any>>(document.getElementById("carousel"), {
-        behavior: actions => {
-          return new Promise((resolve, rejected) => {
-            scrollIntoViewIfNeeded(document.getElementById("carousel"), {
-              behavior: 'smooth',
-              block: 'start'
-            });
-            resolve();
-          })
-        },
-      });
-      scrolling.then(() => {
-        console.log("YAAYYYY!!!!");
-      });
+      // const scrolling = scrollIntoViewIfNeeded<Promise<any>>(document.getElementById("carousel"), {
+      //   behavior: actions => {
+      //     return new Promise((resolve, rejected) => {
+      //       scrollIntoViewIfNeeded(document.getElementById("carousel"), {
+      //         behavior: 'smooth',
+      //         block: 'start'
+      //       });
+      //       resolve();
+      //     })
+      //   },
+      // });
+      // scrolling.then(() => {
+      //   console.log("YAAYYYY!!!!");
+      // });
+      this.goto('carousel');
       // console.log(typeof(scrollIntoViewIfNeeded));
       // console.log("Carousel");
       // console.log(this.carousel);
@@ -1125,6 +1155,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
     setTimeout(() => {
       // this.inTransition = false;
       this.priority = false;
+      this.activatePage(s);
     }, 1200);
   }
 
@@ -1139,7 +1170,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
               this.turnstate2 = "lalala";
               break;
       case "board":
-              this.bState = ["inactive","inactive","inactive","inactive","inactive","inactive","inactive","inactive","inactive","inactive"];
+              this.bState = ["inactive","inactive","inactive","inactive","inactive","inactive","inactive","inactive","inactive","inactive","inactive"];
               this.turnstate3 = "lalala";
               break;
       case "sponsors":
@@ -1259,7 +1290,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
   }
 
   bdeactivate(){
-    this.bState = ["inactive","inactive","inactive","inactive","inactive","inactive","inactive","inactive","inactive","inactive"];
+    this.bState = ["inactive","inactive","inactive","inactive","inactive","inactive","inactive","inactive","inactive","inactive","inactive"];
   }
 
   // ngAfterViewInit() {
