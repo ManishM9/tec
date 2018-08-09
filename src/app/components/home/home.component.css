@@ -76,6 +76,13 @@
     font-size: 40px;
 }
 
+.logophone {
+    height: 30%;
+}
+
+.logophone2 {
+    height: 25%;
+}
 
 @media only screen 
 and (min-width : 320px) 
@@ -171,6 +178,14 @@ and (max-width : 700px) {
 
     .motto-margin {
         margin-top: 60%;
+    }
+
+    .logophone {
+        height: 15%;
+    }
+
+    .logophone2 {
+        height: 13%;
     }
 
   }
