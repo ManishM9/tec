@@ -84,6 +84,10 @@
     height: 25%;
 }
 
+.boardmovedown {
+    transform: translateY(50%);
+}
+
 @media only screen 
 and (min-width : 320px) 
 and (max-width : 700px) {
@@ -186,6 +190,10 @@ and (max-width : 700px) {
 
     .logophone2 {
         height: 13%;
+    }
+
+    .boardmovedown {
+        transform: translateY(0px);
     }
 
   }
