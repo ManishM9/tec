@@ -217,7 +217,7 @@ and (max-width : 700px) {
     }
 
     .phoneimage {
-        width: 200%;
+        width: 230%;
     }
 
     .trans {
@@ -237,7 +237,7 @@ and (max-width : 700px) {
     }
 
     .maptra {
-        transform: translateY(-25%);
+        transform: translateY(0%);
     }
 
   }
