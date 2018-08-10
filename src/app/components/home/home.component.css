@@ -108,6 +108,10 @@
     transform: translateY(-40%);
 }
 
+.aboutback {
+    width: 100%;
+}
+
 @media only screen 
 and (min-width : 320px) 
 and (max-width : 700px) {
@@ -238,6 +242,10 @@ and (max-width : 700px) {
 
     .maptra {
         transform: translateY(0%);
+    }
+
+    .aboutback {
+        width: 200%;
     }
 
   }
