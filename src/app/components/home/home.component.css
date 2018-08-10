@@ -246,6 +246,7 @@ and (max-width : 700px) {
 
     .aboutback {
         width: 200%;
+        transform: translateX(-20%)
     }
 
   }
