@@ -1024,7 +1024,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
           this.email = "";
           this.message = "";
           this.validate = false;
-          alert("Message Submitted!")
+          alert("Message Submitted!");
         }
       });
     }
@@ -1032,10 +1032,12 @@ export class HomeComponent implements OnInit, AfterViewInit {
       this.validate = true;
       this.phnovalid = true;
     }
-    // if(this.phno.toString().length<8){
-    //   alert("Please enter a valid Phone Number");
-    //   this.phnovalid = true;
-    // }
+    if(this.phno.toString().length<8){
+      // alert("Please enter a valid Phone Number");
+      this.phnovalid = true;
+    } else {
+      this.phnovalid = false;
+    }
   }
 
   ngAfterViewInit() {

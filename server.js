@@ -62,6 +62,15 @@ var itemSchema = new mongoose.Schema({
     images: [String],
 });
 
+var messageSchema = new mongoose.Schema({
+    name: String,
+    phno: Number,
+    email: String,
+    message: String
+});
+
+var Message = mongoose.model("message", messageSchema);
+
 var accountSchema = new mongoose.Schema({
     name: String,
     reg_no: String,
@@ -176,7 +185,17 @@ app.post("/api/message", (req,res) => {
     console.log(reqb);
     if(reqb.name !== "" && reqb.name.length <= 40 && reqb.phno.toString().length >= 8 && reqb.email !== "" && reqb.email.length <=40 && reqb.message !== "" && reqb.message.length <= 150){
         console.log("Validated");
-        res.send(true);
+        Message.create(reqb, (err, obj) => {
+            if(err){
+                console.log(err);
+                throw err;
+            } else {
+                console.log("Message Added");
+                console.log(obj);
+                res.send(true);
+            }
+        });
+        // res.send(true);
     } else {
         console.log("Invalid");
         res.send(false);

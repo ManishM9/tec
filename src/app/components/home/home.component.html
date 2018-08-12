@@ -452,7 +452,7 @@
   <div class="" style="width: 100%; height: 55%; background: white; position: relative; overflow: scroll;">
     <!-- <div class="border border-dark bg-light" style="width: 50px; height: 50px; border: black; border-radius: 50%; position: absolute; margin-left: 48%; transform: translateY(-25px);"></div> -->
     <h2 class="text-dark text-center pt-4" style="font-family: 'Open Sans', sans-serif; font-weight: 100;">Get In Touch</h2>
-    <form class="row mx-auto px-2" style="overflow: scroll;" [ngClass]="validate? 'was-validated': 'needs-validation'" (submit)="onSubmit($event)">
+    <form class="row mx-auto px-2" [ngClass]="validate? 'was-validated': 'needs-validation'" (submit)="onSubmit($event)">
       <div class="col-6 pl-3 pr-1 mx-auto form-group">
         <div class="input-group">
           <span class="input-group-addon fa fa-user"></span>
