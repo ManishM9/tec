@@ -6,6 +6,8 @@ import { element } from '../../../../node_modules/protractor';
 import scrollIntoViewIfNeeded from 'scroll-into-view-if-needed';
 import { resolve } from 'path';
 
+import { EventService } from '../../services/event.service';
+
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -997,11 +999,43 @@ export class HomeComponent implements OnInit, AfterViewInit {
   screensActive = [false,false,false,false,false,false,false,false];
   eventdesState = "null";
   priority: boolean = false;
+  name: string = "";
+  phno: number = null;
+  email: string = "";
+  message: string = "";
+  validate: boolean = false;
+  phnovalid: boolean = false;
   
-  constructor(private renderer: Renderer2) { }
+  constructor(private renderer: Renderer2, private eventService: EventService) { }
 
   ngOnInit() {
     
+  }
+
+  onSubmit(e: any) {
+    e.preventDefault();
+    if(this.name !== "" && this.name.length <= 40 && this.phno.toString().length >= 8 && this.email !== "" && this.email.length <=40 && this.message !== "" && this.message.length <= 150){
+      this.phnovalid = false;
+      this.eventService.postMessage({name: this.name, phno: this.phno, email: this.email, message: this.message}).subscribe(data => {
+        console.log(data);
+        if(data === true){
+          this.name = "";
+          this.phno = null;
+          this.email = "";
+          this.message = "";
+          this.validate = false;
+          alert("Message Submitted!")
+        }
+      });
+    }
+    else {
+      this.validate = true;
+      this.phnovalid = true;
+    }
+    // if(this.phno.toString().length<8){
+    //   alert("Please enter a valid Phone Number");
+    //   this.phnovalid = true;
+    // }
   }
 
   ngAfterViewInit() {

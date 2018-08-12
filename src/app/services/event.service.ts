@@ -24,6 +24,13 @@ export class EventService {
     return this.http.post<Event>("/api/event/post", event, httpOptions);
   }
 
+  postMessage(obj):Observable<any>{
+    const httpOptions = {
+      headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+    };
+    return this.http.post<any>("/api/message", obj, httpOptions);
+  }
+
   // test(){
   //   const httpOptions = {
   //     headers: new HttpHeaders({ 'Content-Type': 'application/json' })

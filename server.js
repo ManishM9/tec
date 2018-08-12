@@ -171,6 +171,18 @@ app.get("/api/event/get/:month/:year", authenticate, (req,res) => {
     });
 });
 
+app.post("/api/message", (req,res) => {
+    var reqb = req.body;
+    console.log(reqb);
+    if(reqb.name !== "" && reqb.name.length <= 40 && reqb.phno.toString().length >= 8 && reqb.email !== "" && reqb.email.length <=40 && reqb.message !== "" && reqb.message.length <= 150){
+        console.log("Validated");
+        res.send(true);
+    } else {
+        console.log("Invalid");
+        res.send(false);
+    }
+})
+
 // Item.find({"date": { $gt: "2018-07-17" }}, (err,events) => {
 //     if(err){
 //         console.log(err);

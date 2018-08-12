@@ -452,30 +452,34 @@
   <div class="" style="width: 100%; height: 55%; background: white; position: relative;">
     <!-- <div class="border border-dark bg-light" style="width: 50px; height: 50px; border: black; border-radius: 50%; position: absolute; margin-left: 48%; transform: translateY(-25px);"></div> -->
     <h2 class="text-dark text-center pt-4" style="font-family: 'Open Sans', sans-serif; font-weight: 100;">Get In Touch</h2>
-    <form class="row mx-auto px-2">
-      <div class="col-6 pl-3 pr-1 mx-auto">
+    <form class="row mx-auto px-2" [ngClass]="validate? 'was-validated': 'needs-validation'" (submit)="onSubmit($event)">
+      <div class="col-6 pl-3 pr-1 mx-auto form-group">
         <div class="input-group">
           <span class="input-group-addon fa fa-user"></span>
-          <input type="text" class="form-control" placeholder="Name">
+          <input type="text" class="form-control" placeholder="Name" [(ngModel)]="name" name="name" required>
+          <small class="invalid-feedback">Please Enter your Name.</small>
         </div>
       </div>
-      <div class="col-6 pr-3 mx-auto">
+      <div class="col-6 pr-3 mx-auto form-group">
         <div class="input-group">
           <span class="input-group-addon">#</span>
-          <input type="number" class="form-control" placeholder="Phone Number">
+          <input type="number" class="form-control" placeholder="Phone Number" [ngClass]="phnovalid? 'is-invalid': ''" minlength=8 [(ngModel)]="phno" name="phno" required>
+          <small class="invalid-feedback">Please Enter a valid Phone Number.</small>
         </div>
       </div>
-      <div class="mt-2 col-sm-12 mx-auto">
+      <div class="mt-2 col-sm-12 mx-auto form-group">
         <div class="input-group">
           <span class="input-group-addon">@</span>
-          <input type="text" class="form-control" placeholder="Mail ID">
+          <input type="email" class="form-control" placeholder="Mail ID" [(ngModel)]="email" name="email" required>
+          <small class="invalid-feedback">Please Enter a valid Email Address.</small>
         </div>
       </div>
       <div class="mt-2">
         <div class="col-md-12">
-          <textarea class="form-control" rows="6" cols="200" placeholder="Message"></textarea>
+          <textarea class="form-control" rows="6" cols="200" placeholder="Message" [(ngModel)]="message" name="message" required></textarea>
+          <small class="invalid-feedback">Please Enter a Message.</small>
         </div>
-        <button class="btn mr-3 mt-2" style="background: rgba(0,0,0,1); color: white; margin-left: auto;">SUBMIT</button>
+        <input type="submit" class="btn mr-3 mt-2" style="background: rgba(0,0,0,1); color: white; margin-left: auto;" value="SUBMIT">
       </div>
       
     </form>
