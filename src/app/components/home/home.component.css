@@ -226,7 +226,7 @@ and (max-width : 700px) {
     }
 
     .phoneimage {
-        width: 260%;
+        width: 300%;
     }
 
     .trans {
@@ -251,7 +251,7 @@ and (max-width : 700px) {
     }
 
     .aboutback {
-        width: 200%;
+        width: 250%;
         transform: translateX(-20%)
     }
 
