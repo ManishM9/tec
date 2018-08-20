@@ -189,7 +189,7 @@ and (max-width : 700px) {
     }
 
     .smallerfont {
-        font-size: 6px;
+        font-size: 5px;
     }
 
     .smallfonti {
@@ -221,7 +221,7 @@ and (max-width : 700px) {
     }
 
     .phoneimage {
-        width: 230%;
+        width: 260%;
     }
 
     .trans {
