@@ -242,6 +242,7 @@ and (max-width : 700px) {
 
     .maptra {
         transform: translateY(0%);
+        height: 100%;
     }
 
     .aboutback {
