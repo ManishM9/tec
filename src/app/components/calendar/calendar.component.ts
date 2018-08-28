@@ -60,8 +60,11 @@ export class CalendarComponent implements OnInit {
   showEvent(e){
     this.currevents.forEach(element => {
       if((new Date(element.date).getDate()) === e){
-        this.currentEvent = !this.currentEvent;
+        // this.currentEvent = !this.currentEvent;
         this.currentEventd = element;
+      }
+      if(this.currentEventd.date === e || this.currentEvent === false){
+        this.currentEvent = !this.currentEvent;
       }
     });
   }

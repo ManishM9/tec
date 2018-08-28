@@ -11,6 +11,8 @@ import { EventService } from './services/event.service';
 import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/login/login.component';
 import { AppRoutingModule } from './/app-routing.module';
+import { Accountform1Component } from './components/accountform1/accountform1.component';
+import { AccountformService } from './services/accountform.service';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,8 @@ import { AppRoutingModule } from './/app-routing.module';
     CalendarComponent,
     EventMakerComponent,
     HomeComponent,
-    LoginComponent
+    LoginComponent,
+    Accountform1Component
   ],
   imports: [
     BrowserModule,
@@ -27,7 +30,7 @@ import { AppRoutingModule } from './/app-routing.module';
     BrowserAnimationsModule,
     AppRoutingModule
   ],
-  providers: [EventService],
+  providers: [EventService, Accountform1Component],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

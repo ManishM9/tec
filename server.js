@@ -130,6 +130,8 @@ app.post("/api/login", (req,res) => {
     // console.log(reqb.username, reqb.password);
     var username_entered = reqb.username;
     Account.find({reg_no: username_entered}, (err, account) => {
+        // console.log(account);
+        account = account[0];
         if(typeof(account) === typeof({})){
             if(account.reg_no === username_entered){
                 req.session.username = account.reg_no;
@@ -182,9 +184,9 @@ app.get("/api/event/get/:month/:year", authenticate, (req,res) => {
 
 app.post("/api/message", (req,res) => {
     var reqb = req.body;
-    console.log(reqb);
+    // console.log(reqb);
     if(reqb.name !== "" && reqb.name.length <= 40 && reqb.phno.toString().length >= 8 && reqb.email !== "" && reqb.email.length <=40 && reqb.message !== "" && reqb.message.length <= 150){
-        console.log("Validated");
+        // console.log("Validated");
         Message.create(reqb, (err, obj) => {
             if(err){
                 console.log(err);
@@ -200,7 +202,16 @@ app.post("/api/message", (req,res) => {
         console.log("Invalid");
         res.send(false);
     }
-})
+});
+
+app.post("/api/accountform1", (req,res) => {
+    var reqb = req.body;
+    console.log(reqb);
+    var regexp = new RegExp(/1[4-7][A-Z][A-Z][A-Z][0-9][0-9][0-9][0-9]/);
+    if(reqb.name.length<30 && reqb.name !== "" && reqb.email.length<30 && reqb.email !== "" && reqb.reg_no.length === 9 && regexp.test(reqb.reg_no)){
+        console.log("Validated");
+    }
+});
 
 // Item.find({"date": { $gt: "2018-07-17" }}, (err,events) => {
 //     if(err){
