@@ -30,7 +30,7 @@ import { AccountformService } from './services/accountform.service';
     BrowserAnimationsModule,
     AppRoutingModule
   ],
-  providers: [EventService, Accountform1Component],
+  providers: [EventService, AccountformService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

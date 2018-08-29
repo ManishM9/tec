@@ -71,6 +71,14 @@ var messageSchema = new mongoose.Schema({
 
 var Message = mongoose.model("message", messageSchema);
 
+var account1Schema = new mongoose.Schema({
+    name: String,
+    email: String,
+    reg_no: String,
+});
+
+var Accountform1 = mongoose.model("accountform1", account1Schema);
+
 var accountSchema = new mongoose.Schema({
     name: String,
     reg_no: String,
@@ -208,8 +216,21 @@ app.post("/api/accountform1", (req,res) => {
     var reqb = req.body;
     console.log(reqb);
     var regexp = new RegExp(/1[4-7][A-Z][A-Z][A-Z][0-9][0-9][0-9][0-9]/);
-    if(reqb.name.length<30 && reqb.name !== "" && reqb.email.length<30 && reqb.email !== "" && reqb.reg_no.length === 9 && regexp.test(reqb.reg_no)){
-        console.log("Validated");
+    if(reqb.name.length<30 && reqb.name !== "" && reqb.email.length<40 && reqb.email !== "" && reqb.reg_no.length === 9 && regexp.test(reqb.reg_no)){
+        // console.log("Validated");
+        Accountform1.create(reqb, (err,obj) => {
+            if(err){
+                console.log(err);
+                res.send(false);
+                throw err;
+            } else {
+                console.log(obj);
+                res.send(true);
+            }
+        });
+    }
+    else {
+        res.send(false);
     }
 });
 

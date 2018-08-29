@@ -1,4 +1,13 @@
-<form (submit)="submit($event)" class="form-group" [ngClass]="validate? 'was-validated': 'needs-validation'">
+<div class="container">
+  <div class="p-3 mt-2 rounded bg-primary">
+    <h3>Rules to be followed:</h3>
+    <ul>
+      <li>Please enter your details correctly.</li>
+      <li>Do not fill twice. <small class="text-muted bg-light rounded px-2">You can't get away with it anyways.</small></li>
+      <li>Treat this form with respect, no DDOS or any such attacks. <small class="text-muted bg-light rounded px-2">If you do so, I'll make you fill it again ¯\_(ツ)_/¯ </small>.</li>
+    </ul>
+  </div>
+  <form (submit)="submit($event)" class="form-group mt-2" [ngClass]="validate? 'was-validated': 'needs-validation'">
 
   <div>
     <label>Name:</label>
@@ -14,10 +23,11 @@
 
   <div class="form-group">
     <label>Reg_No:</label>
-    <input type="text" class="form-control" [(ngModel)]="reg_no" name="reg_no" required>
+    <input type="text" class="form-control" [(ngModel)]="reg_no" [ngClass]="invalid_reg?'is-invalid': 'is-valid'" name="reg_no" required>
     <small class="invalid-feedback">Enter a valid Register Number.</small>
   </div>
 
   <input type="submit" class="btn btn-lg" value="Submit">
 
-</form>
+  </form>
+</div>
