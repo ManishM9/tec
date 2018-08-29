@@ -5,6 +5,50 @@ var bodyparser = require("body-parser");
 var nodecalendar = require("node-calendar");
 var path = require("path");
 var mongoose = require("mongoose");
+var nodemailer = require("nodemailer");
+
+// var transporter = nodemailer.createTransport("SMTP", {
+//     host: "smtp-mail.outlook.com",
+//     secureConnection: false,
+//     port: 587,
+//     auth: {
+//         user: 'webdevs.tec@outlook.com',
+//         pass: 'anshulmalepati69@$$'
+//     },
+//     tls: {
+//         ciphers: 'SSLv3'
+//     }
+// });
+
+// var transport = nodemailer.createTransport("SMTP", {
+//     host: "smtp-mail.outlook.com", // hostname
+//     secureConnection: false, // TLS requires secureConnection to be false
+//     port: 587, // port for secure SMTP
+//     auth: {
+//         user: "webdevs.tec@outlook.com",
+//         pass: "anshulmalepati69@$$"
+//     },
+//     tls: {
+//         ciphers:'SSLv3'
+//     }
+// });
+
+// This is working!!!!
+// var transporter = nodemailer.createTransport("smtp://webdevs.tec%40outlook.com:"+encodeURIComponent('anshulmalepati69@$$') + "@smtp-mail.outlook.com"); 
+
+// const mailOptions = {
+//     from: 'webdevs.tec@outlook.com', // sender address
+//     to: 'ridhasardana318@gmail.com', // list of receivers
+//     subject: 'CONGRATULATIONS!!!!', // Subject line
+//     html: '<h1>Congrats!!!!</h1><p>You\'ve been selected in a lucky draw of one person to get annoyed by Meme Lord Manish!!</p><p>You must be so proud of yourself :D</p>'// plain text body
+// };
+
+// transporter.sendMail(mailOptions, function (err, info) {
+//     if(err)
+//       console.log(err)
+//     else
+//       console.log(info);
+// });
 
 // var event = require('../tec/src/app/models/Event.js');
 
@@ -129,7 +173,7 @@ var authenticate = function(req,res,next){
         next();
     } else {
         console.log("-1");
-        res.send("-1");
+        res.send(false);
     }
 }
 
@@ -141,7 +185,7 @@ app.post("/api/login", (req,res) => {
         // console.log(account);
         account = account[0];
         if(typeof(account) === typeof({})){
-            if(account.reg_no === username_entered){
+            if(account.reg_no === username_entered && account.password === reqb.password){
                 req.session.username = account.reg_no;
                 req.session.yearite = account.yearite;
                 req.session.clearance = account.clearance;
@@ -154,6 +198,14 @@ app.post("/api/login", (req,res) => {
     
     // res.send(true);
 });
+
+app.get("/api/loginch", authenticate, (req,res) => {
+    if(req.session.username !== undefined && req.session.username !== ''){
+        if(req.session.clearance === 'admin'){
+            res.send(true);
+        }
+    }
+})
 
 app.post("/api/event/post", authenticate, (req,res) => {
     var rbody = req.body;
@@ -228,6 +280,21 @@ app.post("/api/accountform1", (req,res) => {
                 res.send(true);
             }
         });
+    }
+    else {
+        res.send(false);
+    }
+});
+
+app.post("/api/acp", authenticate, (req,res) => {
+    var reqb = req.body;
+    if(reqb.doit){
+        if(req.session.clearance === 'admin'){
+            console.log("ACCOUNT CREATION PROTOCOL INITIATED");
+            res.send(true);
+        } else {
+            res.send(false);
+        }
     }
     else {
         res.send(false);

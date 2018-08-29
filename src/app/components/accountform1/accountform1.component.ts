@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 
 import { AccountformService } from '../../services/accountform.service';
+import { LoginService } from '../../services/login.service';
+import { AdminService } from '../../services/admin.service';
+import { Observable } from '../../../../node_modules/rxjs';
 
 @Component({
   selector: 'app-accountform1',
@@ -13,10 +16,23 @@ export class Accountform1Component implements OnInit {
   name: string = "";
   email: string = "";
   reg_no: string = "";
+  admin: boolean = false;
 
-  constructor(private accountFromService: AccountformService) { }
+  constructor(private accountFromService: AccountformService, private loginService: LoginService, private adminService: AdminService) { }
 
   ngOnInit() {
+    this.loginService.getLogin().subscribe(data => {
+      // console.log(data);
+      this.admin = data;
+    })
+  }
+
+  acp(){
+    this.adminService.acp().subscribe(data => {
+      if(data){
+        console.log("ACP Initiated");
+      }
+    });
   }
 
   submit(e: any){

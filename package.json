@@ -30,6 +30,7 @@
     "mongod": "^2.0.0",
     "mongoose": "^5.2.3",
     "node-calendar": "^0.1.5",
+    "nodemailer": "^4.6.8",
     "popper.js": "^1.14.3",
     "rxjs": "^6.0.0",
     "scroll-into-view-if-needed": "^2.2.16",

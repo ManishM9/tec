@@ -18,4 +18,8 @@ export class LoginService {
     return this.http.post<any>("/api/login", { username: username, password: password }, httpOptions);
   }
 
+  getLogin(): Observable<boolean>{
+    return this.http.get<any>("/api/loginch");
+  }
+
 }

@@ -13,6 +13,8 @@ import { LoginComponent } from './components/login/login.component';
 import { AppRoutingModule } from './/app-routing.module';
 import { Accountform1Component } from './components/accountform1/accountform1.component';
 import { AccountformService } from './services/accountform.service';
+import { AdminService } from './services/admin.service';
+import { SensoredComponent } from './components/sensored/sensored.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +23,8 @@ import { AccountformService } from './services/accountform.service';
     EventMakerComponent,
     HomeComponent,
     LoginComponent,
-    Accountform1Component
+    Accountform1Component,
+    SensoredComponent
   ],
   imports: [
     BrowserModule,
@@ -30,7 +33,7 @@ import { AccountformService } from './services/accountform.service';
     BrowserAnimationsModule,
     AppRoutingModule
   ],
-  providers: [EventService, AccountformService],
+  providers: [EventService, AccountformService, AdminService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
