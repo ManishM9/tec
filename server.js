@@ -34,11 +34,11 @@ var nodemailer = require("nodemailer");
 // });
 
 // This is working!!!!
-// var transporter = nodemailer.createTransport("smtp://webdevs.tec%40outlook.com:"+encodeURIComponent('anshulmalepati69@$$') + "@smtp-mail.outlook.com"); 
+var transporter = nodemailer.createTransport("smtp://webdevs.tec%40outlook.com:"+encodeURIComponent('anshulmalepati69@$$') + "@smtp-mail.outlook.com"); 
 
 // const mailOptions = {
 //     from: 'webdevs.tec@outlook.com', // sender address
-//     to: 'ridhasardana318@gmail.com', // list of receivers
+//     to: ['sheetymanish@gmail.com', 'mr.malepati@gmail.com'], // list of receivers
 //     subject: 'CONGRATULATIONS!!!!', // Subject line
 //     html: '<h1>Congrats!!!!</h1><p>You\'ve been selected in a lucky draw of one person to get annoyed by Meme Lord Manish!!</p><p>You must be so proud of yourself :D</p>'// plain text body
 // };
@@ -122,6 +122,33 @@ var account1Schema = new mongoose.Schema({
 });
 
 var Accountform1 = mongoose.model("accountform1", account1Schema);
+
+// Accountform1.find({}, (err, accounts) => {
+//     if(err){
+//         console.log(err);
+//         throw err;
+//     } else {
+//         var tos = [];
+//         accounts.forEach(account => {
+//             tos.push(account.email);
+//         });
+//         console.log(tos);
+//         const mailOptions = {
+//             from: 'webdevs.tec@outlook.com',
+//             to: tos,
+//             subject: 'Testing Mail for mass spam',
+//             html:'<h2 style=\"text-align: center;\">Sensored:</h2><p style=\"text-align: center;\">Sensored is a graVITas Workshop.It is a very awesome workshop, you not only get to learn but also apply, and practice and also get to talk to industrial experts</p><p>Please inform if this mail came in spam or normal Inbox.</p><br><br><br><h6>~XD</h6>',
+//         }
+//         transporter.sendMail(mailOptions, (err, info) => {
+//             if(err){
+//                 console.log(err);
+//                 throw err;
+//             } else {
+//                 console.log(info);
+//             }
+//         });
+//     }
+// });
 
 var accountSchema = new mongoose.Schema({
     name: String,
