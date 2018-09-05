@@ -123,6 +123,54 @@ var account1Schema = new mongoose.Schema({
 
 var Accountform1 = mongoose.model("accountform1", account1Schema);
 
+// APP====APP====APP====APP====APP====APP====APP====APP===APP
+
+var accountSchema_app = mongoose.Schema({
+    username: String,
+    password: String,
+    fname: String,
+    lname: String,
+    phno: Number,
+    email: String,
+    gender: String,
+    regno: String,
+    inteam: Boolean,
+    teamno: Number,
+});
+
+var Account_app = mongoose.model("app_account", accountSchema_app);
+
+var loginSchema_app = mongoose.Schema({
+    username: String,
+    password: String,
+});
+
+var Login_app = mongoose.model("app_login", loginSchema_app);
+
+var teamSchema_app = mongoose.Schema({
+    teamno: Number,
+    members: [{
+        username: String,
+        fname: String,
+        lname: String,
+        phno: Number,
+        email: String,
+        gender: String,
+        regno: String,
+    }],
+});
+
+var Team_app = mongoose.model("app_team", teamSchema_app);
+
+var distressSchema_app = mongoose.Schema({
+    teamno: Number,
+    pressedby: String,
+});
+
+var Distress_app = mongoose.model("app_distress", distressSchema_app);
+
+// APP====APP====APP====APP====APP====APP====APP====APP===APP
+
 // Accountform1.find({}, (err, accounts) => {
 //     if(err){
 //         console.log(err);
@@ -337,6 +385,321 @@ app.post("/api/acp", authenticate, (req,res) => {
 //     }
 // });
 // YAAAYYY!!!!
+
+
+
+// APP====APP====APP====APP====APP====APP====APP====APP===APP
+
+app.post("/apiapp/login", (req,res) => {
+    var reqb = req.body;
+    var username = reqb.username;
+    var password = reqb.password;
+    var app = reqb.app;
+    Login_app.find({ username: username }, (err, login) => {
+        login = login[0];
+        if(err){
+            console.log(err);
+            throw err;
+            res.send({
+                authenticated: false,
+                chastity: false,
+            });
+        } else if(login !== undefined) {
+            if(login.password === password){
+                Account_app.find({ username: username }, (err1, account) => {
+                    if(err){
+                        console.log(err1);
+                        throw err1;
+                    } else {
+                        if(account.password === password){
+                            res.send({
+                                authenticated: true,
+                                chastity: false,
+                            });
+                        } else {
+                            res.send({
+                                authenticated: true,
+                                chastity: true,
+                            });
+                        }
+                    }
+                });
+            } else {
+                res.send({
+                    authenticated: false,
+                    chastity: false,
+                });
+            }
+        } else {
+            res.send({
+                authenticated: false,
+                chastity: false,
+            });
+        }
+    });
+});
+
+app.post("/apiapp/formsubmit", (req,res) => {
+    var reqb = req.body;
+    var username = reqb.username;
+    var password = reqb.password;
+    Login_app.find({ username: username }, (err,login) => {
+        login = login[0];
+        if(err){
+            console.log(err);
+            throw err;
+            res.send({
+                processed: false,
+                dberror: true,
+            });
+        } else if(login !== undefined){
+            if(login.password === password){
+                Account_app.find({ username: username }, (err, account) => {
+                    if(err){
+                        console.log(err);
+                        throw err;
+                        res.send({
+                            processed: false,
+                            dberror: true,
+                        });
+                    } else {
+                        if(account.password === password){
+                            res.send({
+                                processed: false,
+                                dberror: false,
+                            });
+                        } else {
+                            var fname = reqb.fname;
+                            var lname = reqb.lname;
+                            var phno = reqb.phno;
+                            var email = reqb.email;
+                            var gender = reqb.gender;
+                            var regno = reqb.regno;
+                            var regexp = new RegExp(/1[4-8][A-Z][A-Z][A-Z][0-9][0-9][0-9][0-9]/);
+                            if(regexp.test(regno)){
+                                Account_app.create({
+                                    username: username,
+                                    password: password,
+                                    fname: fname,
+                                    lname: lname,
+                                    phno: phno,
+                                    email: email,
+                                    gender: gender,
+                                    regno: regno,
+                                    inteam: false,
+                                    teamno: -1,
+                                }, (err,obj) => {
+                                    if(err){
+                                        console.log(err);
+                                        throw err;
+                                        res.send({
+                                            processed: false,
+                                            dberror: true,
+                                        });
+                                    } else {
+                                        console.log(obj);
+                                        res.send({
+                                            processed: true,
+                                            dberror: false
+                                        });
+                                    }
+                                });
+                            }
+                        }
+                    }
+                });
+            } else {
+                res.send({
+                    processed: false,
+                    dberror: false,
+                })
+            }
+        } else {
+            res.send({
+                processed: false,
+                dberror: false,
+            });
+        }
+    });
+});
+
+app.post("/apiapp/getaccount", (req,res) => {
+    var reqb = req.body;
+    var username = reqb.username;
+    var password = reqb.password;
+    Account_app.find({ username: username }, (err, account) => {
+        account = account[0];
+        if(err){
+            console.log(err);
+            throw err;
+            res.send({
+                valid: false,
+                dberror: true,
+            });
+        } else if(account !== undefined){
+            if(account.password === password){
+                var acc_tosend = {
+                    valid: true,
+                    username: account.username,
+                    fname: account.fname,
+                    lname: account.lname,
+                    phno: account.phno,
+                    email: account.email,
+                    gender: account.gender,
+                    regno: account.regno,
+                };
+                res.send(acc_tosend);
+            } else {
+                res.send({
+                    valid: false,
+                });
+            }
+        } else {
+            res.send({
+                valid: false,
+            });
+        }
+    });
+});
+
+app.post("/apiapp/teamdet", (req,res) => {
+    var reqb = req.body;
+    var username = reqb.username;
+    var password = reqb.password;
+    Account_app.find({ username: username }, (err, account) => {
+        account = account[0];
+        if(err){
+            console.log(err);
+            throw err;
+            res.send({
+                inteam: false,
+                dberror: true,
+            });
+        } else if(account !== undefined){
+            if(account.password === password){
+                var teamno = account.teamno;
+                Team_app.find({ teamno: teamno }, (err, team) => {
+                    if(err){
+                        console.log(err);
+                        throw err;
+                        res.send({
+                            inteam: false,
+                            dberror: true,
+                        });
+                    } else {
+                        var team_tosend = {
+                            teamno: teamno,
+                            members: team.members,
+                            inteam: true,
+                        };
+                        res.send(team_tosend);
+                    }
+                });
+            } else {
+                res.send({
+                    inteam: false,
+                });
+            }
+        }
+    });
+});
+
+app.post("/apiapp/distresscheck", (req,res) => {
+    var reqb = req.body;
+    var username = reqb.username;
+    var password = reqb.password;
+    Account_app.find({ username: username }, (err, account) => {
+        account = account[0];
+        if(err){
+            console.log(err);
+            throw err;
+            res.send({
+                status: false,
+                dberror: true,
+            });
+        } else if(account !== undefined){
+            if(account.password === password){
+                var teamno = account.teamno;
+                Distress_app.find({ teamno: teamno }, (err, distress) => {
+                    if(err){
+                        console.log(err);
+                        throw err;
+                        res.send({
+                            status: false,
+                            dberror: true,
+                        });
+                    } else {
+                        if(distress.teamno === teamno){
+                            res.send({
+                                status: true,
+                            });
+                        } else {
+                            res.send({
+                                status: false,
+                            });
+                        }
+                    }
+                });
+            } else {
+                res.send({
+                    status: false,
+                });
+            }
+        } else {
+            res.send({
+                status: false,
+            });
+        }
+    });
+});
+
+app.post("/apiapp/distresspressed", (req,res) => {
+    var reqb = req.body;
+    var username = reqb.username;
+    var password = reqb.password;
+    Account_app.find({ username: username }, (err, account) => {
+        account = account[0];
+        if(err){
+            console.log(err);
+            throw err;
+            res.send({
+                status: false,
+                dberror: true,
+            });
+        } else if(account !== undefined){
+            if(account.password === password){
+                Distress_app.create({
+                    teamno: account.teamno,
+                    pressedby: username,
+                }, (err, distress) => {
+                    if(err){
+                        console.log(err);
+                        throw err;
+                        res.send({
+                            status: false,
+                        });
+                    } else {
+                        res.send({
+                            status: true,
+                        });
+                    }
+                });
+            }
+        } else {
+            res.send({
+                status: false,
+            });
+        }
+    });
+})
+
+// APP====APP====APP====APP====APP====APP====APP====APP===APP
+
+
+
+
+
+
 
 
 

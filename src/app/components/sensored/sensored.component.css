@@ -11,5 +11,9 @@ and (max-width : 700px)  {
         font-size: 8px;
     }
 
+    .smallfonth {
+        font-size: 12px;
+    }
+
 
 }
