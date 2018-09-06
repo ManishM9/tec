@@ -147,6 +147,15 @@ var loginSchema_app = mongoose.Schema({
 
 var Login_app = mongoose.model("app_login", loginSchema_app);
 
+// Login_app.create({ username: "sample2", password: "password2" }, (err, login) => {
+//     if(err){
+//         console.log(err);
+//         throw err;
+//     } else {
+//         console.log(login);
+//     }
+// });
+
 var teamSchema_app = mongoose.Schema({
     teamno: Number,
     members: [{
@@ -392,6 +401,7 @@ app.post("/api/acp", authenticate, (req,res) => {
 
 app.post("/apiapp/login", (req,res) => {
     var reqb = req.body;
+    console.log(reqb);
     var username = reqb.username;
     var password = reqb.password;
     var app = reqb.app;
