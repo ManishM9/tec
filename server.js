@@ -417,10 +417,11 @@ app.post("/apiapp/login", (req,res) => {
         } else if(login !== undefined) {
             if(login.password === password){
                 Account_app.find({ username: username }, (err1, account) => {
+                    account = account[0];
                     if(err){
                         console.log(err1);
                         throw err1;
-                    } else {
+                    } else if(account !== undefined){
                         if(account.password === password){
                             res.send({
                                 authenticated: true,
