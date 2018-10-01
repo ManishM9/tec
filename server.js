@@ -6,6 +6,7 @@ var nodecalendar = require("node-calendar");
 var path = require("path");
 var mongoose = require("mongoose");
 var nodemailer = require("nodemailer");
+var fs = require("fs");
 
 // var transporter = nodemailer.createTransport("SMTP", {
 //     host: "smtp-mail.outlook.com",
@@ -38,9 +39,13 @@ var transporter = nodemailer.createTransport("smtp://webdevs.tec%40outlook.com:"
 
 // const mailOptions = {
 //     from: 'webdevs.tec@outlook.com', // sender address
-//     to: ['sheetymanish@gmail.com', 'mr.malepati@gmail.com'], // list of receivers
-//     subject: 'CONGRATULATIONS!!!!', // Subject line
-//     html: '<h1>Congrats!!!!</h1><p>You\'ve been selected in a lucky draw of one person to get annoyed by Meme Lord Manish!!</p><p>You must be so proud of yourself :D</p>'// plain text body
+//     bcc: ['aman.bagaria2016@vitstudent.ac.in', 'mr.malepati@gmail.com', 'ridha.sardana2016@vitstudent.ac.in', 'arjun.sengupta2016@vitstudent.ac.in', 'viveka.varma2016@vitstudent.ac.in'], // list of receivers
+//     subject: 'Regarding SENSORED 2018', // Subject line
+//     html: 'Greetings from <strong>The Electronics Club of VIT (TEC)</strong>. The wait for the 4th edition of our technical workshop SENSORED is finally over. </br></br>The venue of the workshop has been changed to Homi Bhabha Gallery in Silver Jubilee Tower (4th floor.) </br></br>The workshop is being conducted on 2 days <strong>8th and 9th of September from 8:00a.m. to 6:00p.m on both the days</strong>.</br> Kindly report to the venue at <strong>7:45.a.m. on 8th of September</strong> with charged laptops and pendrives.</br></br> No prior knowledge or anything is required. Everything will be provided at the workshop including the required softwares and hardware components kit. </br>Snacks will be provided at the venue.Breaks for lunch will also be provided. </br></br>Kindly download the Arduino software from this link:- https://drive.google.com/file/d/1Ro-cvfTw0-f5cDjfZsIGQnC1Hm4Eq97q/view?usp=sharing for MAC, and https://drive.google.com/file/d/13vracme60gRQCc4VwG5lVaY8xgR0tlHF/view?usp=sharing for Windows </br></br></br>Participants carry a screenshot of "GATE ENTRY PASS" with you, which will be checked at the entrance. Attendance will be taken on both the days of the workshop.Make sure you attend all the sessions to be eligible for the participation certificate. Everyone will be divided in teams of 4. For those who do not have a team will be provided with a team on spot. </br>A Glimpse into <strong>SENSORED 2K18</strong> :- </br>1)Starting from basics, covering in depth knowledge on sensors and their interfacing with Arduino. </br>2) Ground based for IOT implementation and the working of a bluetooth module with an app. </br>3) Hands on Implementation of the above theoretical concepts and detailed explanation of codes. </br></br>Follow us on facebook:-  https://www.facebook.com/tec.vit/  </br></br>Website:-   http://www.tecvit.co.in/ ',// plain text body
+//     attachments: [{
+//         filename: 'sensoredpromo2.jpg',
+//         content: fs.createReadStream(__dirname + '\\src\\assets\\images\\sensoredpromo2.jpg'),
+//     }],
 // };
 
 // transporter.sendMail(mailOptions, function (err, info) {
@@ -49,6 +54,95 @@ var transporter = nodemailer.createTransport("smtp://webdevs.tec%40outlook.com:"
 //     else
 //       console.log(info);
 // });
+
+// fs.readFile(__dirname + '\\src\\assets\\jsonemails.json', (err, fileContent) => {
+//     if( err ) {
+//     } else {
+//       data = JSON.parse(fileContent);
+//       //   console.log(data);
+//       var emails = [];  
+//       //   console.log(data[0].G);
+//       for(var i=1; i<data.length;i++){
+//         emails.push(data[i].G);
+//       }
+//       console.log(emails);
+//       emails.push('subhamthirani@gmail.com');
+//       emails.push('mr.malepati@gmail.com');
+//     //   emails.push('divesh2198@gmail.com');
+
+//       console.log(emails.length);
+
+//       for(var i=0;i<10;i++){
+//           var tempemails = [];
+//         for(var j=0;j<25;j++){
+//             var temp = i*25;
+//             // console.log(temp+j);
+//             tempemails.push(emails[temp+j]);
+//         }
+//         console.log(tempemails);
+//         // const mailOptions = {
+//         //     from: 'webdevs.tec@outlook.com', // sender address
+//         //     bcc: tempemails, //['aman.bagaria2016@vitstudent.ac.in', 'mr.malepati@gmail.com', 'ridha.sardana2016@vitstudent.ac.in', 'arjun.sengupta2016@vitstudent.ac.in', 'viveka.varma2016@vitstudent.ac.in'], // list of receivers
+//         //     subject: 'Regarding SENSORED 2018', // Subject line
+//         //     html: 'Greetings from <strong>The Electronics Club of VIT (TEC)</strong>. The wait for the 4th edition of our technical workshop SENSORED is finally over. </br></br>The venue of the workshop has been changed to Homi Bhabha Gallery in Silver Jubilee Tower (4th floor.) </br></br>The workshop is being conducted on 2 days <strong>8th and 9th of September from 8:00a.m. to 6:00p.m on both the days</strong>.</br> Kindly report to the venue at <strong>7:45.a.m. on 8th of September</strong> with charged laptops and pendrives.</br></br> No prior knowledge or anything is required. Everything will be provided at the workshop including the required softwares and hardware components kit. </br>Snacks will be provided at the venue.Breaks for lunch will also be provided. </br></br>Kindly download the Arduino software from this link:- https://drive.google.com/file/d/1Ro-cvfTw0-f5cDjfZsIGQnC1Hm4Eq97q/view?usp=sharing for MAC, and https://drive.google.com/file/d/13vracme60gRQCc4VwG5lVaY8xgR0tlHF/view?usp=sharing for Windows </br></br></br>Participants carry a screenshot of "GATE ENTRY PASS" with you, which will be checked at the entrance. Attendance will be taken on both the days of the workshop.Make sure you attend all the sessions to be eligible for the participation certificate. Everyone will be divided in teams of 4. For those who do not have a team will be provided with a team on spot. </br>A Glimpse into <strong>SENSORED 2K18</strong> :- </br>1)Starting from basics, covering in depth knowledge on sensors and their interfacing with Arduino. </br>2) Ground based for IOT implementation and the working of a bluetooth module with an app. </br>3) Hands on Implementation of the above theoretical concepts and detailed explanation of codes. </br></br>Follow us on facebook:-  https://www.facebook.com/tec.vit/  </br></br>Website:-   http://www.tecvit.co.in/ ',// plain text body
+//         //     attachments: [{
+//         //         filename: 'sensoredpromo2.jpg',
+//         //         content: fs.createReadStream(__dirname + '\\src\\assets\\images\\sensoredpromo2.jpg'),
+//         //     }],
+//         // };
+        
+//         // transporter.sendMail(mailOptions, function (err, info) {
+//         //     if(err)
+//         //       console.log(err)
+//         //     else
+//         //       console.log(info);
+//         // });
+//       }
+
+    //   const mailOptions = {
+    //     from: 'webdevs.tec@outlook.com', // sender address
+    //     bcc: emails,//['aman.bagaria2016@vitstudent.ac.in', 'mr.malepati@gmail.com', 'ridha.sardana2016@vitstudent.ac.in', 'arjun.sengupta2016@vitstudent.ac.in', 'viveka.varma2016@vitstudent.ac.in'], // list of receivers
+    //     subject: 'Regarding SENSORED 2018', // Subject line
+    //     html: 'Greetings from <strong>The Electronics Club of VIT (TEC)</strong>. The wait for the 4th edition of our technical workshop SENSORED is finally over. </br></br>The venue of the workshop has been changed to Homi Bhabha Gallery in Silver Jubilee Tower (4th floor.) </br></br>The workshop is being conducted on 2 days <strong>8th and 9th of September from 8:00a.m. to 6:00p.m on both the days</strong>.</br> Kindly report to the venue at <strong>7:45.a.m. on 8th of September</strong> with charged laptops and pendrives.</br></br> No prior knowledge or anything is required. Everything will be provided at the workshop including the required softwares and hardware components kit. </br>Snacks will be provided at the venue.Breaks for lunch will also be provided. </br></br>Kindly download the Arduino software from this link:- https://drive.google.com/file/d/1Ro-cvfTw0-f5cDjfZsIGQnC1Hm4Eq97q/view?usp=sharing for MAC, and https://drive.google.com/file/d/13vracme60gRQCc4VwG5lVaY8xgR0tlHF/view?usp=sharing for Windows </br></br></br>Participants carry a screenshot of "GATE ENTRY PASS" with you, which will be checked at the entrance. Attendance will be taken on both the days of the workshop.Make sure you attend all the sessions to be eligible for the participation certificate. Everyone will be divided in teams of 4. For those who do not have a team will be provided with a team on spot. </br>A Glimpse into <strong>SENSORED 2K18</strong> :- </br>1)Starting from basics, covering in depth knowledge on sensors and their interfacing with Arduino. </br>2) Ground based for IOT implementation and the working of a bluetooth module with an app. </br>3) Hands on Implementation of the above theoretical concepts and detailed explanation of codes. </br></br>Follow us on facebook:-  https://www.facebook.com/tec.vit/  </br></br>Website:-   http://www.tecvit.co.in/ ',// plain text body
+    //     attachments: [{
+    //         filename: 'sensoredpromo2.jpg',
+    //         content: fs.createReadStream(__dirname + '\\src\\assets\\images\\sensoredpromo2.jpg'),
+    //     }],
+    //   };
+    
+    // transporter.sendMail(mailOptions, function (err, info) {
+    //     if(err)
+    //       console.log(err)
+    //     else
+    //       console.log(info);
+    // });
+
+
+//     }
+// })
+
+
+
+// const mailOptions = {
+//     from: 'webdevs.tec@outlook.com', // sender address
+//     bcc: "mr.malepati@gmail.com",//["principal@bvrit.ac.in","bhagatpoly303@gmail.com","b.suri670@gmail.com","kamakshi.cet@gmail.com","mchrao777@gmail.com","sureshnadi@gmail.com","bhagavatrao123@gmail.com","aljapur_srinivas@rediff.com","drdomal@gmail.com","principal@kitw.ac.in","vrec.29.nzb@gmail.com","vikramom2007@gmail.com","amrutha.latha@gmail.com","inf0@asti.edu.in","principalblraju@gmail.com","avn.principal@yahoo.com","principal.kitswgl@gmail.com","sbitprincipalwgl@gmail.com","sbit.009@gmail.com"], //[ "dsnandavedas@gmail.com","khaja1491@gmail.com","gopalreddy@nigamacollege.com","principal@nigamacollege.com","rameshrmuddasani@gmail.com","kits.kmm@gmail.com","mes_mim@yahoo.in","mespasha@yahoo.in","svits1998@gmail.com","visit2008uh@gmail.com","rpraopasala@gmail.com","krishna_indur@yahoo.co.in" ],//["mr.malepati@gmail.com",'ridha.sardana2016@vitstudent.ac.in'],//['aman.bagaria2016@vitstudent.ac.in', 'mr.malepati@gmail.com', 'ridha.sardana2016@vitstudent.ac.in', 'arjun.sengupta2016@vitstudent.ac.in', 'viveka.varma2016@vitstudent.ac.in'], // list of receivers
+//     subject: 'Embed 4.0', // Subject line
+//     html: 'Respected Sir/Mam,<br><br>We kindly request you to forward this mail to all your students. <br><br><br>Dear Students,<br><br>We invite you all to VIT\'s 10th edition of its annual, technical and design carnival GraVITas 2018 which aims to empower the young minds by giving them a national platform to showcase their genius and innovation. The Technical festival is spread over 3 days with over 100 events, 50 workshops with over 30,000 footfall.<br><br>This GraVITas is a better version of its previous editions which can be reinstated by the theme \"Technologies for the non Technologists\"<br><br>We, The Electronics Club of VIT , present to you it\'s premium workshop being held during this GraVITas.The Electronics Club of VIT is organizing an EMBED 4.0. Workshop in collaboration with Enthutech Technology on the October 2nd, 2018. It is a one day workshop in which we will be dealing with PCB Fabrication.<br><br>PCBs aka printed circuit boards plays an very important role in making our circuits smaller, which is a very important aspect of modern electronics.<br><br>Grab this opportunity and hone your skills and ability to fabricate compact circuits and systems. <br><br>Outcomes of the workshop:<br>Fabrication of circuits manually<br>Exposure to software like EAGLE to design circuits which can be fabricated as PCBs<br>Take away equipment kits <br>Exposure to Industrial PCB prototyping machine by Enthu Technology.  <br><br>Certificates will be provided for the workshop from GraVITas.<br><br>We cordially invite you to our technical workshops.<br><br>The registration cost is Rs.300 for EMBED 4.0<br>The link to register online is given below:<br><br>http://info.vit.ac.in/gravitas18/gravitas/gravitas_login.asp<br><br>You will be required to register yourself in the portal by clicking \'non vitian\' and filling up the registration form. After which you can login onto the same link and register for the events. <br><br>For any further queries you can contact the undersigned.<br><br>Event Coordinator<br>Embed 4.0:<br>Name: Gokul S <br>Contact: 8608121897<br>Email: gokul.s2016@vitstudent.ac.in<br>Website link: www.tecvit.co.in',// plain text body
+//     attachments: [{
+//         filename: 'embed4.0.jpg',
+//         content: fs.createReadStream(__dirname + '\\src\\assets\\images\\embed4.0.jpg'),
+//     }],
+//   };
+
+// transporter.sendMail(mailOptions, function (err, info) {
+//     if(err)
+//       console.log(err)
+//     else
+//       console.log(info);
+// });
+
+
+
 
 // var event = require('../tec/src/app/models/Event.js');
 
@@ -67,8 +161,9 @@ app.use(session({
     resave: false,
     saveUninitialized: true,
     username: undefined,
-    yearite: 0,
-    clearance: ''
+    // yearite: 0,
+    // clearance: ''
+    teamno: 0,
 }));
 
 app.use(express.static(path.join(__dirname, 'dist/tec')));
@@ -81,7 +176,7 @@ conn.on('error', () => {
 });
 conn.on('open', () => {
     console.log("Connection established to mlab");
-})
+});
 
 var EventPerson = {
     name: String,
@@ -125,58 +220,58 @@ var Accountform1 = mongoose.model("accountform1", account1Schema);
 
 // APP====APP====APP====APP====APP====APP====APP====APP===APP
 
-var accountSchema_app = mongoose.Schema({
-    username: String,
-    password: String,
-    fname: String,
-    lname: String,
-    phno: Number,
-    email: String,
-    gender: String,
-    regno: String,
-    inteam: Boolean,
-    teamno: Number,
-});
-
-var Account_app = mongoose.model("app_account", accountSchema_app);
-
-var loginSchema_app = mongoose.Schema({
-    username: String,
-    password: String,
-});
-
-var Login_app = mongoose.model("app_login", loginSchema_app);
-
-// Login_app.create({ username: "sample2", password: "password2" }, (err, login) => {
-//     if(err){
-//         console.log(err);
-//         throw err;
-//     } else {
-//         console.log(login);
-//     }
+// var accountSchema_app = mongoose.Schema({
+//     username: String,
+//     password: String,
+//     fname: String,
+//     lname: String,
+//     phno: Number,
+//     email: String,
+//     gender: String,
+//     regno: String,
+//     inteam: Boolean,
+//     teamno: Number,
 // });
 
-var teamSchema_app = mongoose.Schema({
-    teamno: Number,
-    members: [{
-        username: String,
-        fname: String,
-        lname: String,
-        phno: Number,
-        email: String,
-        gender: String,
-        regno: String,
-    }],
-});
+// var Account_app = mongoose.model("app_account", accountSchema_app);
 
-var Team_app = mongoose.model("app_team", teamSchema_app);
+// var loginSchema_app = mongoose.Schema({
+//     username: String,
+//     password: String,
+// });
 
-var distressSchema_app = mongoose.Schema({
-    teamno: Number,
-    pressedby: String,
-});
+// var Login_app = mongoose.model("app_login", loginSchema_app);
 
-var Distress_app = mongoose.model("app_distress", distressSchema_app);
+// // Login_app.create({ username: "sample2", password: "password2" }, (err, login) => {
+// //     if(err){
+// //         console.log(err);
+// //         throw err;
+// //     } else {
+// //         console.log(login);
+// //     }
+// // });
+
+// var teamSchema_app = mongoose.Schema({
+//     teamno: Number,
+//     members: [{
+//         username: String,
+//         fname: String,
+//         lname: String,
+//         phno: Number,
+//         email: String,
+//         gender: String,
+//         regno: String,
+//     }],
+// });
+
+// var Team_app = mongoose.model("app_team", teamSchema_app);
+
+// var distressSchema_app = mongoose.Schema({
+//     teamno: Number,
+//     pressedby: String,
+// });
+
+// var Distress_app = mongoose.model("app_distress", distressSchema_app);
 
 // APP====APP====APP====APP====APP====APP====APP====APP===APP
 
@@ -251,6 +346,9 @@ var Item = mongoose.model("event", itemSchema);
 //     }
 // });
 
+
+
+// 666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666
 var authenticate = function(req,res,next){
     if(req.session.username !== undefined && req.session.username !== ''){
         console.log("Next");
@@ -313,7 +411,8 @@ app.get("/api/event/get/:month/:year", authenticate, (req,res) => {
     var month = Number(req.params.month) +1;
     var year  = Number(req.params.year);
     console.log(month, year);
-    Item.find({"date": { $gt:year+"-"+month+"-1"}, "date": { $lte:year+"-"+month+"-31" } }, (err,events) => {
+    // Item.find({"date": { $gt:year+"-"+month+"-1"}, "date": { $lte:year+"-"+month+"-31" } }, (err,events) => {
+    Item.find({"date": { $gt:year+"-"+month+"-1" ,$lte:year+"-"+month+"-31" } }, (err,events) => {
         if(err){
             console.log(err);
             throw err;
@@ -325,6 +424,8 @@ app.get("/api/event/get/:month/:year", authenticate, (req,res) => {
         // console.log(events);
     });
 });
+
+// 666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666
 
 app.post("/api/message", (req,res) => {
     var reqb = req.body;
@@ -399,310 +500,244 @@ app.post("/api/acp", authenticate, (req,res) => {
 
 // APP====APP====APP====APP====APP====APP====APP====APP===APP
 
-app.post("/apiapp/login", (req,res) => {
-    var reqb = req.body;
-    console.log(reqb);
-    var username = reqb.username;
-    var password = reqb.password;
-    var app = reqb.app;
-    Login_app.find({ username: username }, (err, login) => {
-        login = login[0];
-        if(err){
-            console.log(err);
-            throw err;
-            res.send({
-                authenticated: false,
-                chastity: false,
-            });
-        } else if(login !== undefined) {
-            if(login.password === password){
-                Account_app.find({ username: username }, (err1, account) => {
-                    account = account[0];
-                    if(err){
-                        console.log(err1);
-                        throw err1;
-                    } else if(account !== undefined){
-                        if(account.password === password){
-                            res.send({
-                                authenticated: true,
-                                chastity: false,
-                            });
-                        } else {
-                            res.send({
-                                authenticated: true,
-                                chastity: true,
-                            });
-                        }
-                    }
-                });
-            } else {
-                res.send({
-                    authenticated: false,
-                    chastity: false,
-                });
-            }
-        } else {
-            res.send({
-                authenticated: false,
-                chastity: false,
-            });
-        }
-    });
-});
+// app.post("/apiapp/login", (req,res) => {
+//     var reqb = req.body;
+//     var username = reqb.username;
+//     var password = reqb.password;
+//     var authenticated = false;
+//     if(!(req.session.username !== undefined && req.session.username !== '')){
+//         res.send(false);
+//     } else {
+//     Login_app.find({ username: username }, (err, login) => {
+//         login = login[0];
+//         if(err){
+//             console.log(err);
+//             throw err;
+//         } else {
+//             if(login !== undefined){
+//                 if(login.password === password){
+//                     authenticated = true;
+//                 } else {
+//                     authenticated = false;
+//                 }
+//             } else {
+//                 authenticated = false;
+//             }
+//         }
+//         if(authenticated){
+//             req.session.username = username;
+//         }
+//         res.send(authenticated);
+//     });
+//     }
+// });
 
-app.post("/apiapp/formsubmit", (req,res) => {
-    var reqb = req.body;
-    var username = reqb.username;
-    var password = reqb.password;
-    Login_app.find({ username: username }, (err,login) => {
-        login = login[0];
-        if(err){
-            console.log(err);
-            throw err;
-            res.send({
-                processed: false,
-                dberror: true,
-            });
-        } else if(login !== undefined){
-            if(login.password === password){
-                Account_app.find({ username: username }, (err, account) => {
-                    if(err){
-                        console.log(err);
-                        throw err;
-                        res.send({
-                            processed: false,
-                            dberror: true,
-                        });
-                    } else {
-                        if(account.password === password){
-                            res.send({
-                                processed: false,
-                                dberror: false,
-                            });
-                        } else {
-                            var fname = reqb.fname;
-                            var lname = reqb.lname;
-                            var phno = reqb.phno;
-                            var email = reqb.email;
-                            var gender = reqb.gender;
-                            var regno = reqb.regno;
-                            var regexp = new RegExp(/1[4-8][A-Z][A-Z][A-Z][0-9][0-9][0-9][0-9]/);
-                            if(regexp.test(regno)){
-                                Account_app.create({
-                                    username: username,
-                                    password: password,
-                                    fname: fname,
-                                    lname: lname,
-                                    phno: phno,
-                                    email: email,
-                                    gender: gender,
-                                    regno: regno,
-                                    inteam: false,
-                                    teamno: -1,
-                                }, (err,obj) => {
-                                    if(err){
-                                        console.log(err);
-                                        throw err;
-                                        res.send({
-                                            processed: false,
-                                            dberror: true,
-                                        });
-                                    } else {
-                                        console.log(obj);
-                                        res.send({
-                                            processed: true,
-                                            dberror: false
-                                        });
-                                    }
-                                });
-                            }
-                        }
-                    }
-                });
-            } else {
-                res.send({
-                    processed: false,
-                    dberror: false,
-                })
-            }
-        } else {
-            res.send({
-                processed: false,
-                dberror: false,
-            });
-        }
-    });
-});
+// var authenticate = function(req,res,next){
+//     if(req.session.username !== undefined && req.session.username !== ''){
+//         next();
+//     } else {
+//         res.send(false);
+//     }
+// }
 
-app.post("/apiapp/getaccount", (req,res) => {
-    var reqb = req.body;
-    var username = reqb.username;
-    var password = reqb.password;
-    Account_app.find({ username: username }, (err, account) => {
-        account = account[0];
-        if(err){
-            console.log(err);
-            throw err;
-            res.send({
-                valid: false,
-                dberror: true,
-            });
-        } else if(account !== undefined){
-            if(account.password === password){
-                var acc_tosend = {
-                    valid: true,
-                    username: account.username,
-                    fname: account.fname,
-                    lname: account.lname,
-                    phno: account.phno,
-                    email: account.email,
-                    gender: account.gender,
-                    regno: account.regno,
-                };
-                res.send(acc_tosend);
-            } else {
-                res.send({
-                    valid: false,
-                });
-            }
-        } else {
-            res.send({
-                valid: false,
-            });
-        }
-    });
-});
+// app.post("/apiapp/formsubmit", authenticate, (req,res) => {
+//     var reqb = req.body;
+//     var fname = reqb.fname;
+//     var lname = reqb.lname;
+//     var phno = reqb.phno;
+//     var gender = reqb.gender;
+//     var regno = reqb.regno;
+//     Account_app.find({ username: username }, (err, account) => {
+//         account = account[0];
+//         if(err){
+//             console.log(err);
+//             throw err;
+//         } else {
+//             if(account === undefined){
+//                 Account_app.create({
+//                     fname: fname,
+//                     lname: lname,
+//                     phno: phno,
+//                     regno: regno,
+//                     inteam: false,
+//                 });
+//             } else {
+//                 res.send(false);
+//             }
+//         }
+//     });
 
-app.post("/apiapp/teamdet", (req,res) => {
-    var reqb = req.body;
-    var username = reqb.username;
-    var password = reqb.password;
-    Account_app.find({ username: username }, (err, account) => {
-        account = account[0];
-        if(err){
-            console.log(err);
-            throw err;
-            res.send({
-                inteam: false,
-                dberror: true,
-            });
-        } else if(account !== undefined){
-            if(account.password === password){
-                var teamno = account.teamno;
-                Team_app.find({ teamno: teamno }, (err, team) => {
-                    if(err){
-                        console.log(err);
-                        throw err;
-                        res.send({
-                            inteam: false,
-                            dberror: true,
-                        });
-                    } else {
-                        var team_tosend = {
-                            teamno: teamno,
-                            members: team.members,
-                            inteam: true,
-                        };
-                        res.send(team_tosend);
-                    }
-                });
-            } else {
-                res.send({
-                    inteam: false,
-                });
-            }
-        }
-    });
-});
+// });
 
-app.post("/apiapp/distresscheck", (req,res) => {
-    var reqb = req.body;
-    var username = reqb.username;
-    var password = reqb.password;
-    Account_app.find({ username: username }, (err, account) => {
-        account = account[0];
-        if(err){
-            console.log(err);
-            throw err;
-            res.send({
-                status: false,
-                dberror: true,
-            });
-        } else if(account !== undefined){
-            if(account.password === password){
-                var teamno = account.teamno;
-                Distress_app.find({ teamno: teamno }, (err, distress) => {
-                    if(err){
-                        console.log(err);
-                        throw err;
-                        res.send({
-                            status: false,
-                            dberror: true,
-                        });
-                    } else {
-                        if(distress.teamno === teamno){
-                            res.send({
-                                status: true,
-                            });
-                        } else {
-                            res.send({
-                                status: false,
-                            });
-                        }
-                    }
-                });
-            } else {
-                res.send({
-                    status: false,
-                });
-            }
-        } else {
-            res.send({
-                status: false,
-            });
-        }
-    });
-});
+// app.post("/apiapp/getaccount", (req,res) => {
+//     var reqb = req.body;
+//     var username = reqb.username;
+//     var password = reqb.password;
+//     Account_app.find({ username: username }, (err, account) => {
+//         account = account[0];
+//         if(err){
+//             console.log(err);
+//             throw err;
+//             res.send({
+//                 valid: false,
+//                 dberror: true,
+//             });
+//         } else if(account !== undefined){
+//             if(account.password === password){
+//                 var acc_tosend = {
+//                     valid: true,
+//                     username: account.username,
+//                     fname: account.fname,
+//                     lname: account.lname,
+//                     phno: account.phno,
+//                     email: account.email,
+//                     gender: account.gender,
+//                     regno: account.regno,
+//                 };
+//                 res.send(acc_tosend);
+//             } else {
+//                 res.send({
+//                     valid: false,
+//                 });
+//             }
+//         } else {
+//             res.send({
+//                 valid: false,
+//             });
+//         }
+//     });
+// });
 
-app.post("/apiapp/distresspressed", (req,res) => {
-    var reqb = req.body;
-    var username = reqb.username;
-    var password = reqb.password;
-    Account_app.find({ username: username }, (err, account) => {
-        account = account[0];
-        if(err){
-            console.log(err);
-            throw err;
-            res.send({
-                status: false,
-                dberror: true,
-            });
-        } else if(account !== undefined){
-            if(account.password === password){
-                Distress_app.create({
-                    teamno: account.teamno,
-                    pressedby: username,
-                }, (err, distress) => {
-                    if(err){
-                        console.log(err);
-                        throw err;
-                        res.send({
-                            status: false,
-                        });
-                    } else {
-                        res.send({
-                            status: true,
-                        });
-                    }
-                });
-            }
-        } else {
-            res.send({
-                status: false,
-            });
-        }
-    });
-})
+// app.post("/apiapp/teamdet", (req,res) => {
+//     var reqb = req.body;
+//     var username = reqb.username;
+//     var password = reqb.password;
+//     Account_app.find({ username: username }, (err, account) => {
+//         account = account[0];
+//         if(err){
+//             console.log(err);
+//             throw err;
+//             res.send({
+//                 inteam: false,
+//                 dberror: true,
+//             });
+//         } else if(account !== undefined){
+//             if(account.password === password){
+//                 var teamno = account.teamno;
+//                 Team_app.find({ teamno: teamno }, (err, team) => {
+//                     if(err){
+//                         console.log(err);
+//                         throw err;
+//                         res.send({
+//                             inteam: false,
+//                             dberror: true,
+//                         });
+//                     } else {
+//                         var team_tosend = {
+//                             teamno: teamno,
+//                             members: team.members,
+//                             inteam: true,
+//                         };
+//                         res.send(team_tosend);
+//                     }
+//                 });
+//             } else {
+//                 res.send({
+//                     inteam: false,
+//                 });
+//             }
+//         }
+//     });
+// });
+
+// app.post("/apiapp/distresscheck", (req,res) => {
+//     var reqb = req.body;
+//     var username = reqb.username;
+//     var password = reqb.password;
+//     Account_app.find({ username: username }, (err, account) => {
+//         account = account[0];
+//         if(err){
+//             console.log(err);
+//             throw err;
+//             res.send({
+//                 status: false,
+//                 dberror: true,
+//             });
+//         } else if(account !== undefined){
+//             if(account.password === password){
+//                 var teamno = account.teamno;
+//                 Distress_app.find({ teamno: teamno }, (err, distress) => {
+//                     if(err){
+//                         console.log(err);
+//                         throw err;
+//                         res.send({
+//                             status: false,
+//                             dberror: true,
+//                         });
+//                     } else {
+//                         if(distress.teamno === teamno){
+//                             res.send({
+//                                 status: true,
+//                             });
+//                         } else {
+//                             res.send({
+//                                 status: false,
+//                             });
+//                         }
+//                     }
+//                 });
+//             } else {
+//                 res.send({
+//                     status: false,
+//                 });
+//             }
+//         } else {
+//             res.send({
+//                 status: false,
+//             });
+//         }
+//     });
+// });
+
+// app.post("/apiapp/distresspressed", (req,res) => {
+//     var reqb = req.body;
+//     var username = reqb.username;
+//     var password = reqb.password;
+//     Account_app.find({ username: username }, (err, account) => {
+//         account = account[0];
+//         if(err){
+//             console.log(err);
+//             throw err;
+//             res.send({
+//                 status: false,
+//                 dberror: true,
+//             });
+//         } else if(account !== undefined){
+//             if(account.password === password){
+//                 Distress_app.create({
+//                     teamno: account.teamno,
+//                     pressedby: username,
+//                 }, (err, distress) => {
+//                     if(err){
+//                         console.log(err);
+//                         throw err;
+//                         res.send({
+//                             status: false,
+//                         });
+//                     } else {
+//                         res.send({
+//                             status: true,
+//                         });
+//                     }
+//                 });
+//             }
+//         } else {
+//             res.send({
+//                 status: false,
+//             });
+//         }
+//     });
+// })
 
 // APP====APP====APP====APP====APP====APP====APP====APP===APP
 

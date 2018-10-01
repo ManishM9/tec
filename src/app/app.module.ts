@@ -15,6 +15,10 @@ import { Accountform1Component } from './components/accountform1/accountform1.co
 import { AccountformService } from './services/accountform.service';
 import { AdminService } from './services/admin.service';
 import { SensoredComponent } from './components/sensored/sensored.component';
+import { LoginsensComponent } from './components/loginsens/loginsens.component';
+import { SensoredService } from './services/sensored.service';
+import { FormsensComponent } from './components/formsens/formsens.component';
+import { EmbedComponent } from './components/embed/embed.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +28,10 @@ import { SensoredComponent } from './components/sensored/sensored.component';
     HomeComponent,
     LoginComponent,
     Accountform1Component,
-    SensoredComponent
+    SensoredComponent,
+    LoginsensComponent,
+    FormsensComponent,
+    EmbedComponent
   ],
   imports: [
     BrowserModule,
@@ -33,7 +40,7 @@ import { SensoredComponent } from './components/sensored/sensored.component';
     BrowserAnimationsModule,
     AppRoutingModule
   ],
-  providers: [EventService, AccountformService, AdminService],
+  providers: [EventService, AccountformService, AdminService, SensoredService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
