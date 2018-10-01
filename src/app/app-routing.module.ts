@@ -23,7 +23,7 @@ const routes: Routes = [
   { path: 'sensored', component: SensoredComponent },
   // { path: 'sensored/login', component: LoginsensComponent },
   // { path: 'sensored/form', component: FormsensComponent },
-  // { path: 'embed', component: EmbedComponent }
+  // { path: 'embed', component: EmbedComponent },
 ];
 
 @NgModule({
