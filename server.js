@@ -35,17 +35,17 @@ var fs = require("fs");
 // });
 
 // This is working!!!!
-var transporter = nodemailer.createTransport("smtp://webdevs.tec%40outlook.com:"+encodeURIComponent('anshulmalepati69@$$') + "@smtp-mail.outlook.com"); 
+// var transporter = nodemailer.createTransport("smtp://embed2k18%40outlook.com:"+encodeURIComponent('anshulmalepati69@$$') + "@smtp-mail.outlook.com"); 
 
 // const mailOptions = {
-//     from: 'webdevs.tec@outlook.com', // sender address
-//     bcc: ['aman.bagaria2016@vitstudent.ac.in', 'mr.malepati@gmail.com', 'ridha.sardana2016@vitstudent.ac.in', 'arjun.sengupta2016@vitstudent.ac.in', 'viveka.varma2016@vitstudent.ac.in'], // list of receivers
-//     subject: 'Regarding SENSORED 2018', // Subject line
-//     html: 'Greetings from <strong>The Electronics Club of VIT (TEC)</strong>. The wait for the 4th edition of our technical workshop SENSORED is finally over. </br></br>The venue of the workshop has been changed to Homi Bhabha Gallery in Silver Jubilee Tower (4th floor.) </br></br>The workshop is being conducted on 2 days <strong>8th and 9th of September from 8:00a.m. to 6:00p.m on both the days</strong>.</br> Kindly report to the venue at <strong>7:45.a.m. on 8th of September</strong> with charged laptops and pendrives.</br></br> No prior knowledge or anything is required. Everything will be provided at the workshop including the required softwares and hardware components kit. </br>Snacks will be provided at the venue.Breaks for lunch will also be provided. </br></br>Kindly download the Arduino software from this link:- https://drive.google.com/file/d/1Ro-cvfTw0-f5cDjfZsIGQnC1Hm4Eq97q/view?usp=sharing for MAC, and https://drive.google.com/file/d/13vracme60gRQCc4VwG5lVaY8xgR0tlHF/view?usp=sharing for Windows </br></br></br>Participants carry a screenshot of "GATE ENTRY PASS" with you, which will be checked at the entrance. Attendance will be taken on both the days of the workshop.Make sure you attend all the sessions to be eligible for the participation certificate. Everyone will be divided in teams of 4. For those who do not have a team will be provided with a team on spot. </br>A Glimpse into <strong>SENSORED 2K18</strong> :- </br>1)Starting from basics, covering in depth knowledge on sensors and their interfacing with Arduino. </br>2) Ground based for IOT implementation and the working of a bluetooth module with an app. </br>3) Hands on Implementation of the above theoretical concepts and detailed explanation of codes. </br></br>Follow us on facebook:-  https://www.facebook.com/tec.vit/  </br></br>Website:-   http://www.tecvit.co.in/ ',// plain text body
+//     from: 'embed2k18@outlook.com', // sender address
+//     bcc: ['mgpta007@gmail.com', 'mr.malepati@gmail.com', 'siddhantsaka6@gmail.com'],//, 'ridha.sardana2016@vitstudent.ac.in', 'arjun.sengupta2016@vitstudent.ac.in', 'viveka.varma2016@vitstudent.ac.in'], // list of receivers
+//     subject: 'Regarding EMBED 2018', // Subject line
+//     html: 'Greetings from The Electronics Club of VIT (TEC).<br>The wait for the 4th edition of our technical workshop Embed is finally over.<br><br>The venue of the workshop is TT gallery 1,  TT(Ground Floor) <br><br>The workshop will be of 12 hours, from 8.00 am to 8.00 pm<br>Kindly report to the venue at 7:45.a.m. on 2nd of October with charged laptops, mouses, chargers and pendrives.<br><br>No prior knowledge or anything is required. Everything will be provided at the workshop including the required softwares and hardware components kit. <br>Snacks will be provided at the venue.Breaks for lunch will also be provided. <br><br>Kindly download the Eagle Software for both MAC and Windows OS<br><br>https://www.dropbox.com/sh/3vfsaezj0d8j461/AADbcJi2cPBfgQLfkDkN-Z7Xa?dl=0<br><br><br>Participants make sure that you give your attendance at the desk outside the venue to the volunteers. Attendance will be taken after every session.Make sure you attend all the sessions to be eligible for the participation certificate. Everyone will be divided in teams of 2. For those who do not have a team will be provided with a team on spot. <br><br>A Glimpse into Embed 4.0 :- <br>1)Starting from basics, covering in depth knowledge on breadboards, PCB\'s and designing through Eagle. <br>2) Hands on session to be conducted. Drilling and etching to be shown live.<br>3) We have also collaborated with Enthu Tech, who\'ll be bringing their PCB prototype machine so as to get an industrial incline.',// plain text body
 //     attachments: [{
-//         filename: 'sensoredpromo2.jpg',
-//         content: fs.createReadStream(__dirname + '\\src\\assets\\images\\sensoredpromo2.jpg'),
-//     }],
+//         filename: 'embed4.jpg',
+//         content: fs.createReadStream(__dirname + '\\src\\assets\\images\\embed4.jpg'),
+//     }]
 // };
 
 // transporter.sendMail(mailOptions, function (err, info) {
@@ -55,7 +55,7 @@ var transporter = nodemailer.createTransport("smtp://webdevs.tec%40outlook.com:"
 //       console.log(info);
 // });
 
-// fs.readFile(__dirname + '\\src\\assets\\jsonemails.json', (err, fileContent) => {
+// fs.readFile(__dirname + '\\src\\assets\\embedlistfinal.json', (err, fileContent) => {
 //     if( err ) {
 //     } else {
 //       data = JSON.parse(fileContent);
@@ -66,13 +66,14 @@ var transporter = nodemailer.createTransport("smtp://webdevs.tec%40outlook.com:"
 //         emails.push(data[i].G);
 //       }
 //       console.log(emails);
-//       emails.push('subhamthirani@gmail.com');
+//       emails.push('mgpta007@gmail.com');
 //       emails.push('mr.malepati@gmail.com');
-//     //   emails.push('divesh2198@gmail.com');
+//       emails.push('divesh2198@gmail.com');
+//       emails.push('test@test.com');
 
 //       console.log(emails.length);
 
-//       for(var i=0;i<10;i++){
+//       for(var i=0;i<6;i++){
 //           var tempemails = [];
 //         for(var j=0;j<25;j++){
 //             var temp = i*25;
@@ -80,46 +81,46 @@ var transporter = nodemailer.createTransport("smtp://webdevs.tec%40outlook.com:"
 //             tempemails.push(emails[temp+j]);
 //         }
 //         console.log(tempemails);
-//         // const mailOptions = {
-//         //     from: 'webdevs.tec@outlook.com', // sender address
-//         //     bcc: tempemails, //['aman.bagaria2016@vitstudent.ac.in', 'mr.malepati@gmail.com', 'ridha.sardana2016@vitstudent.ac.in', 'arjun.sengupta2016@vitstudent.ac.in', 'viveka.varma2016@vitstudent.ac.in'], // list of receivers
-//         //     subject: 'Regarding SENSORED 2018', // Subject line
-//         //     html: 'Greetings from <strong>The Electronics Club of VIT (TEC)</strong>. The wait for the 4th edition of our technical workshop SENSORED is finally over. </br></br>The venue of the workshop has been changed to Homi Bhabha Gallery in Silver Jubilee Tower (4th floor.) </br></br>The workshop is being conducted on 2 days <strong>8th and 9th of September from 8:00a.m. to 6:00p.m on both the days</strong>.</br> Kindly report to the venue at <strong>7:45.a.m. on 8th of September</strong> with charged laptops and pendrives.</br></br> No prior knowledge or anything is required. Everything will be provided at the workshop including the required softwares and hardware components kit. </br>Snacks will be provided at the venue.Breaks for lunch will also be provided. </br></br>Kindly download the Arduino software from this link:- https://drive.google.com/file/d/1Ro-cvfTw0-f5cDjfZsIGQnC1Hm4Eq97q/view?usp=sharing for MAC, and https://drive.google.com/file/d/13vracme60gRQCc4VwG5lVaY8xgR0tlHF/view?usp=sharing for Windows </br></br></br>Participants carry a screenshot of "GATE ENTRY PASS" with you, which will be checked at the entrance. Attendance will be taken on both the days of the workshop.Make sure you attend all the sessions to be eligible for the participation certificate. Everyone will be divided in teams of 4. For those who do not have a team will be provided with a team on spot. </br>A Glimpse into <strong>SENSORED 2K18</strong> :- </br>1)Starting from basics, covering in depth knowledge on sensors and their interfacing with Arduino. </br>2) Ground based for IOT implementation and the working of a bluetooth module with an app. </br>3) Hands on Implementation of the above theoretical concepts and detailed explanation of codes. </br></br>Follow us on facebook:-  https://www.facebook.com/tec.vit/  </br></br>Website:-   http://www.tecvit.co.in/ ',// plain text body
-//         //     attachments: [{
-//         //         filename: 'sensoredpromo2.jpg',
-//         //         content: fs.createReadStream(__dirname + '\\src\\assets\\images\\sensoredpromo2.jpg'),
-//         //     }],
-//         // };
+//         const mailOptions = {
+//             from: 'embed2k18@outlook.com', // sender address
+//             bcc: tempemails, //['aman.bagaria2016@vitstudent.ac.in', 'mr.malepati@gmail.com', 'ridha.sardana2016@vitstudent.ac.in', 'arjun.sengupta2016@vitstudent.ac.in', 'viveka.varma2016@vitstudent.ac.in'], // list of receivers
+//             subject: 'Regarding EMBED 2018', // Subject line
+//             html: 'Greetings from The Electronics Club of VIT (TEC).<br>The wait for the 4th edition of our technical workshop Embed is finally over.<br><br>The venue of the workshop is TT gallery 1,  TT(Ground Floor) <br><br>The workshop will be of 12 hours, from 8.00 am to 8.00 pm<br>Kindly report to the venue at 7:45.a.m. on 2nd of October with charged laptops, mouses, chargers and pendrives.<br><br>No prior knowledge or anything is required. Everything will be provided at the workshop including the required softwares and hardware components kit. <br>Snacks will be provided at the venue.Breaks for lunch will also be provided. <br><br>Kindly download the Eagle Software for both MAC and Windows OS<br><br>https://www.dropbox.com/sh/3vfsaezj0d8j461/AADbcJi2cPBfgQLfkDkN-Z7Xa?dl=0<br><br><br>Participants make sure that you give your attendance at the desk outside the venue to the volunteers. Attendance will be taken after every session.Make sure you attend all the sessions to be eligible for the participation certificate. Everyone will be divided in teams of 2. For those who do not have a team will be provided with a team on spot. <br><br>A Glimpse into Embed 4.0 :- <br>1)Starting from basics, covering in depth knowledge on breadboards, PCB\'s and designing through Eagle. <br>2) Hands on session to be conducted. Drilling and etching to be shown live.<br>3) We have also collaborated with Enthu Tech, who\'ll be bringing their PCB prototype machine so as to get an industrial incline.',// plain text body
+//             attachments: [{
+//                 filename: 'embed4.jpg',
+//                 content: fs.createReadStream(__dirname + '\\src\\assets\\images\\embed4.jpg'),
+//             }]
+//         };
         
-//         // transporter.sendMail(mailOptions, function (err, info) {
-//         //     if(err)
-//         //       console.log(err)
-//         //     else
-//         //       console.log(info);
-//         // });
+//         transporter.sendMail(mailOptions, function (err, info) {
+//             if(err)
+//               console.log(err)
+//             else
+//               console.log(info);
+//         });
 //       }
 
-    //   const mailOptions = {
-    //     from: 'webdevs.tec@outlook.com', // sender address
-    //     bcc: emails,//['aman.bagaria2016@vitstudent.ac.in', 'mr.malepati@gmail.com', 'ridha.sardana2016@vitstudent.ac.in', 'arjun.sengupta2016@vitstudent.ac.in', 'viveka.varma2016@vitstudent.ac.in'], // list of receivers
-    //     subject: 'Regarding SENSORED 2018', // Subject line
-    //     html: 'Greetings from <strong>The Electronics Club of VIT (TEC)</strong>. The wait for the 4th edition of our technical workshop SENSORED is finally over. </br></br>The venue of the workshop has been changed to Homi Bhabha Gallery in Silver Jubilee Tower (4th floor.) </br></br>The workshop is being conducted on 2 days <strong>8th and 9th of September from 8:00a.m. to 6:00p.m on both the days</strong>.</br> Kindly report to the venue at <strong>7:45.a.m. on 8th of September</strong> with charged laptops and pendrives.</br></br> No prior knowledge or anything is required. Everything will be provided at the workshop including the required softwares and hardware components kit. </br>Snacks will be provided at the venue.Breaks for lunch will also be provided. </br></br>Kindly download the Arduino software from this link:- https://drive.google.com/file/d/1Ro-cvfTw0-f5cDjfZsIGQnC1Hm4Eq97q/view?usp=sharing for MAC, and https://drive.google.com/file/d/13vracme60gRQCc4VwG5lVaY8xgR0tlHF/view?usp=sharing for Windows </br></br></br>Participants carry a screenshot of "GATE ENTRY PASS" with you, which will be checked at the entrance. Attendance will be taken on both the days of the workshop.Make sure you attend all the sessions to be eligible for the participation certificate. Everyone will be divided in teams of 4. For those who do not have a team will be provided with a team on spot. </br>A Glimpse into <strong>SENSORED 2K18</strong> :- </br>1)Starting from basics, covering in depth knowledge on sensors and their interfacing with Arduino. </br>2) Ground based for IOT implementation and the working of a bluetooth module with an app. </br>3) Hands on Implementation of the above theoretical concepts and detailed explanation of codes. </br></br>Follow us on facebook:-  https://www.facebook.com/tec.vit/  </br></br>Website:-   http://www.tecvit.co.in/ ',// plain text body
-    //     attachments: [{
-    //         filename: 'sensoredpromo2.jpg',
-    //         content: fs.createReadStream(__dirname + '\\src\\assets\\images\\sensoredpromo2.jpg'),
-    //     }],
-    //   };
+//     //   const mailOptions = {
+//     //     from: 'webdevs.tec@outlook.com', // sender address
+//     //     bcc: emails,//['aman.bagaria2016@vitstudent.ac.in', 'mr.malepati@gmail.com', 'ridha.sardana2016@vitstudent.ac.in', 'arjun.sengupta2016@vitstudent.ac.in', 'viveka.varma2016@vitstudent.ac.in'], // list of receivers
+//     //     subject: 'Regarding SENSORED 2018', // Subject line
+//     //     html: 'Greetings from <strong>The Electronics Club of VIT (TEC)</strong>. The wait for the 4th edition of our technical workshop SENSORED is finally over. </br></br>The venue of the workshop has been changed to Homi Bhabha Gallery in Silver Jubilee Tower (4th floor.) </br></br>The workshop is being conducted on 2 days <strong>8th and 9th of September from 8:00a.m. to 6:00p.m on both the days</strong>.</br> Kindly report to the venue at <strong>7:45.a.m. on 8th of September</strong> with charged laptops and pendrives.</br></br> No prior knowledge or anything is required. Everything will be provided at the workshop including the required softwares and hardware components kit. </br>Snacks will be provided at the venue.Breaks for lunch will also be provided. </br></br>Kindly download the Arduino software from this link:- https://drive.google.com/file/d/1Ro-cvfTw0-f5cDjfZsIGQnC1Hm4Eq97q/view?usp=sharing for MAC, and https://drive.google.com/file/d/13vracme60gRQCc4VwG5lVaY8xgR0tlHF/view?usp=sharing for Windows </br></br></br>Participants carry a screenshot of "GATE ENTRY PASS" with you, which will be checked at the entrance. Attendance will be taken on both the days of the workshop.Make sure you attend all the sessions to be eligible for the participation certificate. Everyone will be divided in teams of 4. For those who do not have a team will be provided with a team on spot. </br>A Glimpse into <strong>SENSORED 2K18</strong> :- </br>1)Starting from basics, covering in depth knowledge on sensors and their interfacing with Arduino. </br>2) Ground based for IOT implementation and the working of a bluetooth module with an app. </br>3) Hands on Implementation of the above theoretical concepts and detailed explanation of codes. </br></br>Follow us on facebook:-  https://www.facebook.com/tec.vit/  </br></br>Website:-   http://www.tecvit.co.in/ ',// plain text body
+//     //     attachments: [{
+//     //         filename: 'sensoredpromo2.jpg',
+//     //         content: fs.createReadStream(__dirname + '\\src\\assets\\images\\sensoredpromo2.jpg'),
+//     //     }],
+//     //   };
     
-    // transporter.sendMail(mailOptions, function (err, info) {
-    //     if(err)
-    //       console.log(err)
-    //     else
-    //       console.log(info);
-    // });
+//     // transporter.sendMail(mailOptions, function (err, info) {
+//     //     if(err)
+//     //       console.log(err)
+//     //     else
+//     //       console.log(info);
+//     // });
 
 
 //     }
-// })
+// });
 
 
 
