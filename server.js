@@ -488,6 +488,7 @@ app.post("/api/accountform1", (req,res) => {
 var transporter = nodemailer.createTransport({
     service: 'gmail',
     host: "smtp.gmail.com",
+    port: 587,
     auth: {
         user: 'webdevs.tec@gmail.com',
         pass: 'anshulmalepati69@$$',
