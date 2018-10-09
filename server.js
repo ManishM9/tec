@@ -490,8 +490,9 @@ var transporter = nodemailer.createTransport({
     host: "smtp.gmail.com",
     auth: {
         user: 'webdevs.tec@gmail.com',
+        pass: 'anshulmalepati69@$$',
         // pass: 'ljewzovbuwjspauq',
-        pass: 'jssstovxpyylpdht',
+        // pass: 'jssstovxpyylpdht',
     }
 });
 
