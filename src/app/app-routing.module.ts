@@ -14,6 +14,8 @@ import { FormsensComponent } from './components/formsens/formsens.component';
 
 import { EmbedComponent } from './components/embed/embed.component';
 
+import { AccountformfinalComponent } from './components/accountformfinal/accountformfinal.component';
+
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'form1', component: Accountform1Component },
@@ -21,6 +23,7 @@ const routes: Routes = [
   { path: 'calendar', component: CalendarComponent },
   { path: 'event-maker', component: EventMakerComponent },
   { path: 'sensored', component: SensoredComponent },
+  { path: 'accountform/:aid', component: AccountformfinalComponent }
   // { path: 'sensored/login', component: LoginsensComponent },
   // { path: 'sensored/form', component: FormsensComponent },
   // { path: 'embed', component: EmbedComponent },

@@ -19,6 +19,7 @@ import { LoginsensComponent } from './components/loginsens/loginsens.component';
 import { SensoredService } from './services/sensored.service';
 import { FormsensComponent } from './components/formsens/formsens.component';
 import { EmbedComponent } from './components/embed/embed.component';
+import { AccountformfinalComponent } from './components/accountformfinal/accountformfinal.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { EmbedComponent } from './components/embed/embed.component';
     SensoredComponent,
     LoginsensComponent,
     FormsensComponent,
-    EmbedComponent
+    EmbedComponent,
+    AccountformfinalComponent
   ],
   imports: [
     BrowserModule,

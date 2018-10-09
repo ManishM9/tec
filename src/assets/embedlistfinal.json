@@ -1,0 +1,1325 @@
+[
+ {
+   "A": "Sl.No",
+   "B": "Participant ID",
+   "C": "Participant Name",
+   "D": "Type",
+   "E": "Payment Status",
+   "F": "Mobile No",
+   "G": "Email ID"
+ },
+ {
+   "A": "1",
+   "B": "G18I0191",
+   "C": "V SHRUTHIY",
+   "D": "Internal",
+   "E": "Success",
+   "F": "9354169081",
+   "G": "v.shruthiy2018@vitstudent.ac.in"
+ },
+ {
+   "A": "2",
+   "B": "G18I0653",
+   "C": "ARKAJYOTI SAHA",
+   "D": "Internal",
+   "E": "Success",
+   "F": "8805972800",
+   "G": "mausumi2017@gmail.com"
+ },
+ {
+   "A": "3",
+   "B": "G18I1088",
+   "C": "SYED AFROZ W",
+   "D": "Internal",
+   "E": "Success",
+   "F": "7353119975",
+   "G": "syedafroz.w2018@vitstudent.ac.in"
+ },
+ {
+   "A": "4",
+   "B": "G18I4376",
+   "C": "RAKSHIT R KULKARNI",
+   "D": "Internal",
+   "E": "Success",
+   "F": "7038250155",
+   "G": "rakshitkulkarni6161@gmail.com"
+ },
+ {
+   "A": "5",
+   "B": "G18I1322",
+   "C": "SAHIL DUBEY",
+   "D": "Internal",
+   "E": "Success",
+   "F": "9456490229",
+   "G": "yashwin7777777@gmail.com"
+ },
+ {
+   "A": "6",
+   "B": "G18I1325",
+   "C": "ANIRUDDH SHASTRI",
+   "D": "Internal",
+   "E": "Success",
+   "F": "8225943424",
+   "G": "aniruddh.shastri.751@gmail.com"
+ },
+ {
+   "A": "7",
+   "B": "G18I1331",
+   "C": "MEHUL PRASHAR",
+   "D": "Internal",
+   "E": "Success",
+   "F": "9003434331",
+   "G": "mehul.prashar@gmail.com"
+ },
+ {
+   "A": "8",
+   "B": "G18I1343",
+   "C": "SURAJ NAIR",
+   "D": "Internal",
+   "E": "Success",
+   "F": "9405613688",
+   "G": "surajnair3840@gmail.com"
+ },
+ {
+   "A": "9",
+   "B": "G18I1442",
+   "C": "ASHHWATH C",
+   "D": "Internal",
+   "E": "Success",
+   "F": "9994400201",
+   "G": "ashhwath.c2018@vitstudent.ac.in"
+ },
+ {
+   "A": "10",
+   "B": "G18I3289",
+   "C": "K. SUNAM PRUSTY",
+   "D": "Internal",
+   "E": "Success",
+   "F": "7873359808",
+   "G": "ksunam.prusty2018@vitstudent.ac.in"
+ },
+ {
+   "A": "11",
+   "B": "G18I0230",
+   "C": "PATEL GRIMAL RAMANBHAI",
+   "D": "Internal",
+   "E": "Success",
+   "F": "9714107708",
+   "G": "grimalpatel@gmail.com"
+ },
+ {
+   "A": "12",
+   "B": "G18I5143",
+   "C": "ANTONY JOSE KURUVILLA",
+   "D": "Internal",
+   "E": "Success",
+   "F": "9819192734",
+   "G": "ajosekuruvilla@gmail.com"
+ },
+ {
+   "A": "13",
+   "B": "G18I1742",
+   "C": "SYED FARMAAN",
+   "D": "Internal",
+   "E": "Success",
+   "F": "9844008568",
+   "G": "syed.farmaan2018@vitstudent.ac.in"
+ },
+ {
+   "A": "14",
+   "B": "G18I2015",
+   "C": "ABHIANSH WADEGAONKAR",
+   "D": "Internal",
+   "E": "Success",
+   "F": "8529164307",
+   "G": "abhiansh333@gmail.com"
+ },
+ {
+   "A": "15",
+   "B": "G18I0687",
+   "C": "D.KIRAN",
+   "D": "Internal",
+   "E": "Success",
+   "F": "9945521406",
+   "G": "dkiran100@gmail.com"
+ },
+ {
+   "A": "16",
+   "B": "G18I2019",
+   "C": "MANMEET SINGH",
+   "D": "Internal",
+   "E": "Success",
+   "F": "6377749155",
+   "G": "manmeet.singh2018@vitstudent.ac.in"
+ },
+ {
+   "A": "17",
+   "B": "G18I2023",
+   "C": "MANISH JSNGID",
+   "D": "Internal",
+   "E": "Success",
+   "F": "8128344586",
+   "G": "manishjangid5188@gmail.com"
+ },
+ {
+   "A": "18",
+   "B": "G18I1630",
+   "C": "SHUBHASHISH SARKAR",
+   "D": "Internal",
+   "E": "Success",
+   "F": "7869429421",
+   "G": "shubhashishsarkar318@gmail.com"
+ },
+ {
+   "A": "19",
+   "B": "G18I2109",
+   "C": "KUNTAL BAG",
+   "D": "Internal",
+   "E": "Success",
+   "F": "7728947053",
+   "G": "kuntal.bag2018@vitstudent.ac.in"
+ },
+ {
+   "A": "20",
+   "B": "G18I2131",
+   "C": "JASPREET SINGH",
+   "D": "Internal",
+   "E": "Success",
+   "F": "7838260826",
+   "G": "jaspreet4200singh@gmail.com"
+ },
+ {
+   "A": "21",
+   "B": "G18I1330",
+   "C": "ANKIT PARKAR",
+   "D": "Internal",
+   "E": "Success",
+   "F": "9167169659",
+   "G": "ankitpankaj.parkar2018@vitstudent.ac.in"
+ },
+ {
+   "A": "22",
+   "B": "G18I4299",
+   "C": "SIDDHANT MADHAV JOSHI",
+   "D": "Internal",
+   "E": "Success",
+   "F": "8826718016",
+   "G": "smj121020@gmail.com"
+ },
+ {
+   "A": "23",
+   "B": "G18I2203",
+   "C": "PRAYAG JAIN",
+   "D": "Internal",
+   "E": "Success",
+   "F": "9571980181",
+   "G": "prayagjain072001@gmail.com"
+ },
+ {
+   "A": "24",
+   "B": "G18I4436",
+   "C": "SAMYAK DOSHI",
+   "D": "Internal",
+   "E": "Success",
+   "F": "7693074175",
+   "G": "samyak.2018@vitstudent.ac.in"
+ },
+ {
+   "A": "25",
+   "B": "G18I2280",
+   "C": "BRYAN P GEORGE",
+   "D": "Internal",
+   "E": "Success",
+   "F": "9880069519",
+   "G": "bryanpgeorge@gmail.com"
+ },
+ {
+   "A": "26",
+   "B": "G18I0602",
+   "C": "HITESH SUTHAR",
+   "D": "Internal",
+   "E": "Success",
+   "F": "7023999203",
+   "G": "hits44haha@gmail.com"
+ },
+ {
+   "A": "27",
+   "B": "G18I2226",
+   "C": "DEVDUTT CHATTERJEE",
+   "D": "Internal",
+   "E": "Success",
+   "F": "9748493036",
+   "G": "chatterjeedevdutt@gmail.com"
+ },
+ {
+   "A": "28",
+   "B": "G18I1040",
+   "C": "SOURANEEL GHOSH",
+   "D": "Internal",
+   "E": "Success",
+   "F": "7001394921",
+   "G": "souraneel007@gmail.com"
+ },
+ {
+   "A": "29",
+   "B": "G18I0291",
+   "C": "PUNID RAMESH NATESAN",
+   "D": "Internal",
+   "E": "Success",
+   "F": "7760493022",
+   "G": "punidramesh@gmail.com"
+ },
+ {
+   "A": "30",
+   "B": "G18I2828",
+   "C": "UJJWAL NATH",
+   "D": "Internal",
+   "E": "Success",
+   "F": "9188752538",
+   "G": "uj17nath@gmail.com"
+ },
+ {
+   "A": "31",
+   "B": "G18I1138",
+   "C": "HARDIK NAGAR",
+   "D": "Internal",
+   "E": "Success",
+   "F": "9003447040",
+   "G": "hardik.nagar2018@vitstudent.ac.in"
+ },
+ {
+   "A": "32",
+   "B": "G18I2504",
+   "C": "MITHUL MANOJ",
+   "D": "Internal",
+   "E": "Success",
+   "F": "9741165485",
+   "G": "mithulmanoj99@gmail.com"
+ },
+ {
+   "A": "33",
+   "B": "G18I2525",
+   "C": "SHWETANSHU",
+   "D": "Internal",
+   "E": "Success",
+   "F": "9354059043",
+   "G": "shwetanshu.2018@vitstudent.ac.in"
+ },
+ {
+   "A": "34",
+   "B": "G18I2540",
+   "C": "SHIVIKA BISARIA",
+   "D": "Internal",
+   "E": "Success",
+   "F": "8527860806",
+   "G": "shivika.bisaria2018@vitstudent.ac.in"
+ },
+ {
+   "A": "35",
+   "B": "G18I2587",
+   "C": "ADITYA MENON",
+   "D": "Internal",
+   "E": "Success",
+   "F": "7795165607",
+   "G": "adityamenon9@gmail.com"
+ },
+ {
+   "A": "36",
+   "B": "G18I2358",
+   "C": "SHIVAM DUBEY",
+   "D": "Internal",
+   "E": "Success",
+   "F": "9521760594",
+   "G": "shivam.dubey2018@vitstudent.ac.in"
+ },
+ {
+   "A": "37",
+   "B": "G18I2045",
+   "C": "SIDDHARTH GORTI",
+   "D": "Internal",
+   "E": "Success",
+   "F": "9972233110",
+   "G": "siddharthgorti@gmail.com"
+ },
+ {
+   "A": "38",
+   "B": "G18I2616",
+   "C": "VIKAS YADAV",
+   "D": "Internal",
+   "E": "Success",
+   "F": "9621808109",
+   "G": "vikas.yadav@vitstudent.ac.in"
+ },
+ {
+   "A": "39",
+   "B": "G18I2736",
+   "C": "SAHANA Y M",
+   "D": "Internal",
+   "E": "Success",
+   "F": "9740525841",
+   "G": "sahanasonu7777@gmail.com"
+ },
+ {
+   "A": "40",
+   "B": "G18I1576",
+   "C": "GOKILAMBIKA HARIKRISHNAN",
+   "D": "Internal",
+   "E": "Success",
+   "F": "9791090528",
+   "G": "gokila2001@gmail.com"
+ },
+ {
+   "A": "41",
+   "B": "G18I0802",
+   "C": "ISHAN MAHENDRA PATEL",
+   "D": "Internal",
+   "E": "Success",
+   "F": "9370985546",
+   "G": "patelishan1400@gmail.com"
+ },
+ {
+   "A": "42",
+   "B": "G18I4759",
+   "C": "AYUSH ANAND",
+   "D": "Internal",
+   "E": "Success",
+   "F": "8873145678",
+   "G": "ayush.anand2018@vitstudent.ac.in"
+ },
+ {
+   "A": "43",
+   "B": "G18I2946",
+   "C": "MADHAV K MADHU",
+   "D": "Internal",
+   "E": "Success",
+   "F": "9072185701",
+   "G": "madhavkmadhu7@gmail.com"
+ },
+ {
+   "A": "44",
+   "B": "G18I0865",
+   "C": "PRIYESH BHAWSAR",
+   "D": "Internal",
+   "E": "Success",
+   "F": "9082466683",
+   "G": "priyeshbhawsar15@gmail.com"
+ },
+ {
+   "A": "45",
+   "B": "G18I0190",
+   "C": "SAGNIK DUTTA",
+   "D": "Internal",
+   "E": "Success",
+   "F": "8334088700",
+   "G": "sagnik.dutta16092000@gmail.com"
+ },
+ {
+   "A": "46",
+   "B": "G18I1896",
+   "C": "VATSAL CHANDRA",
+   "D": "Internal",
+   "E": "Success",
+   "F": "9837099505",
+   "G": "vatsal.chandra2018@vitstudent.ac.in"
+ },
+ {
+   "A": "47",
+   "B": "G18I2269",
+   "C": "B UMA BHARATHI",
+   "D": "Internal",
+   "E": "Success",
+   "F": "8678991452",
+   "G": "uma.bharathi852001@gmail.com"
+ },
+ {
+   "A": "48",
+   "B": "G18I3100",
+   "C": "M.KAAVIYA VHARSHINY",
+   "D": "Internal",
+   "E": "Success",
+   "F": "6379442141",
+   "G": "kavi.kaaviya4@gmail.com"
+ },
+ {
+   "A": "49",
+   "B": "G18I0673",
+   "C": "RISHIT BANSAL",
+   "D": "Internal",
+   "E": "Success",
+   "F": "9880327979",
+   "G": "rishit.bansal0@gmail.com"
+ },
+ {
+   "A": "50",
+   "B": "G18I1578",
+   "C": "HARSHITH C S",
+   "D": "Internal",
+   "E": "Success",
+   "F": "9611991552",
+   "G": "harshithcs12@gmail.com"
+ },
+ {
+   "A": "51",
+   "B": "G18I1554",
+   "C": "THARUN MV NARENDHRA",
+   "D": "Internal",
+   "E": "Success",
+   "F": "9591689570",
+   "G": "mvtn2001@gmail.com"
+ },
+ {
+   "A": "52",
+   "B": "G18I3248",
+   "C": "AASHISH LALWANI",
+   "D": "Internal",
+   "E": "Success",
+   "F": "8385921130",
+   "G": "aashish.lalwani2018@vitstudent.ac.in"
+ },
+ {
+   "A": "53",
+   "B": "G18I3327",
+   "C": "SHREY BHIWAPURKAR",
+   "D": "Internal",
+   "E": "Success",
+   "F": "8866001640",
+   "G": "shreyb99@gmail.com"
+ },
+ {
+   "A": "54",
+   "B": "G18I2665",
+   "C": "ISHITA GUPTA",
+   "D": "Internal",
+   "E": "Success",
+   "F": "7624935686",
+   "G": "ishitagupta.2018@vitstudent.ac.in"
+ },
+ {
+   "A": "55",
+   "B": "G18I2945",
+   "C": "DHRUV SHAH",
+   "D": "Internal",
+   "E": "Success",
+   "F": "8128510634",
+   "G": "dhruvshah2703@gmail.com"
+ },
+ {
+   "A": "56",
+   "B": "G18I3393",
+   "C": "MOHIT TANEJA",
+   "D": "Internal",
+   "E": "Success",
+   "F": "7990693461",
+   "G": "mohittaneja135@icloud.com"
+ },
+ {
+   "A": "57",
+   "B": "G18I3361",
+   "C": "JAYESH SESHADRI",
+   "D": "Internal",
+   "E": "Success",
+   "F": "6303963201",
+   "G": "jayesh007rox@gmail.com"
+ },
+ {
+   "A": "58",
+   "B": "G18I4395",
+   "C": "VARSHINI.A",
+   "D": "Internal",
+   "E": "Success",
+   "F": "9597364152",
+   "G": "vaari13@yahoo.in"
+ },
+ {
+   "A": "59",
+   "B": "G18I4141",
+   "C": "PRINCE KUMAR SINGH",
+   "D": "Internal",
+   "E": "Success",
+   "F": "9003534193",
+   "G": "princekumarsingh.2018@vitstudent.ac.in"
+ },
+ {
+   "A": "60",
+   "B": "G18I2217",
+   "C": "GOURANGA SATAPATHY",
+   "D": "Internal",
+   "E": "Success",
+   "F": "7381228896",
+   "G": "pulusatapathy@gmail.com"
+ },
+ {
+   "A": "61",
+   "B": "G18I2927",
+   "C": "YANDRA MOHITH SAI",
+   "D": "Internal",
+   "E": "Success",
+   "F": "6303875346",
+   "G": "yandramohithsai@gmail.com"
+ },
+ {
+   "A": "62",
+   "B": "G18I3506",
+   "C": "DEVANG DIXIT",
+   "D": "Internal",
+   "E": "Success",
+   "F": "6386410357",
+   "G": "devangdixit9876@gmail.com"
+ },
+ {
+   "A": "63",
+   "B": "G18I0279",
+   "C": "SUHAS SIRIPROLE",
+   "D": "Internal",
+   "E": "Success",
+   "F": "9619490936",
+   "G": "suhas.siriprole2018@vitstudent.ac.in"
+ },
+ {
+   "A": "64",
+   "B": "G18I3548",
+   "C": "KONJETI SAI ANJAN KUMAR",
+   "D": "Internal",
+   "E": "Success",
+   "F": "8019331619",
+   "G": "konjetianjan@gmail.com"
+ },
+ {
+   "A": "65",
+   "B": "G18I3550",
+   "C": "PASUPULETI VENKATA VINAYAKA RUSHYANTH",
+   "D": "Internal",
+   "E": "Success",
+   "F": "8074846418",
+   "G": "rushyanth11@gmail.com"
+ },
+ {
+   "A": "66",
+   "B": "G18I3596",
+   "C": "KAUSHAL TIMILSINA",
+   "D": "Internal",
+   "E": "Success",
+   "F": "9003535294",
+   "G": "kaushal.timilsina2018@vitstudent.ac.in"
+ },
+ {
+   "A": "67",
+   "B": "G18I2017",
+   "C": "YASH KUMAR SINGH",
+   "D": "Internal",
+   "E": "Success",
+   "F": "9648895324",
+   "G": "yashkumar.singh2018@vitstudent.ac.in"
+ },
+ {
+   "A": "68",
+   "B": "G18I3605",
+   "C": "HRISHABH M NAIR",
+   "D": "Internal",
+   "E": "Success",
+   "F": "7899281222",
+   "G": "hrishabhnair@gmail.com"
+ },
+ {
+   "A": "69",
+   "B": "G18I0245",
+   "C": "SOMDYUTI DAS ADHIKARY",
+   "D": "Internal",
+   "E": "Success",
+   "F": "9830681979",
+   "G": "somdyutidas.adhikary2018@vitstudent.ac.in"
+ },
+ {
+   "A": "70",
+   "B": "G18I3702",
+   "C": "SAKSHI GUPTA",
+   "D": "Internal",
+   "E": "Success",
+   "F": "9003449476",
+   "G": "sakshiigupta1618@gmail.com"
+ },
+ {
+   "A": "71",
+   "B": "G18I2702",
+   "C": "MANISHA KUMARI",
+   "D": "Internal",
+   "E": "Success",
+   "F": "8210148611",
+   "G": "nishakri668@gmail.com"
+ },
+ {
+   "A": "72",
+   "B": "G18I1752",
+   "C": "PRIYAL GODHA",
+   "D": "Internal",
+   "E": "Success",
+   "F": "9407007127",
+   "G": "priyal.godha2018@vitstudent.ac.in"
+ },
+ {
+   "A": "73",
+   "B": "G18E3887",
+   "C": "DEBJIT BHADRA",
+   "D": "External",
+   "E": "Success",
+   "F": "9482734819",
+   "G": "debjitreso2017@gmail.com"
+ },
+ {
+   "A": "74",
+   "B": "G18I2570",
+   "C": "SRINIVASA SANKAR NIKHIL",
+   "D": "Internal",
+   "E": "Success",
+   "F": "9159481050",
+   "G": "nikhilskrishna1999@gmail.com"
+ },
+ {
+   "A": "75",
+   "B": "G18I0492",
+   "C": "ANANT GOVIL",
+   "D": "Internal",
+   "E": "Success",
+   "F": "9582110888",
+   "G": "anant.govil2018@vitstudent.ac.in"
+ },
+ {
+   "A": "76",
+   "B": "G18I3724",
+   "C": "KAPIL CHOUDARY",
+   "D": "Internal",
+   "E": "Success",
+   "F": "7981851860",
+   "G": "ukapilc@gmail.com"
+ },
+ {
+   "A": "77",
+   "B": "G18I4067",
+   "C": "A.RAAHUL",
+   "D": "Internal",
+   "E": "Success",
+   "F": "7014141919",
+   "G": "a.raahul2018@vitstudent.ac.in"
+ },
+ {
+   "A": "78",
+   "B": "G18I3449",
+   "C": "SHREYA AGRAWAL",
+   "D": "Internal",
+   "E": "Success",
+   "F": "6379399211",
+   "G": "shreya.agrawal2018@vitstudent.ac.in"
+ },
+ {
+   "A": "79",
+   "B": "G18I0345",
+   "C": "VINAY",
+   "D": "Internal",
+   "E": "Success",
+   "F": "6303883662",
+   "G": "naidusai.vinay2018@vitstudent.ac.in"
+ },
+ {
+   "A": "80",
+   "B": "G18I2211",
+   "C": "BISWAJIT NANDA",
+   "D": "Internal",
+   "E": "Success",
+   "F": "9051334400",
+   "G": "biswajit.nanda1@gmail.com"
+ },
+ {
+   "A": "81",
+   "B": "G18I0324",
+   "C": "NAMAN KHANDELWAL",
+   "D": "Internal",
+   "E": "Success",
+   "F": "8754939821",
+   "G": "nmnkhandelwal16@gmail.com"
+ },
+ {
+   "A": "82",
+   "B": "G18I4139",
+   "C": "NIRMAL HARIKRISHNAN",
+   "D": "Internal",
+   "E": "Success",
+   "F": "6282192270",
+   "G": "nirmalhari2010@gmail.com"
+ },
+ {
+   "A": "83",
+   "B": "G18I4140",
+   "C": "SHARAT H NAIR",
+   "D": "Internal",
+   "E": "Success",
+   "F": "9447505449",
+   "G": "sharatharidasan11@gmail.com"
+ },
+ {
+   "A": "84",
+   "B": "G18I4514",
+   "C": "AKSHAT",
+   "D": "Internal",
+   "E": "Success",
+   "F": "8939113545",
+   "G": "akshatm211000@gmail.com"
+ },
+ {
+   "A": "85",
+   "B": "G18I3946",
+   "C": "TELAPROLU DINESH RAM SAI",
+   "D": "Internal",
+   "E": "Success",
+   "F": "9951992757",
+   "G": "dinesh.ramsai2018@vitstudent.ac.in"
+ },
+ {
+   "A": "86",
+   "B": "G18I3954",
+   "C": "KOTA.JYOTHI SWAROOP",
+   "D": "Internal",
+   "E": "Success",
+   "F": "9381370230",
+   "G": "jyothiswaroop003@gmail.com"
+ },
+ {
+   "A": "87",
+   "B": "G18I3572",
+   "C": "V L DARSHAN RAM",
+   "D": "Internal",
+   "E": "Success",
+   "F": "7259835881",
+   "G": "gogetaram@gmail.com"
+ },
+ {
+   "A": "88",
+   "B": "G18I3870",
+   "C": "C.PAVITHRA CHOWDARY",
+   "D": "Internal",
+   "E": "Success",
+   "F": "7674942598",
+   "G": "pavithra21chowdary@gmail.com"
+ },
+ {
+   "A": "89",
+   "B": "G18I3461",
+   "C": "VAIBHAV AGGARWAL",
+   "D": "Internal",
+   "E": "Success",
+   "F": "9821687499",
+   "G": "tanu18102000@gmail.com"
+ },
+ {
+   "A": "90",
+   "B": "G18I4157",
+   "C": "SACHIN KS",
+   "D": "Internal",
+   "E": "Success",
+   "F": "9980936394",
+   "G": "sachin.ks8201@gmail.com"
+ },
+ {
+   "A": "91",
+   "B": "G18I1279",
+   "C": "VIKRAMCHANDRA ALLADI",
+   "D": "Internal",
+   "E": "Success",
+   "F": "9440586503",
+   "G": "vikramchandra.alladi2018@vitstudent.ac.in"
+ },
+ {
+   "A": "92",
+   "B": "G18I1423",
+   "C": "JAYADEV.C.K",
+   "D": "Internal",
+   "E": "Success",
+   "F": "9003025185",
+   "G": "jayadev.ck2018@vitstudent.ac.in"
+ },
+ {
+   "A": "93",
+   "B": "G18I4359",
+   "C": "G V GANESH MAURYA",
+   "D": "Internal",
+   "E": "Success",
+   "F": "9740175368",
+   "G": "gvgmaurya@gmail.com"
+ },
+ {
+   "A": "94",
+   "B": "G18I0841",
+   "C": "DIVYANSH SRIVASTAVA",
+   "D": "Internal",
+   "E": "Success",
+   "F": "6379306704",
+   "G": "divyanshsrivastava.2018@vitstudent.ac.in"
+ },
+ {
+   "A": "95",
+   "B": "G18I3357",
+   "C": "SARTHAK AGRAWAL",
+   "D": "Internal",
+   "E": "Success",
+   "F": "9810571083",
+   "G": "sarthak.agrawal2018@vitstudent.ac.in"
+ },
+ {
+   "A": "96",
+   "B": "G18I4427",
+   "C": "SAMARLA MADHAVI",
+   "D": "Internal",
+   "E": "Success",
+   "F": "9381195277",
+   "G": "madhavisamarla890@gmail.com"
+ },
+ {
+   "A": "97",
+   "B": "G18I2456",
+   "C": "AVIRAL BHATIA",
+   "D": "Internal",
+   "E": "Success",
+   "F": "9910357510",
+   "G": "bhatiaaviral@gmail.com"
+ },
+ {
+   "A": "98",
+   "B": "G18I0697",
+   "C": "SHUBHAM SINGH",
+   "D": "Internal",
+   "E": "Success",
+   "F": "9163363255",
+   "G": "shubhamsingh332001@gmail.com"
+ },
+ {
+   "A": "99",
+   "B": "G18I4487",
+   "C": "PRIYANKA SINGH",
+   "D": "Internal",
+   "E": "Success",
+   "F": "7905418892",
+   "G": "priyanka.singh2018@vit.ac.in"
+ },
+ {
+   "A": "100",
+   "B": "G18I1209",
+   "C": "AMAN RAJ GUPTA",
+   "D": "Internal",
+   "E": "Success",
+   "F": "7991569980",
+   "G": "amang852@gmail.com"
+ },
+ {
+   "A": "101",
+   "B": "G18I2654",
+   "C": "DHANANJAY SUNIL MENON",
+   "D": "Internal",
+   "E": "Success",
+   "F": "9747996729",
+   "G": "dhananjaymenon26@gmail.com"
+ },
+ {
+   "A": "102",
+   "B": "G18I3394",
+   "C": "ROHITDEO MANOJ HANDE",
+   "D": "Internal",
+   "E": "Success",
+   "F": "8104505750",
+   "G": "rohit.hande88@gmail.com"
+ },
+ {
+   "A": "103",
+   "B": "G18I4147",
+   "C": "SHARATH SANTHOSH",
+   "D": "Internal",
+   "E": "Success",
+   "F": "9895345680",
+   "G": "sharath.santhosh2018@vitstudent.ac.in"
+ },
+ {
+   "A": "104",
+   "B": "G18I0908",
+   "C": "CH. SRI HARSHA",
+   "D": "Internal",
+   "E": "Success",
+   "F": "9491378556",
+   "G": "cherukurisri.harsha2018@vitstudent.ac.in"
+ },
+ {
+   "A": "105",
+   "B": "G18I1788",
+   "C": "ANIMISHA SHARANAPPA",
+   "D": "Internal",
+   "E": "Success",
+   "F": "9113528517",
+   "G": "animishcs23@gmail.com"
+ },
+ {
+   "A": "106",
+   "B": "G18I1502",
+   "C": "AKSHITH",
+   "D": "Internal",
+   "E": "Success",
+   "F": "7358549244",
+   "G": "akiman08@gmail.com"
+ },
+ {
+   "A": "107",
+   "B": "G18I3712",
+   "C": "AKSHAT",
+   "D": "Internal",
+   "E": "Success",
+   "F": "9711851711",
+   "G": "akshat1284@gmail.com"
+ },
+ {
+   "A": "108",
+   "B": "G18I4673",
+   "C": "PRADYOT KHER",
+   "D": "Internal",
+   "E": "Success",
+   "F": "9560795149",
+   "G": "pradyot261100@gmail.com"
+ },
+ {
+   "A": "109",
+   "B": "G18I4530",
+   "C": "CHINMAY SHRIPRAKASH GALANDE",
+   "D": "Internal",
+   "E": "Success",
+   "F": "7038779998",
+   "G": "csgalande@gmail.com"
+ },
+ {
+   "A": "110",
+   "B": "G18I0418",
+   "C": "SATIRTHA BASAK",
+   "D": "Internal",
+   "E": "Success",
+   "F": "9932038189",
+   "G": "satirtha.basak2018@vitstudent.ac.in"
+ },
+ {
+   "A": "111",
+   "B": "G18I4424",
+   "C": "THUMMALA SATHVIKA",
+   "D": "Internal",
+   "E": "Success",
+   "F": "6303355800",
+   "G": "thummalasathvika@gmail.com"
+ },
+ {
+   "A": "112",
+   "B": "G18I3982",
+   "C": "MUSKAN GUPTA",
+   "D": "Internal",
+   "E": "Success",
+   "F": "6264946039",
+   "G": "muskan.gupta2018@vitstudent.ac.in"
+ },
+ {
+   "A": "113",
+   "B": "G18I4429",
+   "C": "JAGATA VAISHNAVI",
+   "D": "Internal",
+   "E": "Success",
+   "F": "8074462167",
+   "G": "vaishnavi.jagata@gmail.com"
+ },
+ {
+   "A": "114",
+   "B": "G18I5018",
+   "C": "GAUTHAM KRISHNA.K",
+   "D": "Internal",
+   "E": "Success",
+   "F": "9841299301",
+   "G": "kgauthamkmenon@gmail.com"
+ },
+ {
+   "A": "115",
+   "B": "G18I5038",
+   "C": "MUSKAN CHANANA",
+   "D": "Internal",
+   "E": "Success",
+   "F": "9914661446",
+   "G": "sherylpoet@gmail.com"
+ },
+ {
+   "A": "116",
+   "B": "G18I4670",
+   "C": "HIMANSHU",
+   "D": "Internal",
+   "E": "Success",
+   "F": "8428204917",
+   "G": "savargaonkar123@gmail.com"
+ },
+ {
+   "A": "117",
+   "B": "G18I5041",
+   "C": "ALFRED RB",
+   "D": "Internal",
+   "E": "Success",
+   "F": "8270128516",
+   "G": "alfredrb.07@gmail.com"
+ },
+ {
+   "A": "118",
+   "B": "G18I5064",
+   "C": "TUSHAR PATIDAR",
+   "D": "Internal",
+   "E": "Success",
+   "F": "8989097100",
+   "G": "tusharpatidar22@gmail.com"
+ },
+ {
+   "A": "119",
+   "B": "G18I1803",
+   "C": "KOTHA HEMANTH KUMAR",
+   "D": "Internal",
+   "E": "Success",
+   "F": "7032983270",
+   "G": "hemanthkotha14@rediffmail.com"
+ },
+ {
+   "A": "120",
+   "B": "G18I2121",
+   "C": "AJEYA SHYAM BHAT",
+   "D": "Internal",
+   "E": "Success",
+   "F": "9940260060",
+   "G": "ajeyashyam.bhat2018@vitstudent.ac.in"
+ },
+ {
+   "A": "121",
+   "B": "G18I4549",
+   "C": "SATHYA CHARAN",
+   "D": "Internal",
+   "E": "Success",
+   "F": "9963880430",
+   "G": "chavanasathya.charan2018@vitstudent.ac.in"
+ },
+ {
+   "A": "122",
+   "B": "G18I4426",
+   "C": "JYOTHI",
+   "D": "Internal",
+   "E": "Success",
+   "F": "6379227349",
+   "G": "jyothim1008@gmail.com"
+ },
+ {
+   "A": "123",
+   "B": "G18I5152",
+   "C": "MRINAL HARSH",
+   "D": "Internal",
+   "E": "Success",
+   "F": "9540840717",
+   "G": "minkpathak@gmail.com"
+ },
+ {
+   "A": "124",
+   "B": "G18I2213",
+   "C": "APOORV SINGH",
+   "D": "Internal",
+   "E": "Success",
+   "F": "9928039230",
+   "G": "apoorv.singh2018@vitstudent.ac.in"
+ },
+ {
+   "A": "125",
+   "B": "G18E4602",
+   "C": "NANDHINI",
+   "D": "External",
+   "E": "Success",
+   "F": "7397196006",
+   "G": "nandhuds106@gmail.com"
+ },
+ {
+   "A": "126",
+   "B": "G18E6199",
+   "C": "SWETHA MANIEZHILAN",
+   "D": "External",
+   "E": "Success",
+   "F": "9487532548",
+   "G": "sweman0499@gmail.com"
+ },
+ {
+   "A": "127",
+   "B": "G18I6428",
+   "C": "BADUGU DEEPAK VENKATESHWAR RAO",
+   "D": "Internal",
+   "E": "Success",
+   "F": "9063397551",
+   "G": "srinivasbsk123@gmail.com"
+ },
+ {
+   "A": "128",
+   "B": "G18I7033",
+   "C": "ANSHUL JANGWAL",
+   "D": "Internal",
+   "E": "Success",
+   "F": "8800564404",
+   "G": "anshuljangwal006@gmail.com"
+ },
+ {
+   "A": "129",
+   "B": "G18E7286",
+   "C": "SUSMITHA RAVICHANDRAN",
+   "D": "External",
+   "E": "Success",
+   "F": "9952149479",
+   "G": "susmithachandran99@gmail.com"
+ },
+ {
+   "A": "130",
+   "B": "G18I2688",
+   "C": "SAI VISWANTH",
+   "D": "Internal",
+   "E": "Success",
+   "F": "9381299154",
+   "G": "sai07012001@yahoo.com"
+ },
+ {
+   "A": "131",
+   "B": "G18I1519",
+   "C": "ROMIL BHANU PRAKASH NUJELLA",
+   "D": "Internal",
+   "E": "Success",
+   "F": "8105124847",
+   "G": "romilnujella@gmail.com"
+ },
+ {
+   "A": "132",
+   "B": "G18I2122",
+   "C": "VISHAL RAMAN",
+   "D": "Internal",
+   "E": "Success",
+   "F": "9560071898",
+   "G": "vishal.raman2018@vitstudent.ac.in"
+ },
+ {
+   "A": "133",
+   "B": "G18I2083",
+   "C": "KASILANKA JOSEPH VARA PRASAD",
+   "D": "Internal",
+   "E": "Success",
+   "F": "6281100396",
+   "G": "kasilankajosephvaraprasad@gmail.com"
+ },
+ {
+   "A": "134",
+   "B": "G18I1568",
+   "C": "DILPREET LUTHRA",
+   "D": "Internal",
+   "E": "Success",
+   "F": "9752321564",
+   "G": "dilpreetluthra7@gmail.com"
+ },
+ {
+   "A": "135",
+   "B": "G18I0731",
+   "C": "AYUSH KAKAR",
+   "D": "Internal",
+   "E": "Success",
+   "F": "8826719267",
+   "G": "ayush.kakar2018@vitstudent.ac.in"
+ },
+ {
+   "A": "136",
+   "B": "G18I6353",
+   "C": "SANTANU GUHA",
+   "D": "Internal",
+   "E": "Success",
+   "F": "9674531320",
+   "G": "santanu.guha2018@vitstudent.ac.in"
+ },
+ {
+   "A": "137",
+   "B": "G18I8384",
+   "C": "ISHITA KABRA",
+   "D": "Internal",
+   "E": "Success",
+   "F": "9891412428",
+   "G": "ishitakabra18@gmail.com"
+ },
+ {
+   "A": "138",
+   "B": "G18I2712",
+   "C": "ABHIJIT VARIYAR",
+   "D": "Internal",
+   "E": "Success",
+   "F": "9449364238",
+   "G": "abhivariyar@gmail.com"
+ },
+ {
+   "A": "139",
+   "B": "G18I1766",
+   "C": "SHREYA KUMARI",
+   "D": "Internal",
+   "E": "Success",
+   "F": "9680582051",
+   "G": "shreya.kumari2018@vitstudent.ac.in"
+ },
+ {
+   "A": "140",
+   "B": "G18I1961",
+   "C": "SIDRA AHMAD",
+   "D": "Internal",
+   "E": "Success",
+   "F": "9410391021",
+   "G": "nandiniawtani11@gmail.com"
+ },
+ {
+   "A": "141",
+   "B": "G18E8405",
+   "C": "SHALINI",
+   "D": "External",
+   "E": "Success",
+   "F": "9790725972",
+   "G": "shalinidiaz3@gmail.com"
+ },
+ {
+   "A": "142",
+   "B": "G18I4727",
+   "C": "ADARSH KUMAR SINGH",
+   "D": "Internal",
+   "E": "Pending",
+   "F": "8935033048",
+   "G": "mailmeadarshvns@gmail.com"
+ },
+ {
+   "A": "143",
+   "B": "G18I4599",
+   "C": "MARIA SPARSHITA",
+   "D": "Internal",
+   "E": "Success",
+   "F": "9003306536",
+   "G": "maria.sparshitha2017@vitstudent.ac.in"
+ },
+ {
+   "A": "144",
+   "B": "G18I2934",
+   "C": "RAVELLA NITHISH KUMAR",
+   "D": "Internal",
+   "E": "Pending",
+   "F": "9010409449",
+   "G": "nithishnikki007@gmail.com"
+ },
+ {
+   "A": "145",
+   "B": "G18I4036",
+   "C": "U.SOWRI SUBHASH",
+   "D": "Internal",
+   "E": "Success",
+   "F": "7675000767",
+   "G": "subhash.sub121@gmail.com"
+ },
+ {
+   "A": "146",
+   "B": "G18I9028",
+   "C": "ANUSHA GUPTA",
+   "D": "Internal",
+   "E": "Success",
+   "F": "7607000863",
+   "G": "guptaanusha398@gmail.com"
+ }
+]

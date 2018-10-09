@@ -21,7 +21,7 @@ export class Accountform1Component implements OnInit {
   constructor(private accountFromService: AccountformService, private loginService: LoginService, private adminService: AdminService) { }
 
   ngOnInit() {
-    this.loginService.getLogin().subscribe(data => {
+    this.loginService.checkAdmin().subscribe(data => {
       // console.log(data);
       this.admin = data;
     })

@@ -1,0 +1,33 @@
+<form (submit)="submit($event)" *ngIf="visible" class="form-group mt-2" [ngClass]="validate? 'was-validated': 'needs-validation'">
+  <div>
+    <label>Yearite:</label>
+    <input type="number" class="form-control" [(ngModel)]="yearite" name="yearite" required>
+    <small class="invalid-feedback">Enter your Year of Study.</small>
+  </div>
+
+  <div>
+    <label>Password:</label>
+    <input type="password" class="form-control" [(ngModel)]="pass1" name="pass2" required>
+    <small class="invalid-feedback">Enter Password.</small>
+  </div>
+
+  <div>
+    <label>Confirm Password:</label>
+    <input type="password" class="form-control" [(ngModel)]="pass2" name="pass2" required>
+    <small class="invalid-feedback">Confirm Password.</small>
+  </div>
+
+  <button type="submit" class="btn btn-success">Create Account</button>
+
+</form>
+
+<div *ngIf="admin">
+  <h4>Final Accounts Set Clearance:</h4>
+  <div *ngFor="let account of accounts; let i = index" [attr.data-index]="i">
+    <div class="bg-primary mb-3">
+      <p><strong>{{ account.name }}</strong>, {{ account.reg_no }}</p>
+      <input type="text" placeholder="{{ account.clearance }}" [(ngModel)]="account.newClearance" id="{{ i }}">
+      <button (click)="update(account.reg_no, i)" class="btn btn-info">Update Clearance</button>
+    </div>
+  </div>
+</div>

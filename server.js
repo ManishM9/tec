@@ -7,6 +7,9 @@ var path = require("path");
 var mongoose = require("mongoose");
 var nodemailer = require("nodemailer");
 var fs = require("fs");
+var send = require('gmail-send');
+
+var ObjectID = require("mongodb").ObjectID;
 
 // var transporter = nodemailer.createTransport("SMTP", {
 //     host: "smtp-mail.outlook.com",
@@ -211,6 +214,15 @@ var messageSchema = new mongoose.Schema({
 
 var Message = mongoose.model("message", messageSchema);
 
+var accountmidSchema = new mongoose.Schema({
+    name: String,
+    email: String,
+    reg_no: String,
+    aid: String,
+});
+
+var Accountmid = mongoose.model("accountmid", accountmidSchema);
+
 var account1Schema = new mongoose.Schema({
     name: String,
     email: String,
@@ -309,6 +321,7 @@ var accountSchema = new mongoose.Schema({
     yearite: Number,
     clearance: String,
     password: String,
+    email: String,
 });
 
 var Account = mongoose.model("account", accountSchema);
@@ -409,7 +422,7 @@ app.post("/api/event/post", authenticate, (req,res) => {
 });
 
 app.get("/api/event/get/:month/:year", authenticate, (req,res) => {
-    var month = Number(req.params.month) +1;
+    var month = Number(req.params.month);
     var year  = Number(req.params.year);
     console.log(month, year);
     // Item.find({"date": { $gt:year+"-"+month+"-1"}, "date": { $lte:year+"-"+month+"-31" } }, (err,events) => {
@@ -472,18 +485,239 @@ app.post("/api/accountform1", (req,res) => {
     }
 });
 
+var transporter = nodemailer.createTransport({
+    service: 'gmail',
+    host: "smtp.gmail.com",
+    auth: {
+        user: 'webdevs.tec@gmail.com',
+        pass: 'ljewzovbuwjspauq',
+    }
+});
+
 app.post("/api/acp", authenticate, (req,res) => {
     var reqb = req.body;
     if(reqb.doit){
         if(req.session.clearance === 'admin'){
             console.log("ACCOUNT CREATION PROTOCOL INITIATED");
-            res.send(true);
+            
+            Accountform1.find({}, (err,account1) => {
+                let accounts1 = account1;
+                if(err){
+                    console.log(err);
+                    throw err;
+                } else {
+                    if(accounts1[0] !== undefined || accounts1[0] !== null || accounts1[0] !== {}){
+                        // accounts1.forEach((account1, index) => {
+                        //     accounts1[index]["aid"] = Math.random().toString(36).replace(/[^a-z]+/g, '').substr(0, 10);
+                        //     console.log(accounts1[index].aid);
+                        // });
+                        let array_accountsmid = [];
+                        for(let i=0; i<accounts1.length; i++){
+                            let obj_toadd = {
+                                name: account1[i].name,
+                                email: account1[i].email,
+                                reg_no: account1[i].reg_no,
+                                aid: Math.random().toString(36).replace(/[^a-z]+/g, '').substr(0, 10),
+                            };
+                            // obj_toadd.aid = Math.random().toString(36).replace(/[^a-z]+/g, '').substr(0, 10);
+                            array_accountsmid.push(obj_toadd);
+                        }
+                        Accountmid.insertMany(array_accountsmid, (err, docs) => {
+                            if(err){
+                                console.log(err);
+                                throw err;
+                            } else {
+                                console.log(docs);
+                                docs.forEach(doc => {
+                                    var email_tosend = doc.email;
+                                    var mailOptions = {
+                                        from: '"TEC Web Developers" <webdevs.tec@gmail.com>', // sender address
+                                        to: email_tosend, // list of receivers
+                                        subject: "[IMPORTANT]Account Creation Completion",
+                                        text: "Yo It works!!!! :D :D :D :D",
+                                        html: '<h4>Please go to the following URL</h4><p>www.tecvit.co.in/accountform/'+ doc.aid +'</p><p>Fill in the details and Submit.</p><br><br><br><br><br><p>~XD</p>' // html body
+                                    };
+                                    transporter.sendMail(mailOptions, function(error, info){
+                                        console.log(mailOptions);
+                                        console.log(info);
+                                        if(error){
+                                            return console.log(error);
+                                        }
+                                        console.log('Message sent: ' + info.response);
+                                    });
+                                });
+                                Accountform1.deleteMany({}, (err, info) => {
+                                    if(err){
+                                        console.log(err);
+                                        throw err;
+                                    } else {
+                                        console.log(info);
+                                        res.send(true);
+                                    }
+                                })
+                            }
+                        });
+                        // console.log(array_accountsmid);
+                    }
+                }
+            });
+
         } else {
             res.send(false);
         }
     }
     else {
         res.send(false);
+    }
+});
+
+
+app.get('/api/accountform/:aid', (req,res) => {
+    var aid = req.params.aid;
+    Accountmid.find({ aid: aid }, (err,obj) => {
+        obj = obj[0];
+        if(err){
+            console.log(err);
+            throw err;
+        } else {
+            console.log(obj);
+            if(obj !== undefined && obj !== {} && obj !== null){
+                res.send(true);
+            } else {
+                res.send(false);
+            }
+        }
+    });
+});
+
+
+// send({
+//     user: "webdevs.tec@gmail.com",
+//     pass: "ljewzovbuwjspauq",
+//     to: "sheetymanish@gmail.com",
+//     subject: "Testing Gmail-Send :D 2",
+//     text: "Yo It works!!!! :D :D :D :D",
+// }, function(err, res) {
+//     console.log(err);
+//     console.log(res);
+// })();
+
+// var transporter = nodemailer.createTransport({
+//     service: 'gmail',
+//     host: "smtp.gmail.com",
+//     auth: {
+//         user: 'webdevs.tec@gmail.com',
+//         pass: 'ljewzovbuwjspauq',
+//     }
+//   });
+  
+  // setup e-mail data with unicode symbols
+// var mailOptions = {
+//     from: '"TEC Web Developers" <webdevs.tec@gmail.com>', // sender address
+//     to: 'sheetymanish@gmail.com', // list of receivers
+//     subject: "Testing Gmail-Send :D 2",
+//     text: "Yo It works!!!! :D :D :D :D",
+//     html: '<p>TEC</p>' // html body
+// };
+  
+  // send mail with defined transport object
+// transporter.sendMail(mailOptions, function(error, info){
+//     console.log(mailOptions);
+//     console.log(info);
+//     if(error){
+//         return console.log(error);
+//     }
+//     console.log('Message sent: ' + info.response);
+// });
+
+app.post('/api/accountsubmit/:aid', (req,res) => {
+    var aid = req.params.aid;
+    console.log(aid);
+    var account_rec = req.body;
+    var account_toadd = {
+        yearite: account_rec.yearite,
+        password: account_rec.password,
+    };
+    Accountmid.find({ aid: aid }, (err, obj) => {
+        obj = obj[0];
+        console.log(obj);
+        if(err){
+            console.log(err);
+            res.send(false);
+            throw err;
+        } else {
+            if(obj !== undefined && obj !== {} && obj !== null){
+                account_toadd.name = obj.name;
+                account_toadd.email = obj.email;
+                account_toadd.reg_no = obj.reg_no;
+                Account.create(account_toadd, (err, account) => {
+                    console.log(account);
+                    if(err){
+                        console.log(err);
+                        res.send(false);
+                        throw err;
+                    } else {
+                        Accountmid.deleteOne({ aid: aid }, (err, info) => {
+                            if(err){
+                                console.log(err);
+                                throw err;
+                            } else {
+                                console.log(info);
+                                res.send(true);
+                            }
+                        });
+                    }
+                });
+            } else {
+                res.send(false);
+            }
+        }
+    });
+});
+
+app.get('/api/getaccounts', (req,res) => {
+    if(req.session.clearance === "admin"){
+        Account.find({}, (err, accounts) => {
+            if(err){
+                console.log(err);
+                throw err;
+            } else {
+                var accounts_tosend = [];
+                accounts.forEach(account => {
+                    var obj = {
+                        name: account.name,
+                        reg_no: account.reg_no,
+                        yearite: account.yearite,
+                        clearance: account.clearance,
+                        email: account.email,
+                    };
+                    accounts_tosend.push(obj);
+                });
+                res.send(accounts_tosend);
+            }
+        });
+    } else {
+        res.send([]);
+    }
+});
+
+app.post('/api/updateclearance/:reg_no', (req, res) => {
+    var reg_no = req.params.reg_no;
+    var obj = req.body;
+    var to_update = {
+        clearance: obj.clearance,
+    };
+    if(req.session.clearance === "admin"){
+        Account.update({ reg_no: reg_no }, to_update, { multi: false }, (err, doc) => {
+            if(err){
+                console.log(err);
+                res.send(false);
+                throw err;
+            } else {
+                console.log(doc);
+                res.send(true);
+            }
+        });
     }
 });
 
