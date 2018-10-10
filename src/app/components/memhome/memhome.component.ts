@@ -16,7 +16,7 @@ export class MemhomeComponent implements OnInit {
   socket: SocketIOClient.Socket;
 
   constructor(private loginService: LoginService) {
-    this.socket = io.connect("http://tecvit.co.in:3001");
+    this.socket = io.connect("http://tecvit.co.in/home:3001");
   }
 
   ngOnInit() {
