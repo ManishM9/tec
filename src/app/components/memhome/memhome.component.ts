@@ -16,7 +16,7 @@ export class MemhomeComponent implements OnInit {
   socket: SocketIOClient.Socket;
 
   constructor(private loginService: LoginService) {
-    this.socket = io.connect("https://secure-wave-33024.herokuapp.com:3000");
+    this.socket = io.connect("https://secure-wave-33024.herokuapp.com");
   }
 
   ngOnInit() {
