@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import * as io from 'socket.io-client';
 import { FormsModule } from '@angular/forms';
 import { LoginService } from '../../services/login.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-memhome',
@@ -10,12 +11,13 @@ import { LoginService } from '../../services/login.service';
   styleUrls: ['./memhome.component.css']
 })
 export class MemhomeComponent implements OnInit {
+  valid: boolean = false;
   name: string = '';
   messages = [];
   newMessage: string = '';
   socket: SocketIOClient.Socket;
 
-  constructor(private loginService: LoginService) {
+  constructor(private loginService: LoginService, private router: Router) {
     // this.socket = io.connect("https://secure-wave-33024.herokuapp.com");
     this.socket = io.connect();
   }
@@ -37,7 +39,13 @@ export class MemhomeComponent implements OnInit {
     });
     this.loginService.getName().subscribe(data => {
       this.name = data.name;
-      console.log(this.name);
+      // console.log(this.name);
+      if(this.name === undefined || this.name === ""){
+        this.valid = false;
+        this.router.navigate(['/login']);
+      } else {
+        this.valid = true;
+      }
     });
   }
 
