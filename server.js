@@ -252,6 +252,13 @@ var grpchatmessageSchema = new mongoose.Schema({
 
 var GroupChatMessage = mongoose.model("GroupChatMessage", grpchatmessageSchema);
 
+var onlineusersSchema = new mongoose.Schema({
+    name: String,
+    time: Date,
+});
+
+var OnlineUsers = mongoose.model("OnlineUser", onlineusersSchema);
+
 var accountmidSchema = new mongoose.Schema({
     name: String,
     email: String,
@@ -1044,8 +1051,33 @@ const server = app.listen(process.env.PORT || 8888, process.env.IP, (req,res) =>
 // var http = require("http").createServer().listen(3000);
 var io = require("socket.io").listen(server);
 
+
+// var activeUsers = [];
+
 io.on('connection', (socket) => {
     console.log("New Connection Made");
+    socket.on('register', data => {
+        // activeUsers.push(data);
+        // console.log(activeUsers);
+        OnlineUsers.find({ name: data }, (err, doc) => {
+            doc = doc[0];
+            if(err){
+                console.log(err);
+                throw err;
+            } else {
+                if(doc === undefined || doc === {} || doc === null){
+                    OnlineUsers.create({ name: data, time: Date.now() }, (err, doc) => {
+                        if(err){
+                            console.log(err);
+                            throw err;
+                        } else {
+                            console.log(doc);
+                        }
+                    });
+                }
+            }
+        })
+    });
 
     // socket.emit('message-recieved', { message: "Welcome to TEC Chat", sender: "SERVER" });
 
@@ -1054,7 +1086,7 @@ io.on('connection', (socket) => {
             console.log(err);
             throw err
         } else {
-            console.log(messages);
+            // console.log(messages);
             socket.emit("message-recieved-bulk", messages);
             socket.emit('message-recieved', { message: "Welcome to TEC Chat", sender: "SERVER" });
         }
@@ -1075,6 +1107,36 @@ io.on('connection', (socket) => {
         // io.emit('message-recieved', message_toadd);
     });
 
+    socket.on('get-online-users', data => {
+        OnlineUsers.find({}, (err, docs) => {
+            if(err){
+                console.log(err);
+                throw err;
+            } else {
+                var activeUsers_tosend = [];
+                docs.forEach(user => {
+                    activeUsers_tosend.push({
+                        name: user.name,
+                        time: user.time,
+                    });
+                });
+                socket.emit('recieve-online-users', activeUsers_tosend);
+            }
+        });
+    });
 
+    socket.on('disconnect', data => {
+        // console.log("Disconnected");
+        // console.log(data);
+        // socket.emit('register-urselves', { doIt: true });
+        OnlineUsers.deleteMany({}, (err, info) => {
+            if(err){
+                console.log(err);
+                throw err;
+            } else {
+                console.log(info);
+            }
+        });
+    });
 
 });

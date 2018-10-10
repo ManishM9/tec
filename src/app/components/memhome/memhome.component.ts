@@ -11,6 +11,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./memhome.component.css']
 })
 export class MemhomeComponent implements OnInit {
+  onlineUsers = [];
   valid: boolean = false;
   name: string = '';
   messages = [];
@@ -41,6 +42,22 @@ export class MemhomeComponent implements OnInit {
       };
       this.messages.push(obj);
     });
+    // this.socket.on('register-urselves', data => {
+    //   if(this.name !== undefined && this.name !== ""){
+    //     this.socket.emit('register', this.name);
+    //   }
+    // });
+    setInterval(() => {
+      if(this.name !== undefined && this.name !== ""){
+        this.socket.emit('register', this.name);
+      }
+      this.socket.emit('get-online-users', { doIt: true });
+    }, 2000);
+    // this.socket.emit('get-online-users', { doIt: true });
+    this.socket.on('recieve-online-users', data =>{
+      this.onlineUsers = data;
+      console.log(this.onlineUsers);
+    });
     this.loginService.getName().subscribe(data => {
       this.name = data.name;
       // console.log(this.name);
@@ -49,6 +66,7 @@ export class MemhomeComponent implements OnInit {
         this.router.navigate(['/login']);
       } else {
         this.valid = true;
+        this.socket.emit('register', this.name);
       }
     });
   }
