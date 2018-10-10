@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ElementRef, ViewChild } from '@angular/core';
 
 import * as io from 'socket.io-client';
 import { FormsModule } from '@angular/forms';
@@ -11,6 +11,9 @@ import { Router } from '@angular/router';
   styleUrls: ['./memhome.component.css']
 })
 export class MemhomeComponent implements OnInit {
+  @ViewChild('scrollMe') private myScrollContainer: ElementRef;
+  messagelenold: number = -1;
+  messagelennew: number = 0;
   onlineUsers = [];
   valid: boolean = false;
   name: string = '';
@@ -33,6 +36,20 @@ export class MemhomeComponent implements OnInit {
     // }, 500);
     this.socket.on('message-recieved-bulk', data => {
       this.messages = data;
+      this.messagelenold = this.messagelennew;
+      this.messagelennew = this.messages.length;
+      if(this.messagelennew > this.messagelenold){
+        // console.log(this.messagelenold);
+        // console.log(this.messagelennew);
+        // try {
+        //   this.myScrollContainer.nativeElement.scrollTop = this.myScrollContainer.nativeElement.scrollHeight;
+        // } catch(err) { }
+        setTimeout(() => {
+          this.myScrollContainer.nativeElement.scrollTop = this.myScrollContainer.nativeElement.scrollHeight;
+        }, 1);
+        // this.myScrollContainer.nativeElement.scrollTop = this.myScrollContainer.nativeElement.scrollHeight;
+        // this.myScrollContainer.nativeElement.scrollToBottom();
+      }
     });
     // setInterval(() => {
     //   this.socket.on('message-recieved-bulk', data => {
@@ -79,7 +96,7 @@ export class MemhomeComponent implements OnInit {
   submit(e: any) {
     e.preventDefault();
     // alert(this.newMessage);
-    if(this.name !== "" && this.name !== undefined){
+    if(this.name !== "" && this.name !== undefined && this.newMessage !== "" && this.newMessage !== undefined){
       this.socket.emit('message-send', { message: this.newMessage, sender: this.name, time: Date.now() });
       this.newMessage = '';
     } else {

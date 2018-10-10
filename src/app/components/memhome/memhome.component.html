@@ -4,7 +4,7 @@
 </div>
 
 <div class="container mb-4" style="height: 500px;">
-  <div class="w-100 bg-light rounded" style="height: 90%; overflow: scroll;">
+  <div class="w-100 bg-light rounded" style="height: 90%; overflow: scroll;" #scrollMe>
     <div class="py-0 mb-1 bg-dark rounded pl-2" *ngFor="let message of messages">
       <strong class="text-light">{{ message.sender }} : </strong><span class="text-light">{{ message.message }}</span><br>
       <small>{{ message.time | date:"dd MMM, hh:mm" }}</small>
@@ -12,7 +12,7 @@
   </div>
   <div class="w-100 mt-2" style="height: 10%;">
     <form (submit)="submit($event)" style="height:100%;">
-      <input autocomplete="new-password" class="rounded bg-light w-75 h-100 my-auto" type="text" [(ngModel)]="newMessage" name="newMessage">
+      <input autocomplete="off" class="rounded bg-light w-75 h-100 my-auto" type="text" [(ngModel)]="newMessage" name="newMessage">
       <button type="submit" class="btn btn-success w-25 h-100 my-auto">Send</button>
     </form>
   </div>
