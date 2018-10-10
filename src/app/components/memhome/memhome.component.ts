@@ -52,7 +52,7 @@ export class MemhomeComponent implements OnInit {
         this.socket.emit('register', this.name);
       }
       this.socket.emit('get-online-users', { doIt: true });
-    }, 2000);
+    }, 500);
     // this.socket.emit('get-online-users', { doIt: true });
     this.socket.on('recieve-online-users', data =>{
       this.onlineUsers = data;
