@@ -8,7 +8,7 @@ var mongoose = require("mongoose");
 var nodemailer = require("nodemailer");
 var fs = require("fs");
 // var send = require('gmail-send');
-var http = require("http").createServer().listen(3001, '0.0.0.0');
+var http = require("http").createServer().listen(3001);
 var io = require("socket.io").listen(http);
 
 // var ObjectID = require("mongodb").ObjectID;
