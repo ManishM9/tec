@@ -1,0 +1,17 @@
+<div class="container">
+  <app-calendar></app-calendar>
+</div>
+
+<div class="container" style="height: 500px;">
+  <div class="w-100 bg-light rounded" style="height: 90%; overflow: scroll;">
+    <div class="py-0 my-0" *ngFor="let message of messages">
+      <strong>{{ message.sender }}:</strong><span>{{ message.message }}</span>
+    </div>
+  </div>
+  <div class="w-100 mt-2" style="height: 10%;">
+    <form (submit)="submit($event)" style="height:100%;">
+      <input class="rounded bg-light w-75 h-100 my-auto" type="text" [(ngModel)]="newMessage" name="newMessage">
+      <button type="submit" class="btn btn-success w-25 h-100 my-auto">Send</button>
+    </form>
+  </div>
+</div>

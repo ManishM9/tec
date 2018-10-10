@@ -21,6 +21,7 @@ import { FormsensComponent } from './components/formsens/formsens.component';
 import { EmbedComponent } from './components/embed/embed.component';
 import { AccountformfinalComponent } from './components/accountformfinal/accountformfinal.component';
 import { MemhomeComponent } from './components/memhome/memhome.component';
+import { LoginService } from './services/login.service';
 
 @NgModule({
   declarations: [
@@ -44,7 +45,7 @@ import { MemhomeComponent } from './components/memhome/memhome.component';
     BrowserAnimationsModule,
     AppRoutingModule
   ],
-  providers: [EventService, AccountformService, AdminService, SensoredService],
+  providers: [EventService, AccountformService, AdminService, SensoredService, LoginService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
