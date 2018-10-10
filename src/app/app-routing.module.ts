@@ -16,14 +16,17 @@ import { EmbedComponent } from './components/embed/embed.component';
 
 import { AccountformfinalComponent } from './components/accountformfinal/accountformfinal.component';
 
+import { MemhomeComponent } from './components/memhome/memhome.component';
+
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'form1', component: Accountform1Component },
   { path: 'login', component: LoginComponent },
-  { path: 'calendar', component: CalendarComponent },
+  // { path: 'calendar', component: CalendarComponent },
   { path: 'event-maker', component: EventMakerComponent },
   { path: 'sensored', component: SensoredComponent },
-  { path: 'accountform/:aid', component: AccountformfinalComponent }
+  { path: 'accountform/:aid', component: AccountformfinalComponent },
+  { path: 'home', component: MemhomeComponent },
   // { path: 'sensored/login', component: LoginsensComponent },
   // { path: 'sensored/form', component: FormsensComponent },
   // { path: 'embed', component: EmbedComponent },

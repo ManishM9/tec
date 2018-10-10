@@ -22,4 +22,8 @@ export class LoginService {
     return this.http.get<any>("/api/loginch");
   }
 
+  getName(): Observable<any>{
+    return this.http.get<any>("/api/getname");
+  }
+
 }

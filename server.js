@@ -7,9 +7,37 @@ var path = require("path");
 var mongoose = require("mongoose");
 var nodemailer = require("nodemailer");
 var fs = require("fs");
-var send = require('gmail-send');
+// var send = require('gmail-send');
+var http = require("http").createServer().listen(3001, '0.0.0.0');
+var io = require("socket.io").listen(http);
 
 var ObjectID = require("mongodb").ObjectID;
+
+
+
+io.on('connection', (socket) => {
+    console.log("New Connection Made");
+
+    socket.on('message-send', (data) => {
+        io.emit('message-recieved', { message: data.message, sender: data.sender });
+    });
+
+
+
+});
+
+// io.emit('message-recieved', { message: "Welcome To TEC Chat" });
+
+// io.on('message-send', (socket) => {
+//     console.log(socket);
+//     io.emit('message-recieved', { message: socket.message });
+// });
+
+// setInterval(() => {
+//     io.emit('message-recieved', { message: 'OLAhuUber' });
+// }, 5000);
+
+
 
 // var transporter = nodemailer.createTransport("SMTP", {
 //     host: "smtp-mail.outlook.com",
@@ -165,9 +193,10 @@ app.use(session({
     resave: false,
     saveUninitialized: true,
     username: undefined,
-    // yearite: 0,
-    // clearance: ''
-    teamno: 0,
+    yearite: 0,
+    clearance: '',
+    name: '',
+    // teamno: 0,
 }));
 
 app.use(express.static(path.join(__dirname, 'dist/tec')));
@@ -385,6 +414,7 @@ app.post("/api/login", (req,res) => {
                 req.session.username = account.reg_no;
                 req.session.yearite = account.yearite;
                 req.session.clearance = account.clearance;
+                req.session.name = account.name;
                 res.send(true);
             } else {
                 res.send(false);
@@ -723,6 +753,11 @@ app.post('/api/updateclearance/:reg_no', (req, res) => {
             }
         });
     }
+});
+
+app.get("/api/getname", (req, res) => {
+    console.log(req.session.name);
+    res.send({ name: req.session.name });
 });
 
 // Item.find({"date": { $gt: "2018-07-17" }}, (err,events) => {
