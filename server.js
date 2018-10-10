@@ -19,6 +19,7 @@ io.on('connection', (socket) => {
     console.log("New Connection Made");
 
     socket.on('message-send', (data) => {
+        console.log(data);
         io.emit('message-recieved', { message: data.message, sender: data.sender });
     });
 
