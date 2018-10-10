@@ -1039,6 +1039,8 @@ var io = require("socket.io").listen(server);
 io.on('connection', (socket) => {
     console.log("New Connection Made");
 
+    socket.emit('message-recieved', { message: "Welcome to TEC Chat", sender: "SERVER" });
+
     socket.on('message-send', (data) => {
         console.log(data);
         io.emit('message-recieved', { message: data.message, sender: data.sender });
