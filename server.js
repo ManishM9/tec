@@ -8,24 +8,24 @@ var mongoose = require("mongoose");
 var nodemailer = require("nodemailer");
 var fs = require("fs");
 // var send = require('gmail-send');
-var http = require("http").createServer().listen(3000);
-var io = require("socket.io").listen(http);
+// var http = require("http").createServer().listen(3000);
+// var io = require("socket.io").listen(http);
 
 // var ObjectID = require("mongodb").ObjectID;
 
 
 
-io.on('connection', (socket) => {
-    console.log("New Connection Made");
+// io.on('connection', (socket) => {
+//     console.log("New Connection Made");
 
-    socket.on('message-send', (data) => {
-        console.log(data);
-        io.emit('message-recieved', { message: data.message, sender: data.sender });
-    });
+//     socket.on('message-send', (data) => {
+//         console.log(data);
+//         io.emit('message-recieved', { message: data.message, sender: data.sender });
+//     });
 
 
 
-});
+// });
 
 // io.emit('message-recieved', { message: "Welcome To TEC Chat" });
 
@@ -1029,6 +1029,21 @@ app.get("*", (req,res) => {
 });
 
 
-app.listen(process.env.PORT || 8888, process.env.IP, (req,res) => {
+const server = app.listen(process.env.PORT || 8888, process.env.IP, (req,res) => {
     console.log("Server Started");
+});
+
+// var http = require("http").createServer().listen(3000);
+var io = require("socket.io").listen(server);
+
+io.on('connection', (socket) => {
+    console.log("New Connection Made");
+
+    socket.on('message-send', (data) => {
+        console.log(data);
+        io.emit('message-recieved', { message: data.message, sender: data.sender });
+    });
+
+
+
 });
