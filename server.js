@@ -1083,16 +1083,29 @@ io.on('connection', (socket) => {
 
     // socket.emit('message-recieved', { message: "Welcome to TEC Chat", sender: "SERVER" });
 
-    GroupChatMessage.find({}).sort('time').exec( (err, messages) => {
-        if(err){
-            console.log(err);
-            throw err
-        } else {
-            // console.log(messages);
-            socket.emit("message-recieved-bulk", messages);
-            socket.emit('message-recieved', { message: "Welcome to TEC Chat", sender: "SERVER" });
-        }
-    });
+    // GroupChatMessage.find({}).sort('time').exec( (err, messages) => {
+    //     if(err){
+    //         console.log(err);
+    //         throw err
+    //     } else {
+    //         // console.log(messages);
+    //         socket.emit("message-recieved-bulk", messages);
+    //         // socket.emit('message-recieved', { message: "Welcome to TEC Chat", sender: "SERVER" });
+    //     }
+    // });
+
+    setInterval(() => {
+        GroupChatMessage.find({}).sort('time').exec( (err, messages) => {
+            if(err){
+                console.log(err);
+                throw err
+            } else {
+                // console.log(messages);
+                socket.emit("message-recieved-bulk", messages);
+                // socket.emit('message-recieved', { message: "Welcome to TEC Chat", sender: "SERVER" });
+            }
+        });
+    }, 500);
 
     socket.on('message-send', (data) => {
         console.log(data);
@@ -1103,7 +1116,7 @@ io.on('connection', (socket) => {
                 throw err;
             } else {
                 console.log(doc);
-                socket.emit('message-recieved', message_toadd);
+                // socket.emit('message-recieved', message_toadd);
             }
         });
         // io.emit('message-recieved', message_toadd);

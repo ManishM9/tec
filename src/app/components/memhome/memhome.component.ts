@@ -31,14 +31,14 @@ export class MemhomeComponent implements OnInit {
     //     console.log(this.messages);
     //   });
     // }, 500);
-    // this.socket.on('message-recieved-bulk', data => {
-    //   this.messages = data;
-    // });
-    setInterval(() => {
-      this.socket.on('message-recieved-bulk', data => {
-        this.messages = data;
-      });
-    }, 500);
+    this.socket.on('message-recieved-bulk', data => {
+      this.messages = data;
+    });
+    // setInterval(() => {
+    //   this.socket.on('message-recieved-bulk', data => {
+    //     this.messages = data;
+    //   });
+    // }, 500);
     // this.socket.on('message-recieved', (data: any) => {
     //   let obj = {
     //     message: data.message,
@@ -61,7 +61,7 @@ export class MemhomeComponent implements OnInit {
     // this.socket.emit('get-online-users', { doIt: true });
     this.socket.on('recieve-online-users', data =>{
       this.onlineUsers = data;
-      console.log(this.onlineUsers);
+      // console.log(this.onlineUsers);
     });
     this.loginService.getName().subscribe(data => {
       this.name = data.name;
