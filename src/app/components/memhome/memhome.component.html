@@ -6,7 +6,7 @@
 <div class="container mb-4" style="height: 500px;">
   <div class="w-100 bg-light rounded" style="height: 90%; overflow: scroll;">
     <div class="py-0 mb-1 bg-dark rounded pl-2" *ngFor="let message of messages">
-      <strong class="text-light">{{ message.sender }}:</strong><span class="text-light">{{ message.message }}</span><br>
+      <strong class="text-light">{{ message.sender }} : </strong><span class="text-light">{{ message.message }}</span><br>
       <small>{{ message.time | date:"dd MMM, hh:mm" }}</small>
     </div>
   </div>

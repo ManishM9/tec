@@ -31,17 +31,22 @@ export class MemhomeComponent implements OnInit {
     //     console.log(this.messages);
     //   });
     // }, 500);
-    this.socket.on('message-recieved-bulk', data => {
-      this.messages = data;
-    });
-    this.socket.on('message-recieved', (data: any) => {
-      let obj = {
-        message: data.message,
-        sender: data.sender,
-        time: data.time,
-      };
-      this.messages.push(obj);
-    });
+    // this.socket.on('message-recieved-bulk', data => {
+    //   this.messages = data;
+    // });
+    setInterval(() => {
+      this.socket.on('message-recieved-bulk', data => {
+        this.messages = data;
+      });
+    }, 500);
+    // this.socket.on('message-recieved', (data: any) => {
+    //   let obj = {
+    //     message: data.message,
+    //     sender: data.sender,
+    //     time: data.time,
+    //   };
+    //   this.messages.push(obj);
+    // });
     this.socket.on('register-urselves', data => {
       if(this.name !== undefined && this.name !== ""){
         this.socket.emit('register', this.name);
