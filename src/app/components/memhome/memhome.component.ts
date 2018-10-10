@@ -30,10 +30,14 @@ export class MemhomeComponent implements OnInit {
     //     console.log(this.messages);
     //   });
     // }, 500);
+    this.socket.on('message-recieved-bulk', data => {
+      this.messages = data;
+    });
     this.socket.on('message-recieved', (data: any) => {
       let obj = {
         message: data.message,
         sender: data.sender,
+        time: data.time,
       };
       this.messages.push(obj);
     });
@@ -53,7 +57,7 @@ export class MemhomeComponent implements OnInit {
     e.preventDefault();
     // alert(this.newMessage);
     if(this.name !== "" && this.name !== undefined){
-      this.socket.emit('message-send', { message: this.newMessage, sender: this.name });
+      this.socket.emit('message-send', { message: this.newMessage, sender: this.name, time: Date.now() });
       this.newMessage = '';
     } else {
       

@@ -244,6 +244,14 @@ var messageSchema = new mongoose.Schema({
 
 var Message = mongoose.model("message", messageSchema);
 
+var grpchatmessageSchema = new mongoose.Schema({
+    sender: String,
+    message: String,
+    time: Date,
+});
+
+var GroupChatMessage = mongoose.model("GroupChatMessage", grpchatmessageSchema);
+
 var accountmidSchema = new mongoose.Schema({
     name: String,
     email: String,
@@ -1039,11 +1047,32 @@ var io = require("socket.io").listen(server);
 io.on('connection', (socket) => {
     console.log("New Connection Made");
 
-    socket.emit('message-recieved', { message: "Welcome to TEC Chat", sender: "SERVER" });
+    // socket.emit('message-recieved', { message: "Welcome to TEC Chat", sender: "SERVER" });
+
+    GroupChatMessage.find({}).sort('time').exec( (err, messages) => {
+        if(err){
+            console.log(err);
+            throw err
+        } else {
+            console.log(messages);
+            socket.emit("message-recieved-bulk", messages);
+            socket.emit('message-recieved', { message: "Welcome to TEC Chat", sender: "SERVER" });
+        }
+    });
 
     socket.on('message-send', (data) => {
         console.log(data);
-        io.emit('message-recieved', { message: data.message, sender: data.sender });
+        var message_toadd = { message: data.message, sender: data.sender, time: data.time };
+        GroupChatMessage.create(message_toadd, (err, doc) => {
+            if(err){
+                console.log(err);
+                throw err;
+            } else {
+                console.log(doc);
+                socket.emit('message-recieved', message_toadd);
+            }
+        });
+        // io.emit('message-recieved', message_toadd);
     });
 
 
