@@ -1053,6 +1053,7 @@ var io = require("socket.io").listen(server);
 
 
 // var activeUsers = [];
+var curr_name = "";
 
 io.on('connection', (socket) => {
     console.log("New Connection Made");
@@ -1072,6 +1073,7 @@ io.on('connection', (socket) => {
                             throw err;
                         } else {
                             console.log(doc);
+                            curr_name = data;
                         }
                     });
                 }
@@ -1128,8 +1130,8 @@ io.on('connection', (socket) => {
     socket.on('disconnect', data => {
         // console.log("Disconnected");
         // console.log(data);
-        // socket.emit('register-urselves', { doIt: true });
-        OnlineUsers.deleteMany({}, (err, info) => {
+        socket.emit('register-urselves', { doIt: true });
+        OnlineUsers.remove({ name: curr_name }, (err, info) => {
             if(err){
                 console.log(err);
                 throw err;
@@ -1137,6 +1139,15 @@ io.on('connection', (socket) => {
                 console.log(info);
             }
         });
+        // OnlineUsers.deleteMany({}, (err, info) => {
+        //     if(err){
+        //         console.log(err);
+        //         throw err;
+        //     } else {
+        //         // socket.emit('register-urselves', { doIt: true });
+        //         console.log(info);
+        //     }
+        // });
     });
 
 });

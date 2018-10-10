@@ -42,15 +42,15 @@ export class MemhomeComponent implements OnInit {
       };
       this.messages.push(obj);
     });
-    // this.socket.on('register-urselves', data => {
-    //   if(this.name !== undefined && this.name !== ""){
-    //     this.socket.emit('register', this.name);
-    //   }
-    // });
-    setInterval(() => {
+    this.socket.on('register-urselves', data => {
       if(this.name !== undefined && this.name !== ""){
         this.socket.emit('register', this.name);
       }
+    });
+    setInterval(() => {
+      // if(this.name !== undefined && this.name !== ""){
+      //   this.socket.emit('register', this.name);
+      // }
       this.socket.emit('get-online-users', { doIt: true });
     }, 500);
     // this.socket.emit('get-online-users', { doIt: true });
