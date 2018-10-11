@@ -21,6 +21,11 @@ export class MemhomeComponent implements OnInit {
   newMessage: string = '';
   socket: SocketIOClient.Socket;
 
+  perschatflag: boolean = false;
+  persname: string = "";
+  persmessages = [];
+  perschatnewMessage: string = "";
+
   constructor(private loginService: LoginService, private router: Router) {
     // this.socket = io.connect("https://secure-wave-33024.herokuapp.com");
     this.socket = io.connect();
@@ -64,11 +69,16 @@ export class MemhomeComponent implements OnInit {
     //   };
     //   this.messages.push(obj);
     // });
-    this.socket.on('register-urselves', data => {
+    // this.socket.on('register-urselves', data => {
+    //   if(this.name !== undefined && this.name !== ""){
+    //     this.socket.emit('register', this.name);
+    //   }
+    // });
+    setInterval(() => {
       if(this.name !== undefined && this.name !== ""){
         this.socket.emit('register', this.name);
       }
-    });
+    }, 1000);
     setInterval(() => {
       // if(this.name !== undefined && this.name !== ""){
       //   this.socket.emit('register', this.name);
@@ -78,6 +88,11 @@ export class MemhomeComponent implements OnInit {
     // this.socket.emit('get-online-users', { doIt: true });
     this.socket.on('recieve-online-users', data =>{
       this.onlineUsers = data;
+      this.onlineUsers.forEach((element, index) => {
+        if(element.name === this.name){
+          this.onlineUsers.splice(index, 1);
+        }
+      });
       // console.log(this.onlineUsers);
     });
     this.loginService.getName().subscribe(data => {
@@ -91,6 +106,22 @@ export class MemhomeComponent implements OnInit {
         this.socket.emit('register', this.name);
       }
     });
+
+
+
+    setInterval(() => {
+      if(this.perschatflag){
+        this.socket.emit('get-personalchat', { recipient: this.persname, sender: this.name });
+      }
+    }, 1000);
+
+    this.socket.on('recieve-personalchat', data => {
+      if(this.perschatflag){
+        this.persmessages = data;
+        console.log(this.persmessages);
+      }
+    });
+
   }
 
   submit(e: any) {
@@ -102,6 +133,28 @@ export class MemhomeComponent implements OnInit {
     } else {
       
     }
+  }
+
+
+
+
+  perschat(name: string) {
+    // alert(name);
+    this.perschatflag = true;
+    this.persname = name;
+  }
+
+  perssubmit(e: any) {
+    e.preventDefault();
+    // alert(`Sender: ${this.name}, message: ${this.perschatnewMessage}, recipient: ${this.persname}`);
+    var persmessage_tosend = {
+      sender: this.name,
+      message: this.perschatnewMessage,
+      recipient: this.persname,
+      time: Date.now(),
+    };
+    this.socket.emit('post-personalchat', persmessage_tosend);
+    this.perschatnewMessage = "";
   }
 
 }

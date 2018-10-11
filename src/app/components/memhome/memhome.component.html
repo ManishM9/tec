@@ -4,7 +4,7 @@
 </div>
 
 <div class="container mb-4" style="height: 500px;">
-  <div class="w-100 bg-light rounded" style="height: 90%; overflow: scroll;" #scrollMe>
+  <div class="w-100 bg-light rounded" style="height: 90%; overflow-y: scroll;" #scrollMe>
     <div class="py-0 mb-1 bg-dark rounded pl-2" *ngFor="let message of messages">
       <strong class="text-light">{{ message.sender }} : </strong><span class="text-light">{{ message.message }}</span><br>
       <small>{{ message.time | date:"dd MMM, hh:mm" }}</small>
@@ -21,8 +21,31 @@
 
 <!-- yolo -->
 <!-- <p *ngFor="let user of onlineUsers">{{ user.name }}, {{ user.time }}</p> -->
-<div class="container mb-4" style="height: 500px; overflow: scroll;">
-  <div class="py-3 mb-2 bg-info rounded px-3" *ngFor="let user of onlineUsers">
+<div class="container">
+<div class="row mb-4" style="height: 500px;">
+  <div class="h-100 col-3" style="overflow-y: scroll;">
+  <div class="py-3 mb-2 bg-info rounded px-3" *ngFor="let user of onlineUsers" (dblclick)="perschat(user.name)" >
     <div class="d-inline-block" style="width: 10px; height: 10px; border-radius: 50%; background: green;"></div><strong>{{ user.name }}</strong>
   </div>
+  </div>
+  <div class="h-100 col-9">
+    <div *ngIf="perschatflag; else noActivePersChat" class="">
+      <!-- namebar -->
+      <div class="w-100 px-5 py-3 bg-dark text-center text-light" style="height: 10%;">{{ persname }}</div>
+      <div class="w-100 bg-light rounded" style="height: 400px; overflow-y: scroll;" #scrollPersChat>
+        <div class="py-0 mb-1 bg-dark rounded pl-2" *ngFor="let persmessage of persmessages">
+          <strong class="text-light">{{ persmessage.sender }} : </strong><span class="text-light">{{ persmessage.message }}</span><br>
+          <small>{{ persmessage.time | date:"dd MMM, hh:mm" }}</small>
+        </div>
+      </div>
+      <div class="w-100 mt-1" style="height: 10%;">
+        <form (submit)="perssubmit($event)" style="height: 100%;">
+          <input autocomplete="off" class="rounded bg-light w-75 h-100 my-auto" type="text" [(ngModel)]="perschatnewMessage" name="perschatnewMessage">
+          <button type="submit" class="btn btn-success w-25 h-100 my-auto">Send</button>
+        </form>
+      </div>
+    </div>
+    <ng-template #noActivePersChat>No Open Chat, Double-Click on a online user to chat</ng-template>
+  </div>
+</div>
 </div>

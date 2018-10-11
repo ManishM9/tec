@@ -259,6 +259,15 @@ var onlineusersSchema = new mongoose.Schema({
 
 var OnlineUsers = mongoose.model("OnlineUser", onlineusersSchema);
 
+var personalchatSchema = new mongoose.Schema({
+    sender: String,
+    message: String,
+    time: Date,
+    recipient: String,
+});
+
+var PersonalChat = mongoose.model("PeronalChat", personalchatSchema);
+
 var accountmidSchema = new mongoose.Schema({
     name: String,
     email: String,
@@ -1076,6 +1085,8 @@ io.on('connection', (socket) => {
                             curr_name = data;
                         }
                     });
+                } else {
+                    curr_name = data;
                 }
             }
         })
@@ -1106,6 +1117,43 @@ io.on('connection', (socket) => {
             }
         });
     }, 500);
+
+
+
+
+    socket.on('get-personalchat', data => {
+        var sender = data.sender;
+        var recipient = data.recipient;
+        console.log("sendername:",data.sender);
+        console.log(data.recipient);
+        PersonalChat.find({ sender: { $in: [sender, recipient] }, recipient: { $in: [sender, recipient] } }).sort('time').exec((err, persmessages) => {
+            if(err){
+                console.log(err);
+                throw err;
+            } else {
+                // console.log(persmessages);
+                socket.emit("recieve-personalchat", persmessages);
+            }
+        });
+    });
+
+    socket.on('post-personalchat', data => {
+        var obj_toadd = {
+            sender: data.sender,
+            message: data.message,
+            recipient: data.recipient,
+            time: data.time,
+        };
+        PersonalChat.create(obj_toadd, (err, doc) => {
+            if(err){
+                console.log(err);
+                throw err;
+            } else {
+                console.log(doc);
+            }
+        });
+    });
+
 
     socket.on('message-send', (data) => {
         console.log(data);
@@ -1143,24 +1191,26 @@ io.on('connection', (socket) => {
     socket.on('disconnect', data => {
         // console.log("Disconnected");
         // console.log(data);
-        socket.emit('register-urselves', { doIt: true });
-        OnlineUsers.remove({ name: curr_name }, (err, info) => {
+        // socket.emit('register-urselves', { doIt: true });
+        // if(curr_name !== ""){
+        //     OnlineUsers.remove({ name: curr_name }, (err, info) => {
+        //         if(err){
+        //             console.log(err);
+        //             throw err;
+        //         } else {
+        //             console.log(info);
+        //         }
+        //     });
+        // }
+        OnlineUsers.deleteMany({}, (err, info) => {
             if(err){
                 console.log(err);
                 throw err;
             } else {
+                // socket.emit('register-urselves', { doIt: true });
                 console.log(info);
             }
         });
-        // OnlineUsers.deleteMany({}, (err, info) => {
-        //     if(err){
-        //         console.log(err);
-        //         throw err;
-        //     } else {
-        //         // socket.emit('register-urselves', { doIt: true });
-        //         console.log(info);
-        //     }
-        // });
     });
 
 });
