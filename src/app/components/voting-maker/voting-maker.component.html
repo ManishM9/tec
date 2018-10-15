@@ -1,0 +1,35 @@
+<form>
+
+  <div class="form-group">
+    <label>Title:</label>
+    <input type="text" class="form-control" [(ngModel)]="voting.title" name="title" required>
+    <small class="form-text text-muted"></small>
+  </div>
+
+  <div class="form-group">
+    <label>Description:</label>
+    <input type="text" class="form-control" [(ngModel)]="voting.description" name="description" required>
+    <small class="form-text text-muted"></small>
+  </div>
+
+  <div class="form-group">
+    <label>Clearance:</label>
+    <input type="text" class="form-control" [(ngModel)]="voting.clearance" name="clearance" required>
+    <small class="form-text text-muted"></small>
+  </div>
+
+  <div class="form-group">
+    <label>Options:</label>
+    <button (click)="addoption()" class="btn btn-success">+</button>
+    <button (click)="deloption()" class="btn btn-danger">-</button>
+    <br>
+    <div class="ml-4" *ngFor="let option of votingoptions; let i = index" >
+      <hr *ngIf="i!==0">
+      <h4>{{ i+1 }})</h4><label>Name:</label><input type="text" class="form-control" [(ngModel)]="option.name" name="vname{{i}}" required>
+      <label>Description:</label><input type="text" class="form-control" [(ngModel)]="option.description" name="vdescription{{i}}" required>
+    </div>
+  </div>
+
+  <button (click)="submit()" class="btn btn-success">Submit</button>
+
+</form>

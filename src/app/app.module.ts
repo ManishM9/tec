@@ -22,6 +22,10 @@ import { EmbedComponent } from './components/embed/embed.component';
 import { AccountformfinalComponent } from './components/accountformfinal/accountformfinal.component';
 import { MemhomeComponent } from './components/memhome/memhome.component';
 import { LoginService } from './services/login.service';
+import { ListComponent } from './components/list/list.component';
+import { VotingComponent } from './components/voting/voting.component';
+import { VotlistService } from './services/votlist.service';
+import { VotingMakerComponent } from './components/voting-maker/voting-maker.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +40,10 @@ import { LoginService } from './services/login.service';
     FormsensComponent,
     EmbedComponent,
     AccountformfinalComponent,
-    MemhomeComponent
+    MemhomeComponent,
+    ListComponent,
+    VotingComponent,
+    VotingMakerComponent
   ],
   imports: [
     BrowserModule,
@@ -45,7 +52,7 @@ import { LoginService } from './services/login.service';
     BrowserAnimationsModule,
     AppRoutingModule
   ],
-  providers: [EventService, AccountformService, AdminService, SensoredService, LoginService],
+  providers: [EventService, AccountformService, AdminService, SensoredService, LoginService, VotlistService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

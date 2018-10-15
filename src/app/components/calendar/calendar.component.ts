@@ -62,10 +62,13 @@ export class CalendarComponent implements OnInit {
       if((new Date(element.date).getDate()) === e){
         // this.currentEvent = !this.currentEvent;
         this.currentEventd = element;
-      }
-      if(this.currentEventd.date === e || this.currentEvent === false){
         this.currentEvent = !this.currentEvent;
       }
+      // console.log((new Date(this.currentEventd.date)).getDate());
+      // console.log(e);
+      // if((new Date(this.currentEventd.date)).getDate() === e && this.currentEvent === false){
+      //   this.currentEvent = false;
+      // }
     });
   }
 

@@ -268,6 +268,34 @@ var personalchatSchema = new mongoose.Schema({
 
 var PersonalChat = mongoose.model("PeronalChat", personalchatSchema);
 
+var votingSchema = new mongoose.Schema({
+    title: String,
+    description: String,
+    createdby: String,
+    createdbyname: String,
+    clearance: String,
+    options: [{
+        name: String,
+        description: String,
+    }],
+});
+
+var Voting = mongoose.model("Voting", votingSchema);
+
+var votingresults = new mongoose.Schema({
+    title: String,
+    description: String,
+    result: [{
+        name: String,
+        voters: [{
+            name: String,
+            reg_no: String,
+        }],
+    }],
+});
+
+var VotingResult = mongoose.model("VotingResult", votingresults);
+
 var accountmidSchema = new mongoose.Schema({
     name: String,
     email: String,
@@ -427,6 +455,26 @@ var authenticate = function(req,res,next){
     }
 }
 
+var defaultClearance = function(req,res,next){
+    if(req.session.clearance === "default" || req.session.clearance === "admin"){
+        console.log("default:Clearance: Next");
+        next();
+    } else {
+        console.log("defaultClearance: -1");
+        res.send(false);
+    }
+}
+
+var boardClearance = function(req,res,next){
+    if(req.session.clearance === "board" || req.session.clearance === "admin"){
+        console.log("boardClearance: Next");
+        next();
+    } else {
+        console.log("boardClearance: -1");
+        res.send(false);
+    }
+}
+
 app.post("/api/login", (req,res) => {
     var reqb = req.body;
     // console.log(reqb.username, reqb.password);
@@ -458,7 +506,7 @@ app.get("/api/loginch", authenticate, (req,res) => {
     }
 })
 
-app.post("/api/event/post", authenticate, (req,res) => {
+app.post("/api/event/post", authenticate, boardClearance, (req,res) => {
     var rbody = req.body;
     // Item.create()
     console.log(rbody);
@@ -780,9 +828,58 @@ app.post('/api/updateclearance/:reg_no', (req, res) => {
     }
 });
 
-app.get("/api/getname", (req, res) => {
+app.get("/api/getname", authenticate, (req, res) => {
     console.log(req.session.name);
     res.send({ name: req.session.name });
+});
+
+app.get("/api/getregno", authenticate, (req, res) => {
+    console.log(req.session.reg_no);
+    res.send({ reg_no: req.session.reg_no });
+});
+
+app.get("/api/getvoting", authenticate, (req, res) => {
+    Voting.find({}, (err, docs) => {
+        if(err){
+            console.log(err);
+            throw err;
+        } else {
+            console.log(docs);
+            var docs_tosend = [];
+            docs.forEach(element => {
+                docs_tosend.push({
+                    title: element.title,
+                    description: element.description,
+                    createdby: element.createdby,
+                    createdbyname: element.createdbyname,
+                    options: element.options,
+                });
+            });
+            res.send(docs_tosend);
+        }
+    })
+});
+
+app.post("/api/postvoting", authenticate, boardClearance, (req, res) => {
+    var reqb = req.body;
+    var voting_toadd = {
+        title: reqb.title,
+        description: reqb.description,
+        createdby: req.session.username,
+        createdbyname: req.session.name,
+        options: reqb.options,
+        clearance: reqb.clearance,
+    };
+    Voting.create(voting_toadd, (err, doc) => {
+        if(err){
+            console.log(err);
+            res.send(false);
+            throw err;
+        } else {
+            console.log(doc);
+            res.send(true);
+        }
+    });
 });
 
 // Item.find({"date": { $gt: "2018-07-17" }}, (err,events) => {

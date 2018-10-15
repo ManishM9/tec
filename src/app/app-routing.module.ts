@@ -18,6 +18,8 @@ import { AccountformfinalComponent } from './components/accountformfinal/account
 
 import { MemhomeComponent } from './components/memhome/memhome.component';
 
+import { VotingMakerComponent } from './components/voting-maker/voting-maker.component';
+
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'form1', component: Accountform1Component },
@@ -27,9 +29,10 @@ const routes: Routes = [
   { path: 'sensored', component: SensoredComponent },
   { path: 'accountform/:aid', component: AccountformfinalComponent },
   { path: 'home', component: MemhomeComponent },
+  { path: 'voting-maker', component: VotingMakerComponent },
   // { path: 'sensored/login', component: LoginsensComponent },
   // { path: 'sensored/form', component: FormsensComponent },
-  // { path: 'embed', component: EmbedComponent },
+  { path: 'embed', component: EmbedComponent },
 ];
 
 @NgModule({

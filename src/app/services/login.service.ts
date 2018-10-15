@@ -26,4 +26,8 @@ export class LoginService {
     return this.http.get<any>("/api/getname");
   }
 
+  getRegNo(): Observable<any>{
+    return this.http.get<any>("/api/getregno");
+  }
+
 }
