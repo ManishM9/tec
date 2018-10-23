@@ -31,6 +31,7 @@ import { RegistrationComponent } from './components/registration/registration.co
 import { AanvikService } from './services/aanvik.service';
 
 import { RecaptchaModule } from 'ng-recaptcha';
+import { AanvikComponent } from './components/aanvik/aanvik.component';
 
 @NgModule({
   declarations: [
@@ -50,7 +51,8 @@ import { RecaptchaModule } from 'ng-recaptcha';
     VotingComponent,
     VotingMakerComponent,
     ExpoformComponent,
-    RegistrationComponent
+    RegistrationComponent,
+    AanvikComponent
   ],
   imports: [
     BrowserModule,

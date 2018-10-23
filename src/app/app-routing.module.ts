@@ -22,6 +22,7 @@ import { VotingMakerComponent } from './components/voting-maker/voting-maker.com
 
 import { ExpoformComponent } from './components/expoform/expoform.component';
 import { RegistrationComponent } from './components/registration/registration.component';
+import { AanvikComponent } from './components/aanvik/aanvik.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -36,7 +37,8 @@ const routes: Routes = [
   // { path: 'sensored/login', component: LoginsensComponent },
   // { path: 'sensored/form', component: FormsensComponent },
   { path: 'embed', component: EmbedComponent },
-  { path: 'aanvik', component: ExpoformComponent },
+  { path: 'aanvik', component: AanvikComponent },
+  { path: 'whitepaper', component: ExpoformComponent },
   { path: 'register', component: RegistrationComponent },
 ];
 

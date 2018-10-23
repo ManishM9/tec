@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 
 import { AanvikService } from '../../services/aanvik.service';
 
+import { Router } from '@angular/router';
+
 @Component({
   selector: 'app-registration',
   templateUrl: './registration.component.html',
@@ -17,7 +19,7 @@ export class RegistrationComponent implements OnInit {
   phno: number = 0;
   captcha: boolean = false;
 
-  constructor(private aanvikService: AanvikService) { }
+  constructor(private aanvikService: AanvikService, private router: Router) { }
 
   ngOnInit() {
   }
@@ -48,6 +50,7 @@ export class RegistrationComponent implements OnInit {
           this.invalid_phno = false;
           this.invalid_reg = false;
           alert("Form Submitted!");
+          this.router.navigate(['/aanvik']);
           this.validate = false;
         }
       });
