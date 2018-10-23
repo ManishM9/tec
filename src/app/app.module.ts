@@ -30,6 +30,8 @@ import { ExpoformComponent } from './components/expoform/expoform.component';
 import { RegistrationComponent } from './components/registration/registration.component';
 import { AanvikService } from './services/aanvik.service';
 
+import { RecaptchaModule } from 'ng-recaptcha';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -55,7 +57,8 @@ import { AanvikService } from './services/aanvik.service';
     FormsModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    RecaptchaModule.forRoot(),
   ],
   providers: [EventService, AccountformService, AdminService, SensoredService, LoginService, VotlistService, AanvikService],
   bootstrap: [AppComponent]

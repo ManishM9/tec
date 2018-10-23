@@ -15,10 +15,16 @@ export class RegistrationComponent implements OnInit {
   email: string = "";
   reg_no: string = "";
   phno: number = 0;
+  captcha: boolean = false;
 
   constructor(private aanvikService: AanvikService) { }
 
   ngOnInit() {
+  }
+
+  resolved(captchaResponse: string) {
+    // console.log(`Resolved captcha with response ${captchaResponse}:`);
+    this.captcha = true;
   }
 
   submit(e: any) {
@@ -31,7 +37,7 @@ export class RegistrationComponent implements OnInit {
     if(String(this.phno).length !== 10){
       this.invalid_phno = true;
     }
-    if(this.name.length<30 && this.name !== "" && this.email.length<40 && this.email !== "" && this.reg_no.length === 9 && regexp.test(this.reg_no) && String(this.phno).length === 10){
+    if(this.captcha && this.name.length<30 && this.name !== "" && this.email.length<40 && this.email !== "" && this.reg_no.length === 9 && regexp.test(this.reg_no) && String(this.phno).length === 10){
       this.aanvikService.register({ name: this.name, email: this.email, reg_no: this.reg_no, phno: this.phno }).subscribe(data => {
         console.log(data);
         if(data){

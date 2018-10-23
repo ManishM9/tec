@@ -30,9 +30,12 @@
     <!-- <div class="g-recaptcha" data-sitekey="6LdMf3YUAAAAAPBPaaVvvGTshK00lW0HxeDLXFkd"></div> -->
     <!-- <button >Submit</button> -->
   
-    <!-- <input class="g-recaptcha" data-sitekey="6Lc0gnYUAAAAAOcgjV9Mxq76LgpLEdDZQjXu9CeN" data-callback="YourOnSubmitFn" type="submit" class="btn btn-lg" value="Submit"> -->
-    <button class="g-recaptcha" data-sitekey="6Lc0gnYUAAAAAOcgjV9Mxq76LgpLEdDZQjXu9CeN" data-callback="submit"> Submit</button>
+    
+    <!-- <button class="g-recaptcha" data-sitekey="6Lc0gnYUAAAAAOcgjV9Mxq76LgpLEdDZQjXu9CeN" data-callback="submit">Submit</button> -->
   
+    <re-captcha (resolved)="resolved($event)" siteKey="6Lc0gnYUAAAAAOcgjV9Mxq76LgpLEdDZQjXu9CeN"></re-captcha>
+    <input type="submit" class="btn btn-lg" value="Submit">
+
     </form>
   
   </div>
