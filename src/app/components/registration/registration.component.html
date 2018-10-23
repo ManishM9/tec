@@ -1,0 +1,37 @@
+
+<div class="container">
+    <h3>AANVIK TECfest</h3>
+    <form  (submit)="submit($event)" class="form-group mt-2" [ngClass]="validate? 'was-validated': 'needs-validation'">
+
+    <div>
+      <label>Name:</label>
+      <input type="text" class="form-control" [(ngModel)]="name" name="name" required>
+      <small class="invalid-feedback">Enter your Name.</small>
+    </div>
+  
+    <div class="form-group">
+      <label>Email:</label>
+      <input type="email" class="form-control" [(ngModel)]="email" name="email" required>
+      <small class="invalid-feedback">Enter a valid Email.</small>
+    </div>
+  
+    <div class="form-group">
+      <label>Reg_No:</label>
+      <input type="text" class="form-control" [(ngModel)]="reg_no" [ngClass]="invalid_reg?'is-invalid': 'is-valid'" name="reg_no" required>
+      <small class="invalid-feedback">Enter a valid Register Number.</small>
+    </div>
+
+    <div class="form-group">
+      <label>Phone Number:</label>
+      <input type="number" class="form-control" [(ngModel)]="phno" [ngClass]="invalid_phno? 'is-invalid': 'is-valid'" name="phno" required>
+      <small class="invalid-feedback">Enter a valid Phone Number.</small>
+    </div>
+
+    <!-- <div class="g-recaptcha" data-sitekey="6LdMf3YUAAAAAPBPaaVvvGTshK00lW0HxeDLXFkd"></div> -->
+    <!-- <button >Submit</button> -->
+  
+    <input class="g-recaptcha" data-sitekey="6Lc0gnYUAAAAAOcgjV9Mxq76LgpLEdDZQjXu9CeN" data-callback="YourOnSubmitFn" type="submit" class="btn btn-lg" value="Submit">
+  
+    </form>
+  
+  </div>

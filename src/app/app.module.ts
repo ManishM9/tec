@@ -26,6 +26,9 @@ import { ListComponent } from './components/list/list.component';
 import { VotingComponent } from './components/voting/voting.component';
 import { VotlistService } from './services/votlist.service';
 import { VotingMakerComponent } from './components/voting-maker/voting-maker.component';
+import { ExpoformComponent } from './components/expoform/expoform.component';
+import { RegistrationComponent } from './components/registration/registration.component';
+import { AanvikService } from './services/aanvik.service';
 
 @NgModule({
   declarations: [
@@ -43,7 +46,9 @@ import { VotingMakerComponent } from './components/voting-maker/voting-maker.com
     MemhomeComponent,
     ListComponent,
     VotingComponent,
-    VotingMakerComponent
+    VotingMakerComponent,
+    ExpoformComponent,
+    RegistrationComponent
   ],
   imports: [
     BrowserModule,
@@ -52,7 +57,7 @@ import { VotingMakerComponent } from './components/voting-maker/voting-maker.com
     BrowserAnimationsModule,
     AppRoutingModule
   ],
-  providers: [EventService, AccountformService, AdminService, SensoredService, LoginService, VotlistService],
+  providers: [EventService, AccountformService, AdminService, SensoredService, LoginService, VotlistService, AanvikService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

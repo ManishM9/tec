@@ -313,6 +313,46 @@ var account1Schema = new mongoose.Schema({
 
 var Accountform1 = mongoose.model("accountform1", account1Schema);
 
+
+// AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAANNNNNNNNNNNVVVVVVVVVVVVVIIIIIIIIIIIIKKKKKKKKKKKKKKK
+
+var registrationSchema = new mongoose.Schema({
+    name: String,
+    email: String,
+    reg_no: String,
+    phno: Number,
+});
+
+var Registraion = mongoose.model("Registration", registrationSchema);
+
+app.post("/api/registerfest", (req, res) => {
+    var reqb = req.body;
+    var obj_toadd = {
+        name: reqb.name,
+        email: reqb.email,
+        reg_no: reqb.reg_no,
+        phno: reqb.phno,
+    };
+    var regexp = new RegExp(/1[4-7][A-Z][A-Z][A-Z][0-9][0-9][0-9][0-9]/);
+    if(reqb.name.length<30 && reqb.name !== "" && reqb.email.length<40 && reqb.email !== "" && reqb.reg_no.length === 9 && regexp.test(reqb.reg_no) && String(reqb.phno).length === 10){
+        Registraion.create(obj_toadd, (err, doc) => {
+            if(err){
+                console.log(err);
+                res.send(false);
+                throw err;
+            } else {
+                console.log(doc);
+                res.send(true);
+            }
+        });
+    } else {
+        res.send(false);
+    }
+});
+
+
+// AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAANNNNNNNNNNNVVVVVVVVVVVVVIIIIIIIIIIIIKKKKKKKKKKKKKKK
+
 // APP====APP====APP====APP====APP====APP====APP====APP===APP
 
 // var accountSchema_app = mongoose.Schema({

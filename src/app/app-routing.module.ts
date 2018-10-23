@@ -20,6 +20,9 @@ import { MemhomeComponent } from './components/memhome/memhome.component';
 
 import { VotingMakerComponent } from './components/voting-maker/voting-maker.component';
 
+import { ExpoformComponent } from './components/expoform/expoform.component';
+import { RegistrationComponent } from './components/registration/registration.component';
+
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'form1', component: Accountform1Component },
@@ -33,6 +36,8 @@ const routes: Routes = [
   // { path: 'sensored/login', component: LoginsensComponent },
   // { path: 'sensored/form', component: FormsensComponent },
   { path: 'embed', component: EmbedComponent },
+  { path: 'aanvik', component: ExpoformComponent },
+  { path: 'register', component: RegistrationComponent },
 ];
 
 @NgModule({
