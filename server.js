@@ -333,7 +333,7 @@ app.post("/api/registerfest", (req, res) => {
         reg_no: reqb.reg_no,
         phno: reqb.phno,
     };
-    var regexp = new RegExp(/1[4-7][A-Z][A-Z][A-Z][0-9][0-9][0-9][0-9]/);
+    var regexp = new RegExp(/1[4-8][A-Z][A-Z][A-Z][0-9][0-9][0-9][0-9]/);
     if(reqb.name.length<30 && reqb.name !== "" && reqb.email.length<40 && reqb.email !== "" && reqb.reg_no.length === 9 && regexp.test(reqb.reg_no) && String(reqb.phno).length === 10){
         Registraion.create(obj_toadd, (err, doc) => {
             if(err){
